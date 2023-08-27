@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2197456269121640354}
   - component: {fileID: 2472868270435735239}
   - component: {fileID: 2641684146906179420}
+  - component: {fileID: 2464741246702999415}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -152,11 +153,12 @@ MonoBehaviour:
   moveSpeedY: 6
   rb: {fileID: -2197456269121640354}
   attackPoint: {fileID: 6960585619882126846}
-  attackRange: 1
+  attackRange: 1.25
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   Damage: 1
+  life: 0
 --- !u!114 &2641684146906179420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSlowTimer: 0
+--- !u!95 &2464741246702999415
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552590336122789749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1508d1157b85724b82ba5de71702dfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6226035328044358598
 GameObject:
   m_ObjectHideFlags: 0

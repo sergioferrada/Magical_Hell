@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1282981851497180731}
   - component: {fileID: 3825850135685712365}
   - component: {fileID: 2394417879519819005}
-  - component: {fileID: 924175840181335158}
+  - component: {fileID: -6937872198344596799}
+  - component: {fileID: -2370491528318505406}
   m_Layer: 7
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -95,12 +96,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257438578806523981}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -134,7 +135,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &924175840181335158
+--- !u!114 &-6937872198344596799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,3 +148,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  player: {fileID: 2552590336122789749, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+  chaseDistance: 20
+  attackDistance: 0.8
+  speed: 2
+  attackDelay: 1
+--- !u!95 &-2370491528318505406
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257438578806523981}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2122b47153f9b9e41adc6a121bd5ff59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

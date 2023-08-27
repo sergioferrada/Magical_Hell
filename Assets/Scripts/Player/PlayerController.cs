@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D rb;
     private Vector2 moveDirection;
+    private Animator animator;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -48,19 +49,24 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move()
-    {
+    {   
         rb.velocity = new Vector2(moveDirection.x * moveSpeedX, moveDirection.y * moveSpeedY);
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 
     void MeleeAttack()
     {
+        animator.SetTrigger("MeleeAttacking");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies) {
 
             enemy.GetComponent<Enemy1Controller>().ReciveDamage(Damage);
+            Vector2 direction = (enemy.GetComponent<Collider2D>().transform.position - transform.position).normalized;
+            enemy.GetComponent<Rigidbody2D>().AddForce(direction*25, ForceMode2D.Impulse);
             print("pum pum");
         }
+
     }
 
     private void OnDrawGizmosSelected()

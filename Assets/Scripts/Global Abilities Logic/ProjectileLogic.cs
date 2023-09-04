@@ -6,7 +6,16 @@ public class ProjectileLogic : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Vector2 direction;
-    public float damage, speed, lifeTime;
 
-    public void SetDamage(float d) { damage = d; }
+    [SerializeField]
+    private float damage;
+    public float Damage{ get { return damage; } protected set { damage = value; } }
+    [SerializeField]
+    protected float speed, lifeTime;
+
+    protected virtual void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
+
 }

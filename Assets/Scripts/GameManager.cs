@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timePerRoom = 0;
-        enemiesInScene = FindObjectsOfType<Enemy1Controller>().Length;
+        enemiesInScene = FindObjectsOfType<Enemy>().Length;
         roomEnded = false;
-        print("Enemigos en escena:" + enemiesInScene);
+        //print("Enemigos en escena:" + enemiesInScene);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         {
             timePerRoom += Time.unscaledDeltaTime;
             var ts = TimeSpan.FromSeconds(timePerRoom);
-            print("Tiempo: " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
+            //print("Tiempo: " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
         }
         
         if(enemiesInScene <= 0) roomEnded = true;
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         print("Todos los enemigos derrotados");
         var ts = TimeSpan.FromSeconds(timePerRoom);
         print("Tiempo final de la sala: " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
-        UpdateLife(FindObjectOfType<PlayerController>().life);
+        UpdateLife(FindObjectOfType<PlayerController>().Life);
         print("Vida final de la sala: " + totalLifePointsInRoom);
     }
 

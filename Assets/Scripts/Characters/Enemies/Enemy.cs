@@ -13,10 +13,19 @@ public class Enemy : CharacterBase
     [SerializeField]
     protected float chaseDistance = 0;
 
-    override protected void Awake()
+    protected override void Awake()
     {
         base.Awake();
         playerTransform = FindObjectOfType<PlayerController>().GetComponent<Transform>();
+    }
+
+    protected virtual void Update()
+    {
+        //Se redondean las coordenadas del vector para solo obtener valores de 1 o -1
+        if (direction.x > 0)
+            transform.localScale = new Vector2(1, transform.localScale.y);
+        else if (direction.x < 0)
+            transform.localScale = new Vector2(-1, transform.localScale.y);
     }
 
     protected virtual void ShortRangeAttack()
@@ -49,15 +58,9 @@ public class Enemy : CharacterBase
     {
         //chasing the player
         ChangeState(State.Move);
-        Vector2 direction = objectiveTransform.position - transform.position;
+        direction = objectiveTransform.position - transform.position;
         direction.Normalize();
         transform.position = Vector2.MoveTowards(transform.position, objectiveTransform.position, movementSpeed * Time.deltaTime);
-
-        //Se redondean las coordenadas del vector para solo obtener valores de 1 o -1
-        if(direction.x > 0)
-            transform.localScale = new Vector2(1, transform.localScale.y);
-        else if (direction.x < 0)
-            transform.localScale = new Vector2(-1, transform.localScale.y);
     }
 
     private void OnDrawGizmosSelected()

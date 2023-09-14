@@ -13,7 +13,6 @@ public class BoomerangProjectile : ProjectileLogic
     protected override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody2D>();
         targetPosition = (Vector2)FindObjectOfType<PlayerController>().transform.position;
         initialPosition = transform.position; 
     }
@@ -31,8 +30,7 @@ public class BoomerangProjectile : ProjectileLogic
         //Se calcula la direccion para el movimiento con corvatura
         direction = CalculateCurveDirection((Vector2)transform.position, targetPosition);
         // Mueve el proyectil en la dirección
-        rb.velocity = direction * speed;
-        transform.Rotate(Vector3.forward * Time.deltaTime);
+        rb2d.velocity = direction * speed;
     }
 
     private Vector2 CalculateCurveDirection(Vector2 initialPosition, Vector2 targetPosition)
@@ -45,9 +43,11 @@ public class BoomerangProjectile : ProjectileLogic
         return direction += curveDirection;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Lógica de colisión aquí si lo deseas
-        // Puedes causar daño, efectos, etc.
+        if(collision.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
     }
 }

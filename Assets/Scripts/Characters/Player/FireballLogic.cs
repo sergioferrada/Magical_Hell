@@ -7,14 +7,11 @@ public class FireballLogic : ProjectileLogic
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         gameObject.name = "Fireball";
-        rb = GetComponent<Rigidbody2D>();     
         //Se selecciona una direccion aleatoria alrededor del jugador
-        direction = Random.insideUnitSphere;
-        direction = direction.normalized;
-        rb.velocity = speed * direction;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        direction = Random.insideUnitCircle.normalized;
+        rb2d.velocity = speed * direction;
     }
 
     public void ExploteInMore()
@@ -40,6 +37,13 @@ public class FireballLogic : ProjectileLogic
                 ExploteInMore();
                    
         }
-        Destroy(gameObject);
+        animator.Play("Fireball_Explosion");
+    }
+
+    private void Explote()
+    {
+        rb2d.velocity = new Vector2(0,0);
+        GetComponent<CircleCollider2D>().enabled = false;
+        Destroy(gameObject, .4f);
     }
 }

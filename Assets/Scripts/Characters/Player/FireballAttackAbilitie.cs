@@ -13,6 +13,6 @@ public class FireballAttackAbilitie : MonoBehaviour
 
     void FireballAttack()
     {
-         Instantiate(fireball, transform.position, transform.rotation);
+         Instantiate(fireball,transform.position, Quaternion.identity);
     }
 }

@@ -15,11 +15,13 @@ public class CharacterBase : MonoBehaviour
     public float Life { get { return _life; } protected set { _life = value; } }
     [SerializeField] protected float _damage;                                           // Campo privado respaldando la propiedad
     public float Damage { get { return _damage; } protected set { _damage = value; } }
-    protected enum State { Idle, Move, Attack, Injured, Death }
+    protected enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death }
     [SerializeField] protected State state;
     [SerializeField] protected float movementSpeed = 1, attackDistance = 0.8f;
     [SerializeField] protected float attackRange = 1, attackDelay = 1, passedTime = 1;
     [SerializeField] protected LayerMask attackableLayers;
+
+    protected Vector2 direction;
     #endregion
 
     // Start is called before the first frame update
@@ -36,6 +38,10 @@ public class CharacterBase : MonoBehaviour
     }
 
     // Update is called once per frame
+    protected virtual void Move()
+    {
+        ChangeState(State.Move);
+    }
 
     public void ReciveDamage(float damage)
     {

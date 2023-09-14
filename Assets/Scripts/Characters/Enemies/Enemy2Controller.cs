@@ -9,9 +9,9 @@ public class Enemy2Controller : Enemy
     [SerializeField] private ProjectileLogic boomerangProjectile;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if ((playerTransform == null) || (state == State.Death))
+        if ((playerTransform == null) || (state == State.Death) || (state == State.Injured))
             return;
 
         distance = Vector2.Distance(transform.position, playerTransform.position);
@@ -26,29 +26,26 @@ public class Enemy2Controller : Enemy
                 transform.position = transform.position;
 
                 //Puede atacar?
-                if (passedTime >= attackDelay)
-                {            
-                    ChangeState(State.Attack);
-                }
-
+                if (passedTime >= attackDelay)            
+                    ChangeState(State.MidAttack);
             }
             //Fuera de rango de ataque
             else
-            {
-                ChaseGameObject(playerTransform);
-            }
+                Move();
         }
         //Fuera de rango de persecucion
         else
-        {
             ChangeState(State.Idle);
-        }
 
         //Tiempo para el siguiente ataque
         if (passedTime < attackDelay)
-        {
             passedTime += Time.deltaTime;
-        }
+    }
+
+    protected override void Move()
+    {
+        base.Move();
+        ChaseGameObject(playerTransform);
     }
 
     protected override void MidRangeAttack()

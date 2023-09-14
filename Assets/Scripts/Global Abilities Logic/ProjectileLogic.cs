@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ProjectileLogic : MonoBehaviour
 {
-    protected Rigidbody2D rb;
-    protected Vector2 direction;
+    protected Rigidbody2D rb2d;
+    public Vector2 direction { get; set; }
+    protected Animator animator;
 
     [SerializeField]
     private float damage;
@@ -14,7 +15,9 @@ public class ProjectileLogic : MonoBehaviour
     protected float speed, lifeTime;
 
     protected virtual void Start()
-    {
+    {   
+        rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         Destroy(gameObject, lifeTime);
     }
 

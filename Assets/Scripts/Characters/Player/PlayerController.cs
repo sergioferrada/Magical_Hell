@@ -5,20 +5,25 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : CharacterBase
 {
-    private Vector2 moveDirection;
     public Transform attackPoint;
 
     private void Update()
     {
-        ProcessInputs();
-        //Tiempo para el siguiente ataque
-        if (passedTime < attackDelay)
-            passedTime += Time.deltaTime;
+        if (state != State.Death && state != State.Injured)
+        {
+            ProcessInputs();
+            //Tiempo para el siguiente ataque
+            if (passedTime < attackDelay)
+                passedTime += Time.deltaTime;
+        }
     }
     private void FixedUpdate()
     {
         // Physic Calculation
-        Move();
+        if (state != State.Death && state != State.Injured)
+        {
+            Move();
+        }   
     }
 
     void ProcessInputs()
@@ -30,12 +35,12 @@ public class PlayerController : CharacterBase
             transform.localScale = new Vector2 (moveX, transform.localScale.y);
 
         if (Input.GetKeyDown(KeyCode.Space) && passedTime >= attackDelay)
-            ChangeState(State.Attack);
+            ChangeState(State.ShortAttack);
 
         // Cambia los estados en función del movimiento o ataque
-        if (state != State.Attack)
+        if (state != State.ShortAttack)
         {
-            if (moveDirection.magnitude > 0)
+            if (direction.magnitude > 0)
             {
                 ChangeState(State.Move);
             }
@@ -46,12 +51,12 @@ public class PlayerController : CharacterBase
         }
         else { moveX = 0; moveY = 0;}
 
-        moveDirection = new Vector2(moveX, moveY).normalized;
+        direction = new Vector2(moveX, moveY).normalized;
     }
 
-    void Move()
-    {      
-        rb2d.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);   
+    protected override void Move()
+    {   
+        rb2d.velocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);   
     }
 
     void MeleeAttack()
@@ -77,5 +82,21 @@ public class PlayerController : CharacterBase
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Cuando colisione con un objeto en el layer de "Enemies"
+        if (collision.gameObject.layer == 7)
+        {
+            ReciveDamage(collision.gameObject.GetComponent<Enemy>().Damage);
+            Vector2 direction = (transform.position - collision.transform.position).normalized;
+            rb2d.AddForce(direction * 25, ForceMode2D.Impulse);
+        }
+
+        if (collision.gameObject.layer == 10)
+        {
+            ReciveDamage(collision.gameObject.GetComponent<ProjectileLogic>().Damage);
+        }
     }
 }

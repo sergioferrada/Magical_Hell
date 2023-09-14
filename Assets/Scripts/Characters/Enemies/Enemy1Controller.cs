@@ -5,57 +5,49 @@ public class Enemy1Controller : Enemy
 {
     private float distance;
 
-    private void Update()
+    protected override void Update()
     {
-        if ((playerTransform == null) || (state == State.Death))
+        base.Update();
+
+        if ((playerTransform == null) || (state == State.Death) || (state == State.Injured))
             return;
 
         distance = Vector2.Distance(transform.position, playerTransform.position);
 
-        if (state != State.Injured)
+        //Dentro de rango de persecucion
+        if (distance < chaseDistance)
         {
-            //Dentro de rango de persecucion
-            if (distance < chaseDistance)
+            //Dentro de rango de ataque
+            if (distance <= attackDistance)
             {
-                //Dentro de rango de ataque
-                if (distance <= attackDistance)
-                {
-                    //Se detiene
-                    transform.position = transform.position;
+                //Se detiene
+                transform.position = transform.position;
 
-                    //Puede atacar?
-                    if (passedTime >= attackDelay)
-                    {
-                        //Empieza el ataque
-                        ChangeState(State.Attack);
-                    }
-                }
-                //Fuera de rango de ataque
-                else
-                {
-                    if (state != State.Attack)
-                    {
-                        ChaseGameObject(playerTransform);
-                    }
-                }
+                //Puede atacar?
+                if (passedTime >= attackDelay)
+                    //Empieza el ataque
+                    ChangeState(State.ShortAttack);
             }
-            //Fuera de rango de persecucion
+            //Fuera de rango de ataque
             else
             {
-                ChangeState(State.Idle);
+                if (state != State.ShortAttack)
+                    Move();
             }
         }
-
+        //Fuera de rango de persecucion
+        else
+            ChangeState(State.Idle);
+        
         //Tiempo para el siguiente ataque
         if (passedTime < attackDelay)
-        {
             passedTime += Time.deltaTime;
-        }
     }
 
-    protected override void ShortRangeAttack()
+    protected override void Move()
     {
-        base.ShortRangeAttack();
+        base.Move();
+        ChaseGameObject(playerTransform);
     }
 }
 

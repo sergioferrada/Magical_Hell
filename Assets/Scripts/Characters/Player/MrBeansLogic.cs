@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MrBeansLogic : MonoBehaviour
@@ -20,6 +21,7 @@ public class MrBeansLogic : MonoBehaviour
         directions.Add(new Vector2(-1, -1));
 
         currentDirection = directions[Random.Range(0, 3)];
+        transform.localScale = new Vector2(currentDirection.x, transform.localScale.y);
         rb.velocity = currentDirection * speed;
 
         Destroy(gameObject, lifeTime);
@@ -31,5 +33,9 @@ public class MrBeansLogic : MonoBehaviour
             currentDirection = Vector2.Reflect(currentDirection, contactPoint.normal);
        
         rb.velocity = speed * currentDirection;
+
+        //Se redondean las coordenadas del vector par solo obtener valores de 1 o -1
+        currentDirection.x = Mathf.Sign(currentDirection.x);
+        transform.localScale = new Vector2(currentDirection.x, transform.localScale.y);
     }
 }

@@ -167,5 +167,6 @@ MonoBehaviour:
   passedTime: 2.5
   attackableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   chaseDistance: 1
+  attackForce: 15

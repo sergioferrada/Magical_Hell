@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class FireballAbilitieItem : MonoBehaviour
 {
-    public GameObject projectileAbilitie;
-    // Start is called before the first frame update
+    [SerializeField] private GameObject projectileAbilitie;
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,8 +18,8 @@ public class FireballAbilitieItem : MonoBehaviour
 
             collision.gameObject.AddComponent<FireballAttackAbilitie>();
             collision.gameObject.GetComponent<FireballAttackAbilitie>().fireball = projectileAbilitie;
-            Destroy(gameObject);
-        }
-        
+            animator.Play("Fireball_collected_Item_animation");
+            Destroy(gameObject, 1f);
+        }    
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -71,4 +72,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void GoToNextRoom(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
 }

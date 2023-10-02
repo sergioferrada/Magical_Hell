@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawnInfo
 {
     public GameObject enemyPrefab;
-    public float spawnProbability;
+    public float baseSpawnProbability;
+    public float difficulty; // Dificultad del enemigo (ajusta este valor según tus criterios)
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -16,44 +17,42 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnEnemies());
+        SpawnEnemy();
     }
 
-    private IEnumerator SpawnEnemies()
-    {
-        while (true)
+    private void SpawnEnemy()
+    {   
+        // Calcular la suma total de las probabilidades base de aparición.
+        float totalBaseProbability = 0f;
+        foreach (var enemyType in enemyTypes)
         {
-            yield return new WaitForSeconds(spawnInterval);
+            totalBaseProbability += enemyType.baseSpawnProbability;
+        }
 
-            float totalProbability = 0f;
+        // Calcular la dificultad actual (puedes obtenerla desde GameManager).
+        float difficulty = GameManager.Instance.CalculateDifficulty();
 
-            // Calcular la suma total de las probabilidades de aparición.
-            foreach (var enemyType in enemyTypes)
+        // Calcular la probabilidad ajustada en función de la dificultad.
+        foreach (var enemyType in enemyTypes)
+        {
+            // Usar la dificultad del enemigo para ajustar la probabilidad.
+            float adjustedProbability = (enemyType.baseSpawnProbability / totalBaseProbability) * enemyType.difficulty;
+
+            // Si la dificultad es baja, aumentar la probabilidad de enemigos más fáciles.
+            if (difficulty < 0.5f)
             {
-                totalProbability += enemyType.spawnProbability;
+                adjustedProbability *= 2f;
             }
 
-            // Generar un número aleatorio entre 0 y la suma total de probabilidades.
-            float randomValue = Random.Range(0f, totalProbability);
-
-            // Elegir un enemigo basado en las probabilidades.
-            foreach (var enemyType in enemyTypes)
+            if (Random.value <= adjustedProbability)
             {
-                if (randomValue <= enemyType.spawnProbability)
+                if (enemyType.enemyPrefab != null && spawnPoint != null)
                 {
-                    SpawnEnemy(enemyType.enemyPrefab);
-                    break; // Sale del bucle cuando se ha elegido un enemigo.
+                    Instantiate(enemyType.enemyPrefab, spawnPoint.position, Quaternion.identity);
                 }
-                randomValue -= enemyType.spawnProbability;
-            }
-        }
-    }
 
-    private void SpawnEnemy(GameObject enemyPrefab)
-    {
-        if (enemyPrefab != null && spawnPoint != null)
-        {
-            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-        }
+                break; // Salir del bucle cuando se ha elegido un enemigo.
+            }
+        } 
     }
 }

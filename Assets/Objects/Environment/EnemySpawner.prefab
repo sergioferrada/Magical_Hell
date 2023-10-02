@@ -92,15 +92,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5801812513979993744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a20ccc6619fe31b46a53143cf8bf4ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
   - enemyPrefab: {fileID: 8306009547700203818, guid: c16cd03f665688a4e8c02ab141a736d1, type: 3}
-    spawnProbability: 25
+    baseSpawnProbability: 100
+    difficulty: 1
+  - enemyPrefab: {fileID: 4275555614895642885, guid: 852f6542d9a2bdc41a4606c8b35c8b4b, type: 3}
+    baseSpawnProbability: 100
+    difficulty: 2.5
   - enemyPrefab: {fileID: 1257438578806523981, guid: 66decff65bf01e042a695add015ceece, type: 3}
-    spawnProbability: 75
+    baseSpawnProbability: 100
+    difficulty: 5
+  - enemyPrefab: {fileID: 8374032034032654589, guid: ab606548991cd534ca55c3d9e2b45c69, type: 3}
+    baseSpawnProbability: 100
+    difficulty: 7.5
+  - enemyPrefab: {fileID: 8878675889749090585, guid: ec26aeaedde03944e9da3741926396dc, type: 3}
+    baseSpawnProbability: 100
+    difficulty: 10
   spawnPoint: {fileID: 8807967251674585972}
   spawnInterval: 2.5

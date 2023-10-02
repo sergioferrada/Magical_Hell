@@ -7,6 +7,12 @@ public class PlayerController : CharacterBase
 {
     public Transform attackPoint;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Update()
     {
         if (state != State.Death && state != State.Injured)

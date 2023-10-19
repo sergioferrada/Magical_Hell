@@ -68,7 +68,7 @@ public class CharacterBase : MonoBehaviour
     /// <summary>
     /// Destroy the GameObject
     /// </summary>
-    protected void Death()
+    protected virtual void Death()
     {
         Destroy(gameObject);
     }

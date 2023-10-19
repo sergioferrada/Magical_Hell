@@ -83,6 +83,12 @@ public class PlayerController : CharacterBase
         GameManager.SetTotalPlayerLife(Life);
     }
 
+    protected override void Death()
+    {
+        GameManager.SetGameState(GameManager.GameState.GameOver);
+        base.Death();
+    }
+
     protected void ResetAttack()
     {
         passedTime = 0;

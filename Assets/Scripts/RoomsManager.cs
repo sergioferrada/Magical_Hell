@@ -66,6 +66,11 @@ public class RoomsManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (CompareGameStates(GameState.GameOver)) {
+            GoToNextRoom("GameOver");
+            Destroy(gameObject);
+        }
+
         if (CompareGameStates(GameState.RoomFinished))
         {
             //ShowStats();
@@ -106,7 +111,7 @@ public class RoomsManager : MonoBehaviour
     {
         //Buscar Spawner de enemigos
         DoorLogic door = FindObjectOfType<DoorLogic>();
-        door.Activate();  
+        if(door != null) door.Activate();  
     }
 
     public void CalculateEnemiesInScene()

@@ -52,18 +52,18 @@ public class FireWormController : Enemy
                 if (randomValue <= shortAttackProbability)
                 {
                     // Mueve al Fire Worm a un punto aleatorio dentro del radio especificado.
-                    ChangeState(State.ShortAttack);
+                    SetState(State.ShortAttack);
                 }
                 else if (randomValue <= shortAttackProbability + midAttackProbability)
                 {
                     // Realiza un ataque de carga hacia el jugador.
-                    ChangeState(State.MidAttack);
+                    SetState(State.MidAttack);
                 }
                 else
                 {
                     // Dispara 3 bolas de fuego en forma de abanico.
                     direction = (playerTransform.position - transform.position).normalized;
-                    ChangeState(State.LongAttack);
+                    SetState(State.LongAttack);
                 }
 
                 // Espera un tiempo antes de realizar el próximo comportamiento.
@@ -108,7 +108,7 @@ public class FireWormController : Enemy
         yield return new WaitForSeconds(2f);
 
         // Detiene el ataque y reinicia la velocidad.
-        ChangeState(State.Idle);
+        SetState(State.Idle);
         movementSpeed = 6;
         rb2d.drag = 10;
     }

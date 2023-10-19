@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class DoorLogic : MonoBehaviour
@@ -14,21 +15,17 @@ public class DoorLogic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(GameManager.Instance.IsRoomEnded())
-        {
-            doorCollider.enabled = true;
-            spriteRenderer.enabled = true;
-        }
+    public void Activate() {
+
+        doorCollider.enabled = true;
+        spriteRenderer.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
-            GameManager.Instance.GoToNextRoom(nextRoomName);
+            GameManager.GoToNextRoom(nextRoomName);
         }
     }
 }

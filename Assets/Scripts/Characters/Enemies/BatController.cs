@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class BatController : Enemy
 {
-    // ...
-
     [SerializeField]
     private float moveRadius = 5f; // Radio dentro del cual se moverá el enemigo.
     [SerializeField]
@@ -55,7 +53,7 @@ public class BatController : Enemy
     private IEnumerator MoveToPosition(Vector3 targetPosition)
     {
         float moveStartTime = Time.time;
-        ChangeState(State.Move);
+        SetState(State.Move);
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
         {
@@ -74,7 +72,7 @@ public class BatController : Enemy
             yield return null;
         }
 
-        ChangeState(State.Idle); // Indica que el movimiento ha terminado.
+        SetState(State.Idle); // Indica que el movimiento ha terminado.
     }
     // ...
 }

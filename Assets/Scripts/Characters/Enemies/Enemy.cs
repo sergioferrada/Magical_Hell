@@ -57,7 +57,7 @@ public class Enemy : CharacterBase
     protected void ChaseGameObject(Transform objectiveTransform)
     {
         //chasing the player
-        ChangeState(State.Move);
+        SetState(State.Move);
         direction = objectiveTransform.position - transform.position;
         direction.Normalize();
         transform.position = Vector2.MoveTowards(transform.position, objectiveTransform.position, movementSpeed * Time.deltaTime);

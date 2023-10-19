@@ -26,7 +26,7 @@ public class Enemy1Controller : Enemy
                 //Puede atacar?
                 if (passedTime >= attackDelay)
                     //Empieza el ataque
-                    ChangeState(State.ShortAttack);
+                    SetState(State.ShortAttack);
             }
             //Fuera de rango de ataque
             else
@@ -37,7 +37,7 @@ public class Enemy1Controller : Enemy
         }
         //Fuera de rango de persecucion
         else
-            ChangeState(State.Idle);
+            SetState(State.Idle);
         
         //Tiempo para el siguiente ataque
         if (passedTime < attackDelay)

@@ -32,7 +32,7 @@ public class SlimeController : Enemy
 
             //Puede atacar?
             if (passedTime >= attackDelay)
-                ChangeState(State.ShortAttack);
+                SetState(State.ShortAttack);
         }
         //Fuera de rango de ataque
         else

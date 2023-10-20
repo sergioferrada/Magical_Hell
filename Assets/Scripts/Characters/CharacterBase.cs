@@ -59,9 +59,10 @@ public class CharacterBase : MonoBehaviour
     {
         if (Life <= 0)
         {
+            GetComponent<Collider2D>().enabled = false;
             SetState(State.Death);
             roomsManager.CalculateEnemiesInScene();
-            GetComponent<Collider2D>().enabled = false;
+            
         }
     }
 

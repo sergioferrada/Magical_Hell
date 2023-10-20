@@ -16,16 +16,13 @@ public class SimpleUIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelNumber;
     [SerializeField] private TextMeshProUGUI gameStateText;
     [SerializeField] private TextMeshProUGUI timePerRoomText;
+    [SerializeField] private TextMeshProUGUI timeExpectedText;
+    [SerializeField] private TextMeshProUGUI totalPlayerAttacks;
+    [SerializeField] private TextMeshProUGUI succesAttacks;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     private void Update()
@@ -36,6 +33,9 @@ public class SimpleUIController : MonoBehaviour
         UpdateTimePerRoom(timePerRoom);
         UpdateRoomName(roomsManager.GetActualRoomName());
         levelNumber.SetText("N° Enemigos: " + roomsManager.GetEnemiesEnScene().ToString());
+        totalPlayerAttacks.SetText("Att. Totales: "+totalAttacks);
+        succesAttacks.SetText("Att. Acertados: " + successfulAttacksPerRoom);
+        UpdateTimeExpected(maxExpectedTime);
     }
 
     public void UpdatePlayerLife(float value)
@@ -47,6 +47,11 @@ public class SimpleUIController : MonoBehaviour
     {
         var ts = TimeSpan.FromSeconds(value);
         timePerRoomText.SetText("Time: " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
+    }
+    public void UpdateTimeExpected(float value)
+    {
+        var ts = TimeSpan.FromSeconds(value);
+        timeExpectedText.SetText("Time Expected: " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
     }
 
     public void UpdateGameState(GameState state)

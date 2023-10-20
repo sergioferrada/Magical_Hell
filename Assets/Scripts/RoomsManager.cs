@@ -4,6 +4,7 @@ using UnityEngine;
 using static GameManager;
 using UnityEngine.SceneManagement;
 using System;
+using Unity.VisualScripting;
 
 public class RoomsManager : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class RoomsManager : MonoBehaviour
             //NextRoomCreation();
             ActivateDoorInScene();
             CalculateDynamicDifficult();
+            timePassed = 0;
         }
 
         if (CompareGameStates(GameState.InGameRoom))
@@ -86,18 +88,47 @@ public class RoomsManager : MonoBehaviour
         }  
     }
 
+    public static void CalculateExpectedTimeRoom()
+    {
+        float auxTimeExpected = 0;
+
+        Enemy[] enemiesInEscene = FindObjectsOfType<Enemy>();
+
+        foreach(var enemy in enemiesInEscene)
+        {
+            if(enemy is BatController)          auxTimeExpected += 3.5f;
+            if(enemy is SlimeController)        auxTimeExpected += 7.0f;
+            if(enemy is Enemy1Controller)       auxTimeExpected += 5.0f;
+            if(enemy is Enemy2Controller)       auxTimeExpected += 6.0f;
+            if(enemy is FireWormController)     auxTimeExpected += 40.0f;
+        }
+
+        auxTimeExpected += 7.0f;
+
+        SetMaxExpectedTime(auxTimeExpected);
+    }
+
     private void ActivateSpawnsInScene()
     {
         //Buscar spawn del jugador
         PlayerSpawner playerSpawn = FindObjectOfType<PlayerSpawner>();
 
-        if (playerSpawn != null) { playerSpawn.SpawnPlayerInScene(); }
+        if (playerSpawn != null) 
+        { 
+            playerSpawn.SpawnPlayerInScene(); 
+        }
+        else 
+        { 
+            Debug.Log("PlayerSpawn reference not found in scene");
+            return; 
+        }
 
         //Buscar Spawner de enemigos
         EnemySpawner[] EnemySpawners = FindObjectsOfType<EnemySpawner>();
         
-        if(EnemySpawners.Length == 0) { 
-            
+        if(EnemySpawners.Length == 0) 
+        {
+            Debug.Log("Enemy Spawners not found in scene");
             return;
         }
 
@@ -111,7 +142,16 @@ public class RoomsManager : MonoBehaviour
     {
         //Buscar Spawner de enemigos
         DoorLogic door = FindObjectOfType<DoorLogic>();
-        if(door != null) door.Activate();  
+
+        if (door != null) { 
+        
+            door.Activate();
+        }
+        else
+        {
+            Debug.Log("Door references not found in scene");
+            return;
+        }
     }
 
     public void CalculateEnemiesInScene()
@@ -140,7 +180,16 @@ public class RoomsManager : MonoBehaviour
 
     public string GetActualRoomName()
     {
-        return roomName;
+        if(roomName != null) 
+        { 
+            return roomName; 
+        }
+        else 
+        { 
+            Debug.Log("roonName reference is null"); 
+            return "0"; 
+        }
+        
     }
 
     public void SetRoomName(string name)
@@ -151,8 +200,11 @@ public class RoomsManager : MonoBehaviour
     void InitializeRoomData()
     {
         SetRoomName(SceneManager.GetActiveScene().name);
-        SetTimePerRoom(0);
+        ResetTimePerRoom();
+        ResetTotalAttacks();
+        ResetSuccefulAttacks();
         CalculateEnemiesInScene();
+        CalculateExpectedTimeRoom();
     }
 
 }

@@ -12,6 +12,7 @@ public class PlayerController : CharacterBase
         base.Awake();
         DontDestroyOnLoad(gameObject);
         GameManager.SetTotalPlayerLife(Life);
+        GameManager.SetPlayerMaxLife(Life);
     }
 
     private void Update()
@@ -67,6 +68,7 @@ public class PlayerController : CharacterBase
 
     void MeleeAttack()
     {
+        GameManager.AddTotalAttacks();
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
 
         foreach (Collider2D enemy in hitEnemies) {
@@ -74,6 +76,7 @@ public class PlayerController : CharacterBase
             enemy.GetComponent<Enemy>().ReciveDamage(Damage);
             Vector2 direction = (enemy.GetComponent<Collider2D>().transform.position - transform.position).normalized;
             enemy.GetComponent<Rigidbody2D>().AddForce(direction * 25, ForceMode2D.Impulse);
+            GameManager.AddSuccefulAttack();
         }
     }
 

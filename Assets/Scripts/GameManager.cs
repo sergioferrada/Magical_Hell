@@ -75,7 +75,6 @@ public static class GameManager
     private static float accuracyWeight = 1.0f;
     #endregion
 
-
     public static bool CompareGameStates(GameState newGameState)
     {
         return gameState == newGameState;
@@ -243,5 +242,10 @@ public static class GameManager
     public static void SetDynamicDifficult(float value)
     {
         dynamicDifficultValue = value;
+    }
+
+    public static void ChangeScene(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
     }
 }

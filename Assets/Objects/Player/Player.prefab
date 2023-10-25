@@ -194,17 +194,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485746da9cbc1454694d5f5144729a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 10
-  _damage: 1
   _state: 0
-  movementSpeed: 8
-  attackDistance: 0.8
-  attackRange: 1.5
-  attackDelay: 1.5
-  passedTime: 1.5
+  _baseLife: 10
+  _baseMovementSpeed: 6
   attackableLayers:
     serializedVersion: 2
     m_Bits: 128
+  _baseDamage: 1
+  _baseAttackDelay: 1.5
+  attackRange: 1.5
   attackPoint: {fileID: 6960585619882126846}
 --- !u!1 &6226035328044358598
 GameObject:

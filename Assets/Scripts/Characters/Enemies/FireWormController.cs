@@ -4,12 +4,14 @@ using UnityEngine.Analytics;
 
 public class FireWormController : Enemy
 {
-    [SerializeField]
-    private Transform fireballSpawnPoint; // Punto de origen para las bolas de fuego.
-    [SerializeField]
-    private GameObject fireballPrefab; // Prefab de la bola de fuego.
-    [SerializeField]
-    private int numFireballs = 3; // Cantidad de bolas de fuego a disparar.
+    [SerializeField] protected float attackDistance;
+    [SerializeField] protected float chaseDistance;
+
+    [Header("Projectile Stats")]    
+    [SerializeField] private GameObject fireballPrefab; // Prefab de la bola de fuego.
+    [SerializeField] private Transform fireballSpawnPoint; // Punto de origen para las bolas de fuego.
+    [SerializeField] private float projectileDamage;
+    [SerializeField] private int numFireballs; // Cantidad de bolas de fuego a disparar.
 
     // Inicializa las probabilidades de los ataques.
     float shortAttackProbability = 0f;
@@ -19,8 +21,9 @@ public class FireWormController : Enemy
     {
         base.Awake();
     }
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         // Llama a la función para iniciar el comportamiento aleatorio.
         StartCoroutine(RandomBehavior());
     }
@@ -30,6 +33,8 @@ public class FireWormController : Enemy
         if (state != State.Injured && state != State.Death) {
             while (true)
             {
+                
+                direction = (playerTransform.position - transform.position).normalized;
                 // Calcula la distancia entre el jugador y el enemigo.
                 float distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
 
@@ -62,12 +67,11 @@ public class FireWormController : Enemy
                 else
                 {
                     // Dispara 3 bolas de fuego en forma de abanico.
-                    direction = (playerTransform.position - transform.position).normalized;
                     SetState(State.LongAttack);
                 }
 
                 // Espera un tiempo antes de realizar el próximo comportamiento.
-                yield return new WaitForSeconds(attackDelay);
+                yield return new WaitForSeconds(AttackDelay);
             }
         }
     }
@@ -77,10 +81,10 @@ public class FireWormController : Enemy
         // Calcula la dirección hacia el jugador.
         direction = (playerTransform.position - transform.position).normalized;
         rb2d.drag = 5;
-        movementSpeed = 35;
+        MovementSpeed = 35;
 
         // Impulsa al Fire Worm hacia el jugador.
-        rb2d.AddForce(direction * movementSpeed, ForceMode2D.Impulse);
+        rb2d.AddForce(direction * MovementSpeed, ForceMode2D.Impulse);
 
         // Espera un tiempo antes de detener el ataque.
         StartCoroutine(StopAttack());
@@ -100,6 +104,7 @@ public class FireWormController : Enemy
             // Instancia una bola de fuego en la dirección calculada.
             GameObject fireball = Instantiate(fireballPrefab, fireballSpawnPoint.position, Quaternion.identity);
             fireball.GetComponent<WormFireballLogic>().direction = projectileDirection;
+            fireball.GetComponent<WormFireballLogic>().SetDamage(projectileDamage);
         }
     }
     private IEnumerator StopAttack()
@@ -109,7 +114,7 @@ public class FireWormController : Enemy
 
         // Detiene el ataque y reinicia la velocidad.
         SetState(State.Idle);
-        movementSpeed = 6;
+        MovementSpeed = 6;
         rb2d.drag = 10;
     }
 }

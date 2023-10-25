@@ -6,7 +6,18 @@ using UnityEngine;
 public class Enemy2Controller : Enemy
 {
     private float distance;
-    [SerializeField] private ProjectileLogic boomerangProjectile;
+
+    [SerializeField] protected float attackDistance;
+    [SerializeField] protected float chaseDistance;
+
+    [Header("Projectile Stats")]
+    [SerializeField] private GameObject Projectile;
+    [SerializeField] private float projectileDamage;
+    
+    protected override void Start()
+    {
+        base.Start();
+    }
 
     // Update is called once per frame
     protected override void Update()
@@ -26,7 +37,7 @@ public class Enemy2Controller : Enemy
                 transform.position = transform.position;
 
                 //Puede atacar?
-                if (passedTime >= attackDelay)            
+                if (passedTime >= AttackDelay)            
                     SetState(State.MidAttack);
             }
             //Fuera de rango de ataque
@@ -38,7 +49,7 @@ public class Enemy2Controller : Enemy
             SetState(State.Idle);
 
         //Tiempo para el siguiente ataque
-        if (passedTime < attackDelay)
+        if (passedTime < AttackDelay)
             passedTime += Time.deltaTime;
     }
 
@@ -51,7 +62,8 @@ public class Enemy2Controller : Enemy
     protected override void MidRangeAttack()
     {
         base.MidRangeAttack();
-        Instantiate(boomerangProjectile, transform.position, transform.rotation);
+        GameObject pl = Instantiate(Projectile, transform.position, transform.rotation);
+        pl.GetComponent<ProjectileLogic>().SetDamage(projectileDamage);
         ResetAttack();
     }
 }

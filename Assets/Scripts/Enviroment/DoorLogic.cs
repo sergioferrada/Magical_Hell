@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DoorLogic : MonoBehaviour
 {
-    [SerializeField] private string nextRoomName;
+    private string nextRoomName;
     private Collider2D doorCollider;
     private SpriteRenderer spriteRenderer;
 
@@ -25,6 +25,7 @@ public class DoorLogic : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
+            nextRoomName = GameManager.GetNextRoomName();
             GameManager.GoToNextRoom(nextRoomName);
         }
     }

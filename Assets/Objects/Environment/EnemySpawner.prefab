@@ -99,18 +99,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - enemyPrefab: {fileID: 8306009547700203818, guid: c16cd03f665688a4e8c02ab141a736d1, type: 3}
-    baseSpawnProbability: 100
-    difficulty: 1
+    levelsToApper: 000000000100000004000000
   - enemyPrefab: {fileID: 4275555614895642885, guid: 852f6542d9a2bdc41a4606c8b35c8b4b, type: 3}
-    baseSpawnProbability: 100
-    difficulty: 2.5
+    levelsToApper: 010000000200000004000000
   - enemyPrefab: {fileID: 1257438578806523981, guid: 66decff65bf01e042a695add015ceece, type: 3}
-    baseSpawnProbability: 100
-    difficulty: 5
+    levelsToApper: 010000000200000003000000
   - enemyPrefab: {fileID: 8374032034032654589, guid: ab606548991cd534ca55c3d9e2b45c69, type: 3}
-    baseSpawnProbability: 100
-    difficulty: 7.5
-  - enemyPrefab: {fileID: 8878675889749090585, guid: ec26aeaedde03944e9da3741926396dc, type: 3}
-    baseSpawnProbability: 100
-    difficulty: 10
-  isActivate: 0
+    levelsToApper: 020000000300000004000000
+  - enemyPrefab: {fileID: 8878675889749090585, guid: 8a6f4f5cf2c477341b19d7b24c43247b, type: 3}
+    levelsToApper: 0300000004000000

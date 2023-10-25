@@ -183,18 +183,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecffab8601fcfcd4583932e8486e6aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 1
-  _damage: 1
   _state: 0
-  movementSpeed: 4
-  attackDistance: 0.8
-  attackRange: 1
-  attackDelay: 1
-  passedTime: 1
+  _baseLife: 1
+  _baseMovementSpeed: 5
   attackableLayers:
     serializedVersion: 2
     m_Bits: 64
-  chaseDistance: 0
+  _baseDamage: 1
+  _baseAttackDelay: 1
+  attackRange: 1
+  Very_Easy:
+    lifeExtraPoints: 0
+    damageMultiplicator: 0
+    speedMultiplicator: 0
+    attackDelayMultiplicator: 0
+    color: {r: 0.5896226, g: 1, b: 0.5896317, a: 0}
+  Easy:
+    lifeExtraPoints: 1
+    damageMultiplicator: 5
+    speedMultiplicator: 5
+    attackDelayMultiplicator: 0
+    color: {r: 0.5882353, g: 0.99232346, b: 1, a: 0}
+  Medium:
+    lifeExtraPoints: 3
+    damageMultiplicator: 15
+    speedMultiplicator: 7
+    attackDelayMultiplicator: 5
+    color: {r: 1, g: 1, b: 1, a: 0}
+  Hard:
+    lifeExtraPoints: 5
+    damageMultiplicator: 25
+    speedMultiplicator: 10
+    attackDelayMultiplicator: 7
+    color: {r: 0.9864577, g: 0.5882353, b: 1, a: 0}
+  Very_Hard:
+    lifeExtraPoints: 8
+    damageMultiplicator: 35
+    speedMultiplicator: 13
+    attackDelayMultiplicator: 10
+    color: {r: 1, g: 0.97739714, b: 0.5882353, a: 0}
   moveRadius: 5
   moveInterval: 2
   maxMoveTime: 3

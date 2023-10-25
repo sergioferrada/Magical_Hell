@@ -8,11 +8,8 @@ public class ProjectileLogic : MonoBehaviour
     public Vector2 direction { get; set; }
     protected Animator animator;
 
-    [SerializeField]
-    private float damage;
-    public float Damage{ get { return damage; } protected set { damage = value; } }
-    [SerializeField]
-    protected float speed, lifeTime;
+    public float Damage{ get; protected set; }
+    [SerializeField] protected float speed, lifeTime;
 
     protected virtual void Start()
     {   
@@ -21,4 +18,8 @@ public class ProjectileLogic : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
+    public void SetDamage(float damage)
+    {
+        Damage = damage;
+    }
 }

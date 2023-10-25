@@ -5,6 +5,14 @@ public class Enemy1Controller : Enemy
 {
     private float distance;
 
+    [SerializeField] protected float attackDistance;
+    [SerializeField] protected float chaseDistance;
+
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -24,7 +32,7 @@ public class Enemy1Controller : Enemy
                 transform.position = transform.position;
 
                 //Puede atacar?
-                if (passedTime >= attackDelay)
+                if (passedTime >= AttackDelay)
                     //Empieza el ataque
                     SetState(State.ShortAttack);
             }
@@ -40,7 +48,7 @@ public class Enemy1Controller : Enemy
             SetState(State.Idle);
         
         //Tiempo para el siguiente ataque
-        if (passedTime < attackDelay)
+        if (passedTime < AttackDelay)
             passedTime += Time.deltaTime;
     }
 

@@ -21,7 +21,7 @@ public class PlayerController : CharacterBase
         {
             ProcessInputs();
             //Tiempo para el siguiente ataque
-            if (passedTime < attackDelay)
+            if (passedTime < AttackDelay)
                 passedTime += Time.deltaTime;
         }
     }
@@ -43,7 +43,7 @@ public class PlayerController : CharacterBase
             transform.localScale = new Vector2(moveX, transform.localScale.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && passedTime >= attackDelay
+        if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay
             && !CompareState(State.Injured))
             SetState(State.ShortAttack);
 
@@ -63,7 +63,7 @@ public class PlayerController : CharacterBase
 
     protected override void Move()
     {
-        rb2d.velocity = new Vector2(direction.x * movementSpeed, direction.y * movementSpeed);
+        rb2d.velocity = new Vector2(direction.x * MovementSpeed, direction.y * MovementSpeed);
     }
 
     void MeleeAttack()

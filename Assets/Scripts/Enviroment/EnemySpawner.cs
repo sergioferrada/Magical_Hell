@@ -1,73 +1,51 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static GameManager;
 
 [System.Serializable]
 public class EnemySpawnInfo
 {
     public GameObject enemyPrefab;
-    public float baseSpawnProbability;
-    public float difficulty; // Dificultad del enemigo (ajusta este valor según tus criterios)
+    public GameLevel[] levelsToApper;
 }
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemySpawnInfo[] enemyTypes;
-    [SerializeField] private bool isActivate = false;
-
-    public void ActivateSpawn()
+    private List<GameObject> enemiesSelected;
+    private List<GameObject> SelectEnemiesToSpawn()
     {
-        if (!isActivate) { isActivate = true; }
-        else return;
-    }
-
-    public void DeactivateSpawn()
-    {
-        if (isActivate) { isActivate = false; }
-        else return;
-    }
-
-    private void Update()
-    {
-        if (isActivate) { SpawnEnemy(); }
-    }
-
-    public void SpawnEnemy()
-    {   
-        // Calcular la suma total de las probabilidades base de aparición.
-        float totalBaseProbability = 0f;
+        List<GameObject> list = new List<GameObject>();
 
         foreach (var enemyType in enemyTypes)
         {
-            totalBaseProbability += enemyType.baseSpawnProbability;
-        }
-
-        // Calcular la dificultad actual (puedes obtenerla desde GameManager).
-        float difficulty = GameManager.GetDynamicDifficult();
-
-        // Calcular la probabilidad ajustada en función de la dificultad.
-        foreach (var enemyType in enemyTypes)
-        {
-            // Usar la dificultad del enemigo para ajustar la probabilidad.
-            float adjustedProbability = (enemyType.baseSpawnProbability / totalBaseProbability) * enemyType.difficulty;
-
-            // Si la dificultad es baja, aumentar la probabilidad de enemigos más fáciles.
-            if (difficulty < 0.5f)
+            foreach(var level in enemyType.levelsToApper)
             {
-                adjustedProbability *= 2f;
-            }
-
-            if (Random.value <= adjustedProbability)
-            {
-                if (enemyType.enemyPrefab != null)
+                if(level == actualGameLevel)
                 {
-                    Instantiate(enemyType.enemyPrefab, transform.position, Quaternion.identity);
-                    
+                    list.Add(enemyType.enemyPrefab);
+                    break;
                 }
-
-                break; // Salir del bucle cuando se ha elegido un enemigo.
             }
         }
-        
-        DeactivateSpawn();
+
+        return list;
+    }
+
+    public void SpawnEnemyV2()
+    {
+        enemiesSelected = SelectEnemiesToSpawn();
+
+        if (enemiesSelected != null)
+        {
+            var randomEnemy = enemiesSelected[Random.Range(0, enemiesSelected.Count)];
+            Instantiate(randomEnemy, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("enemiesSelected List is null");
+        }
     }
 }

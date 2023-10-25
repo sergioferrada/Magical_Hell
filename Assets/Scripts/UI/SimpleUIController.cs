@@ -12,13 +12,15 @@ public class SimpleUIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI playerLife;
     [SerializeField] private TextMeshProUGUI generalDifficult;
+    [SerializeField] private TextMeshProUGUI generalDifficult2v;
     [SerializeField] private TextMeshProUGUI roomNameText;
-    [SerializeField] private TextMeshProUGUI levelNumber;
+    [SerializeField] private TextMeshProUGUI enemiNumbersText;
     [SerializeField] private TextMeshProUGUI gameStateText;
     [SerializeField] private TextMeshProUGUI timePerRoomText;
     [SerializeField] private TextMeshProUGUI timeExpectedText;
     [SerializeField] private TextMeshProUGUI totalPlayerAttacks;
     [SerializeField] private TextMeshProUGUI succesAttacks;
+    [SerializeField] private TextMeshProUGUI levelDifficultText;
 
     private void Awake()
     {
@@ -32,10 +34,12 @@ public class SimpleUIController : MonoBehaviour
         UpdateGameState(gameState);
         UpdateTimePerRoom(timePerRoom);
         UpdateRoomName(roomsManager.GetActualRoomName());
-        levelNumber.SetText("N° Enemigos: " + roomsManager.GetEnemiesEnScene().ToString());
-        totalPlayerAttacks.SetText("Att. Totales: "+totalAttacks);
+        enemiNumbersText.SetText("N° Enemigos: " + roomsManager.GetEnemiesEnScene().ToString());
+        totalPlayerAttacks.SetText("Att. Totales: " + totalAttacks);
         succesAttacks.SetText("Att. Acertados: " + successfulAttacksPerRoom);
         UpdateTimeExpected(maxExpectedTime);
+        generalDifficult2v.SetText("V2 Dificultad: " + auxDynamicDifficultValue.ToString());
+        levelDifficultText.SetText("Dificultad Estado: " + difficultyLevel);
     }
 
     public void UpdatePlayerLife(float value)

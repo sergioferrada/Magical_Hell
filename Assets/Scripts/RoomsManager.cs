@@ -78,6 +78,7 @@ public class RoomsManager : MonoBehaviour
             //NextRoomCreation();
             ActivateDoorInScene();
             CalculateDynamicDifficult();
+            CalculateDynamicDifficult2_V2();
             timePassed = 0;
         }
 
@@ -91,19 +92,21 @@ public class RoomsManager : MonoBehaviour
     public static void CalculateExpectedTimeRoom()
     {
         float auxTimeExpected = 0;
+        float extraTime = 0;
 
         Enemy[] enemiesInEscene = FindObjectsOfType<Enemy>();
+        PlayerController player = FindObjectOfType<PlayerController>();
 
-        foreach(var enemy in enemiesInEscene)
+        foreach (var enemy in enemiesInEscene)
         {
-            if(enemy is BatController)          auxTimeExpected += 3.5f;
-            if(enemy is SlimeController)        auxTimeExpected += 7.0f;
-            if(enemy is Enemy1Controller)       auxTimeExpected += 5.0f;
-            if(enemy is Enemy2Controller)       auxTimeExpected += 6.0f;
-            if(enemy is FireWormController)     auxTimeExpected += 40.0f;
-        }
+            if (enemy is BatController) extraTime = 3f;
+            else if (enemy is SlimeController) extraTime = 5f;
+            else if(enemy is Enemy1Controller) extraTime = 3f;
+            else if (enemy is Enemy2Controller) extraTime = 3f;
+            else if (enemy is FireWormController) extraTime = 15f;
 
-        auxTimeExpected += 7.0f;
+            auxTimeExpected += (enemy.Life / player.Damage * player.AttackDelay) + extraTime;
+        }
 
         SetMaxExpectedTime(auxTimeExpected);
     }
@@ -134,7 +137,7 @@ public class RoomsManager : MonoBehaviour
 
         foreach (EnemySpawner spawn in EnemySpawners)
         {
-            spawn.SpawnEnemy();
+            spawn.SpawnEnemyV2();
         }
     }
 
@@ -205,6 +208,7 @@ public class RoomsManager : MonoBehaviour
         ResetSuccefulAttacks();
         CalculateEnemiesInScene();
         CalculateExpectedTimeRoom();
+        MapDifficultyLevel();
     }
 
 }

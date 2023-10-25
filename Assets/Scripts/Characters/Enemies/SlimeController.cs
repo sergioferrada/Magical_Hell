@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class SlimeController : Enemy
 {
-    private Vector2[] diagonalDirections = { new Vector2(1, 1), new Vector2(-1, 1), new Vector2(-1, -1), new Vector2(1, -1) };
+    [SerializeField] protected float attackDistance;
+    [SerializeField] protected float chaseDistance;
     [SerializeField] private float attackForce;
+
+    private Vector2[] diagonalDirections = { new Vector2(1, 1), new Vector2(-1, 1), new Vector2(-1, -1), new Vector2(1, -1) };
     private float distance;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         // Inicializa la dirección inicial de manera aleatoria
         direction = GetRandomDirection(); 
     }
@@ -31,7 +35,7 @@ public class SlimeController : Enemy
             transform.position = transform.position;
 
             //Puede atacar?
-            if (passedTime >= attackDelay)
+            if (passedTime >= AttackDelay)
                 SetState(State.ShortAttack);
         }
         //Fuera de rango de ataque
@@ -42,7 +46,7 @@ public class SlimeController : Enemy
         }  
         
         //Tiempo para el siguiente ataque
-        if (passedTime < attackDelay)
+        if (passedTime < AttackDelay)
             passedTime += Time.deltaTime;
     }
 
@@ -61,7 +65,7 @@ public class SlimeController : Enemy
     protected override void Move()
     {
         base.Move();
-        transform.Translate(direction * movementSpeed * Time.deltaTime);
+        transform.Translate(direction * MovementSpeed * Time.deltaTime);
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

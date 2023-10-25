@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class BatController : Enemy
 {
-    [SerializeField]
-    private float moveRadius = 5f; // Radio dentro del cual se moverá el enemigo.
-    [SerializeField]
-    private float moveInterval = 2f; // Tiempo entre movimientos.
-    [SerializeField]
-    private float maxMoveTime = 3f; // Máximo tiempo permitido para llegar al objetivo.
+    [Header("Character Stats (Child)")]
+    [SerializeField] private float moveRadius = 5f; // Radio dentro del cual se moverá el enemigo.
+    [SerializeField] private float moveInterval = 2f; // Tiempo entre movimientos.
+    [SerializeField] private float maxMoveTime = 3f; // Máximo tiempo permitido para llegar al objetivo.
 
     private int movesMade = 0;
     float elapsedMoveTime = 0f;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         // Llama a la función para iniciar el movimiento aleatorio.
         StartCoroutine(MoveToRandomPoints());
     }
@@ -67,7 +66,7 @@ public class BatController : Enemy
                 moveStartTime = Time.time;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, MovementSpeed * Time.deltaTime);
 
             yield return null;
         }

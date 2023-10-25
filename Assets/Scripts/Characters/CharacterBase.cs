@@ -11,20 +11,37 @@ public class CharacterBase : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     #endregion
 
-    #region GENERAL VARIABLES
-    [SerializeField] protected float _life;                                           // Campo privado respaldando la propiedad
-    public float Life { get { return _life; } protected set { _life = value; } }
-    [SerializeField] protected float _damage;                                           // Campo privado respaldando la propiedad
-    public float Damage { get { return _damage; } protected set { _damage = value; } }
-    public enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death }
-    [SerializeField] protected State _state;
-    public State state { get { return _state; } private set { _state = value; } }
-    [SerializeField] protected float movementSpeed = 1, attackDistance = 0.8f;
-    [SerializeField] protected float attackRange = 1, attackDelay = 1, passedTime = 1;
-    [SerializeField] protected LayerMask attackableLayers;
+    #region CHARACTER STATS
 
-    protected Vector2 direction;
+    public enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death }
+    
+    [Header("Character Stats")]
+    [SerializeField] protected State _state;            
+    [SerializeField] protected float _baseLife;          
+    [SerializeField] protected float _baseMovementSpeed;
+
+    public State state { get { return _state; } private set { _state = value; } }
+    public float Life { get { return _baseLife; } protected set { _baseLife = value; } }
+    public float MovementSpeed { get { return _baseMovementSpeed; } protected set { _baseMovementSpeed = value; } }
+    
     #endregion
+
+    #region COMBAT STATS
+
+    [Header("Combat Stats")]
+    [SerializeField] protected LayerMask attackableLayers;
+    [SerializeField] protected float _baseDamage;       
+    [SerializeField] protected float _baseAttackDelay;  
+    [SerializeField] protected float attackRange;
+
+    public float Damage { get { return _baseDamage; } protected set { _baseDamage = value; } }
+    public float AttackDelay { get { return _baseAttackDelay; } protected set { _baseAttackDelay = value; } }
+
+    #endregion
+
+    protected float passedTime;
+    protected Vector2 direction;
+    
 
     // Start is called before the first frame update
     protected virtual void Awake()

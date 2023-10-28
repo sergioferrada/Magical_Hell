@@ -24,7 +24,7 @@ public class Enemy : CharacterBase
     #endregion
 
     #region STATS MODIFIERS
-    [Header("Stats Porcent Modifiers")]
+    [Header("Porcent Modifiers Stats")]
     [SerializeField] private DifficultyStats Very_Easy;
     [SerializeField] private DifficultyStats Easy;
     [SerializeField] private DifficultyStats Medium;
@@ -33,6 +33,10 @@ public class Enemy : CharacterBase
 
     private Dictionary<DifficultyLevel, DifficultyStats> difficultyStats;
     #endregion
+
+    [Header("Item Spawn Stats")]
+    [SerializeField] private GameObject healthItemPrefab;
+    [SerializeField] [Range(0f, 100f)] private float spawnItemProbability; 
 
     protected override void Awake()
     {
@@ -46,11 +50,13 @@ public class Enemy : CharacterBase
             { DifficultyLevel.Hard,         Hard        },
             { DifficultyLevel.Very_Hard,    Very_Hard   }
         };
+
+        SetupCharacterStats();
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        SetupCharacterStats();
+        base.Start();
     }
 
     protected virtual void Update()
@@ -101,6 +107,25 @@ public class Enemy : CharacterBase
     protected void ResetAttack()
     {
         passedTime = 0;
+    }
+
+    protected override void Death()
+    {
+        SpawnHealthItem();
+        base.Death();
+    }
+
+    protected void SpawnHealthItem()
+    {
+        // Genera un número aleatorio entre 0 y 100
+        float randomValue = UnityEngine.Random.Range(0.0f, 100.0f);
+
+        // Compara el número aleatorio con la probabilidad de spawn
+        if (randomValue <= spawnItemProbability)
+        {
+            // Instancia el prefab si el número aleatorio es menor o igual a la probabilidad
+            Instantiate(healthItemPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     protected void ChaseGameObject(Transform objectiveTransform)

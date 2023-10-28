@@ -5,6 +5,7 @@ public class Enemy1Controller : Enemy
 {
     private float distance;
 
+    [Header("Combat Stats (Child)")]
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float chaseDistance;
 

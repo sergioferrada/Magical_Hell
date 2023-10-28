@@ -6,6 +6,7 @@ using UnityEngine;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEditor;
 using System.IO;
+using Unity.VisualScripting;
 
 public static class GameManager
 {
@@ -61,8 +62,11 @@ public static class GameManager
 
     public static DifficultyLevel difficultyLevel;
 
-    private static float dynamicDifficultValue = 8f;
-    public static float auxDynamicDifficultValue = 8f;
+    private static float dynamicDifficultValue = 2f;
+    public static float auxDynamicDifficultValue = 2f;
+    private static int consecutiveDifficultyIncreaseCount = 0;
+    private static int consecutiveDifficultyDecreaseCount = 0;
+
     public static float timePerRoom { get; private set; }
     public static float maxExpectedTime { get; private set; }
     public static float totalPlayerLife { get; private set; }
@@ -82,19 +86,19 @@ public static class GameManager
 
     public static void MapDifficultyLevel()
     {
-        if (auxDynamicDifficultValue <= 2.0f)
+        if (dynamicDifficultValue <= 2.0f)
         {
             difficultyLevel = DifficultyLevel.Very_Easy;
         }
-        else if (auxDynamicDifficultValue <= 4.0f)
+        else if (dynamicDifficultValue <= 4.0f)
         {
             difficultyLevel = DifficultyLevel.Easy;
         }
-        else if (auxDynamicDifficultValue <= 6.0f)
+        else if (dynamicDifficultValue <= 6.0f)
         {
             difficultyLevel = DifficultyLevel.Medium;
         }
-        else if (auxDynamicDifficultValue <= 8.0f)
+        else if (dynamicDifficultValue <= 8.0f)
         {
             difficultyLevel = DifficultyLevel.Hard;
         }
@@ -106,22 +110,71 @@ public static class GameManager
 
     public static void CalculateDynamicDifficult()
     {
-        float lifeDifficulty = 10.0f * (totalPlayerLife / playerMaxLife);
+        float lifeDifficulty     = (10.0f * (totalPlayerLife / playerMaxLife)) * lifeWeight;
+        float timeDifficulty     = (10.0f * ((maxExpectedTime - timePerRoom) / maxExpectedTime)) * timeWeight;
+        float accuracyDifficulty = (10.0f * (successfulAttacksPerRoom / totalAttacks) * accuracyWeight);
 
-        float timeDifficulty = 10.0f * ((maxExpectedTime - timePerRoom) / maxExpectedTime);
+        float totalDifficulty = (lifeDifficulty + timeDifficulty + accuracyDifficulty) / (lifeWeight + timeWeight + accuracyWeight);
 
-        float accuracyDifficulty = 10.0f * (successfulAttacksPerRoom / totalAttacks);
+        float difference = (((totalDifficulty + dynamicDifficultValue) / 2) * 0.95f) - dynamicDifficultValue;
 
+        if (Math.Abs(difference) >= 0.15)   
+            dynamicDifficultValue += Mathf.Sign(difference) * 0.15f;
+        
+        if (totalDifficulty > dynamicDifficultValue + 0.5f)
+        {
+            consecutiveDifficultyIncreaseCount++;
 
-        // Puedes diseñar una fórmula que combine la vida del jugador y el tiempo de finalización.
-        // Asegúrate de ajustar esta fórmula según tus necesidades y preferencias.
+            if (consecutiveDifficultyIncreaseCount >= 3)
+                dynamicDifficultValue += 0.15f;
+        }
+        else
+            consecutiveDifficultyIncreaseCount = 0;
+        
+        if (totalDifficulty < dynamicDifficultValue - 0.5f)
+        {
+            consecutiveDifficultyDecreaseCount++;
 
-        // Por ejemplo, puedes ponderar más la vida del jugador y menos el tiempo completado.
-        float totalDifficulty = (lifeDifficulty * lifeWeight + timeDifficulty * timeWeight + accuracyDifficulty * accuracyWeight) / (lifeWeight + timeWeight + accuracyWeight);
-
+            if (consecutiveDifficultyDecreaseCount >= 3)
+                dynamicDifficultValue -= 0.15f;
+        }
+        else
+            consecutiveDifficultyDecreaseCount = 0;
+        
         // Asegúrate de que el valor de dificultad sea positivo o cero.
-        SetDynamicDifficult(Mathf.Max(0f, totalDifficulty));
+        dynamicDifficultValue = Mathf.Max(0f, dynamicDifficultValue);
+        MapDifficultyLevel();
     }
+
+    //public static void CalculateDynamicDifficult2_V2()
+    //{
+    //    float lifeDifficulty = 10.0f * (totalPlayerLife / playerMaxLife);
+    //    float timeDifficulty = 10.0f * ((maxExpectedTime - timePerRoom) / maxExpectedTime);
+    //    float accuracyDifficulty = 10.0f * (successfulAttacksPerRoom / totalAttacks);
+
+    //    // Define una velocidad de cambio para cada componente de dificultad.
+    //    float lifeChangeSpeed = 0.05f; // Ajusta esta velocidad según lo drástico que quieras que sea el cambio.
+    //    float timeChangeSpeed = 0.05f;
+    //    float accuracyChangeSpeed = 0.02f;
+
+    //    // Calcula la diferencia entre la dificultad actual y la nueva.
+    //    float lifeDifficultyDifference = lifeDifficulty - auxDynamicDifficultValue;
+    //    float timeDifficultyDifference = timeDifficulty - auxDynamicDifficultValue;
+    //    float accuracyDifficultyDifference = accuracyDifficulty - auxDynamicDifficultValue;
+
+    //    // Aplica cambios graduales.
+    //    float newDifficulty = auxDynamicDifficultValue +
+    //        lifeDifficultyDifference * lifeChangeSpeed +
+    //        timeDifficultyDifference * timeChangeSpeed +
+    //        accuracyDifficultyDifference * accuracyChangeSpeed;
+
+    //    // Asegúrate de que el valor de dificultad esté entre 0 y 10.
+    //    newDifficulty = Mathf.Clamp(newDifficulty, 0f, 10f);
+
+    //    // Establece el nuevo valor de dificultad.
+    //    auxDynamicDifficultValue = newDifficulty;
+    //    MapDifficultyLevel();
+    //}
 
     public static void CalculateDynamicDifficult2_V2()
     {
@@ -140,17 +193,17 @@ public static class GameManager
         float accuracyDifficultyDifference = accuracyDifficulty - auxDynamicDifficultValue;
 
         // Aplica cambios graduales.
-        float newDifficulty = auxDynamicDifficultValue +
-            lifeDifficultyDifference * lifeChangeSpeed +
-            timeDifficultyDifference * timeChangeSpeed +
-            accuracyDifficultyDifference * accuracyChangeSpeed;
+        float lifeChange = lifeDifficultyDifference * lifeChangeSpeed;
+        float timeChange = timeDifficultyDifference * timeChangeSpeed;
+        float accuracyChange = accuracyDifficultyDifference * accuracyChangeSpeed;
+
+        // Calcula el nuevo valor de dificultad de manera gradual.
+        auxDynamicDifficultValue += lifeChange + timeChange + accuracyChange;
 
         // Asegúrate de que el valor de dificultad esté entre 0 y 10.
-        newDifficulty = Mathf.Clamp(newDifficulty, 0f, 10f);
+        auxDynamicDifficultValue = Mathf.Clamp(auxDynamicDifficultValue, 0f, 10f);
 
-        // Establece el nuevo valor de dificultad.
-        auxDynamicDifficultValue = newDifficulty;
-        MapDifficultyLevel();
+        
     }
 
     /// <summary>

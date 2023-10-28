@@ -25,7 +25,7 @@ public class BatController : Enemy
             if (state != State.Injured && state != State.Death)
             {
                 // Genera un punto aleatorio dentro del radio de movimiento.
-                Vector3 randomPoint = transform.position + Random.insideUnitSphere * moveRadius;
+                Vector2 randomPoint = transform.position + Random.insideUnitSphere * moveRadius;
 
                 // Mueve el enemigo hacia el punto aleatorio.
                 StartCoroutine(MoveToPosition(randomPoint));
@@ -49,12 +49,12 @@ public class BatController : Enemy
         }
     }
 
-    private IEnumerator MoveToPosition(Vector3 targetPosition)
+    private IEnumerator MoveToPosition(Vector2 targetPosition)
     {
         float moveStartTime = Time.time;
         SetState(State.Move);
 
-        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+        while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
             // Mueve gradualmente al enemigo hacia el punto aleatorio.
             elapsedMoveTime = Time.time - moveStartTime;
@@ -62,11 +62,11 @@ public class BatController : Enemy
             {
                 // Genera un nuevo punto aleatorio y cambia la dirección del movimiento.
                 targetPosition = transform.position + Random.insideUnitSphere * moveRadius;
-                targetPosition.z = transform.position.z;
+                //targetPosition.z = transform.position.z;
                 moveStartTime = Time.time;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, MovementSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, MovementSpeed * Time.deltaTime);
 
             yield return null;
         }

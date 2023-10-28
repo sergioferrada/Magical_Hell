@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2197456269121640354}
   - component: {fileID: 2464741246702999415}
   - component: {fileID: 2472868270435735239}
+  - component: {fileID: 5185363185309086866}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2552590336122789749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -196,7 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _baseLife: 10
-  _baseMovementSpeed: 6
+  _maxLife: 10
+  _baseMovementSpeed: 8
   attackableLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -204,6 +206,20 @@ MonoBehaviour:
   _baseAttackDelay: 1.5
   attackRange: 1.5
   attackPoint: {fileID: 6960585619882126846}
+--- !u!114 &5185363185309086866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552590336122789749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0f78e4acfe21a4594760304164796e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartsParent: {fileID: 0}
+  heartContainerPrefab: {fileID: 1000013667988280, guid: 677e3f20f0ab76a45bd59d5b73b0b446, type: 3}
 --- !u!1 &6226035328044358598
 GameObject:
   m_ObjectHideFlags: 0

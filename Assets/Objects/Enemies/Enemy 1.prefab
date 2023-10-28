@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   _baseLife: 3
+  _maxLife: 0
   _baseMovementSpeed: 5
   attackableLayers:
     serializedVersion: 2
@@ -264,5 +265,7 @@ MonoBehaviour:
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
     color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
+  healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
+  spawnItemProbability: 10
   attackDistance: 2
   chaseDistance: 10

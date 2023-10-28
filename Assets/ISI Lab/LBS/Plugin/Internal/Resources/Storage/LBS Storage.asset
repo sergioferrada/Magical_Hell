@@ -261,3 +261,14 @@ MonoBehaviour:
   - type: MAPElitesPreset
     items:
     - {fileID: 11400000, guid: b90bb27f581fe354799c9c3b84f44eac, type: 2}
+  - type: Cinemachine.NoiseSettings
+    items:
+    - {fileID: 11400000, guid: 8608ec81ee27a15488d33f9dad239e91, type: 2}
+    - {fileID: 11400000, guid: 20e46be82478fa24b90f748044c06b4b, type: 2}
+    - {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
+    - {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+    - {fileID: 11400000, guid: 20a705aea2d80e0478fb89b6f43d8530, type: 2}
+    - {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
+    - {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    - {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112, type: 2}
+    - {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}

@@ -38,13 +38,21 @@ public class RoomsManager : MonoBehaviour
     {
         if (CompareGameStates(GameState.PreLoadRoom))
         {
+            CalculateDynamicDifficult();
+            //MapDifficultyLevel();
+            SetRoomName(SceneManager.GetActiveScene().name);
+            ResetTimePerRoom();
+            ResetTotalAttacks();
+            ResetSuccefulAttacks();
             ActivateSpawnsInScene();
+            CalculateEnemiesInScene();
+            CalculateExpectedTimeRoom();
             SetGameState(GameState.InGameRoom);
         }
 
         if (CompareGameStates(GameState.InGameRoom))
         {
-            InitializeRoomData();
+            
         }
     }
 
@@ -77,7 +85,6 @@ public class RoomsManager : MonoBehaviour
             //ShowStats();
             //NextRoomCreation();
             ActivateDoorInScene();
-            CalculateDynamicDifficult();
             CalculateDynamicDifficult2_V2();
             timePassed = 0;
         }
@@ -200,15 +207,6 @@ public class RoomsManager : MonoBehaviour
         roomName = name;
     }
 
-    void InitializeRoomData()
-    {
-        SetRoomName(SceneManager.GetActiveScene().name);
-        ResetTimePerRoom();
-        ResetTotalAttacks();
-        ResetSuccefulAttacks();
-        CalculateEnemiesInScene();
-        CalculateExpectedTimeRoom();
-        MapDifficultyLevel();
-    }
+    
 
 }

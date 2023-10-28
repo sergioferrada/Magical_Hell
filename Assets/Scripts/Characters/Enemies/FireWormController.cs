@@ -4,6 +4,7 @@ using UnityEngine.Analytics;
 
 public class FireWormController : Enemy
 {
+    [Header("Combat Stats (Child)")]
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float chaseDistance;
 
@@ -14,13 +15,14 @@ public class FireWormController : Enemy
     [SerializeField] private int numFireballs; // Cantidad de bolas de fuego a disparar.
 
     // Inicializa las probabilidades de los ataques.
-    float shortAttackProbability = 0f;
-    float midAttackProbability = 0.5f; // Misma probabilidad para midattack y longattack.
+    private float shortAttackProbability = 0f;
+    private float midAttackProbability = 0.5f; // Misma probabilidad para midattack y longattack.
 
     protected override void Awake()
     {
         base.Awake();
     }
+
     protected override void Start()
     {
         base.Start();

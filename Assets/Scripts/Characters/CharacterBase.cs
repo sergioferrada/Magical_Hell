@@ -17,11 +17,13 @@ public class CharacterBase : MonoBehaviour
     
     [Header("Character Stats")]
     [SerializeField] protected State _state;            
-    [SerializeField] protected float _baseLife;          
+    [SerializeField] protected float _baseLife;
+    [SerializeField] protected float _maxLife;
     [SerializeField] protected float _baseMovementSpeed;
 
     public State state { get { return _state; } private set { _state = value; } }
     public float Life { get { return _baseLife; } protected set { _baseLife = value; } }
+    public float MaxLife { get { return _maxLife; } protected set { _maxLife = value; } }
     public float MovementSpeed { get { return _baseMovementSpeed; } protected set { _baseMovementSpeed = value; } }
     
     #endregion
@@ -51,7 +53,7 @@ public class CharacterBase : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetState(State.Idle);
     }
@@ -79,7 +81,6 @@ public class CharacterBase : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             SetState(State.Death);
             roomsManager.CalculateEnemiesInScene();
-            
         }
     }
 

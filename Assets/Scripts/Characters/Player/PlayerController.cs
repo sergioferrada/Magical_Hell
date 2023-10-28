@@ -6,13 +6,16 @@ using UnityEngine.EventSystems;
 public class PlayerController : CharacterBase
 {
     public Transform attackPoint;
+    private HealthBarController healthBarController;
 
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
         GameManager.SetTotalPlayerLife(Life);
-        GameManager.SetPlayerMaxLife(Life);
+        GameManager.SetPlayerMaxLife(MaxLife);
+        
+        healthBarController = GetComponent<HealthBarController>();
     }
 
     private void Update()
@@ -80,10 +83,19 @@ public class PlayerController : CharacterBase
         }
     }
 
+    public void RecoverLife(float lifePoints)
+    {
+        Life += lifePoints;
+        if (Life > MaxLife) Life = MaxLife;
+        healthBarController.UpdateHeartsHUD();
+    }
+
     public override void ReciveDamage(float damage)
     {
         base.ReciveDamage(damage);
+        //PlayerStats.Instance.TakeDamage(damage);
         GameManager.SetTotalPlayerLife(Life);
+        healthBarController.UpdateHeartsHUD();
     }
 
     protected override void Death()

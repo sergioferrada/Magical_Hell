@@ -194,13 +194,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  _baseLife: 0
-  _baseMovementSpeed: 0
+  _baseLife: 2
+  _maxLife: 20
+  _baseMovementSpeed: 4
   attackableLayers:
     serializedVersion: 2
     m_Bits: 64
-  _baseDamage: 0
-  _baseAttackDelay: 0
+  _baseDamage: 1
+  _baseAttackDelay: 2
   attackRange: 1
   Very_Easy:
     lifeExtraPoints: 0
@@ -232,6 +233,8 @@ MonoBehaviour:
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
     color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
+  healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
+  spawnItemProbability: 15
   attackDistance: 10
   chaseDistance: 25
   Projectile: {fileID: 2096972827389886136, guid: 318c8052b5f0e9e41b41ddd07491eb35, type: 3}

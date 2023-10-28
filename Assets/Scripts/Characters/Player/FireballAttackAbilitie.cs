@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FireballAttackAbilitie : MonoBehaviour
 {
-    public GameObject fireball;
+    [SerializeField] public GameObject fireball;
+    [SerializeField] private float fireballDamage = 1;
+    [SerializeField] private float attackDelay = 1;
 
     private void Start()
     {
-        InvokeRepeating(nameof(FireballAttack), 0, 1f);
+        InvokeRepeating(nameof(FireballAttack), 0, attackDelay);
     }
 
     void FireballAttack()
     {
-         Instantiate(fireball,transform.position, Quaternion.identity);
+        var projectile = Instantiate(fireball,transform.position, Quaternion.identity);
+        projectile.GetComponent<FireballLogic>().SetDamage(fireballDamage);
     }
 }

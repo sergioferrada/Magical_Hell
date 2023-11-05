@@ -43,7 +43,7 @@ public class BoomerangProjectile : ProjectileLogic
         return direction += curveDirection;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private new void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 6)
         {

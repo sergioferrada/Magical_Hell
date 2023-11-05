@@ -139,6 +139,7 @@ public class RoomsManager : MonoBehaviour
         if (CompareRoomStates(RoomState.RoomFinished))
         {        
             ActivateDoorInScene();
+            ActivateChestSpawnInScene();
             timePassed = 0;
         }
 
@@ -217,6 +218,19 @@ public class RoomsManager : MonoBehaviour
             Debug.Log("Door references not found in scene");
             return;
         }
+    }
+
+    private void ActivateChestSpawnInScene()
+    {
+        ChestSpawn chestSpawn = FindObjectOfType<ChestSpawn>();
+
+        if (chestSpawn == null)
+        {
+            Debug.Log("Chest Spawn not found in scene");
+            return;
+        }
+
+        chestSpawn.Activate();
     }
 
     public void CalculateEnemiesInScene()

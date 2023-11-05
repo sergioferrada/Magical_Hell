@@ -12,7 +12,7 @@ public class WormFireballLogic : ProjectileLogic
         rb2d.velocity = speed * direction;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private new void OnCollisionEnter2D(Collision2D collision)
     {
         animator.Play("Fireball_Explosion");
     }

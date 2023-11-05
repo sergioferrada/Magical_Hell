@@ -34,8 +34,10 @@ public class FireballLogic : ProjectileLogic
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
+
         //Cuando colisione con un objeto en el layer de "Enemies"
         if (collision.gameObject.layer == 7)
         {

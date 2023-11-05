@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: numberRoomsInLevel
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: TransitionManagerPrefab
@@ -498,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795600741275222841, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904571181028845137, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_Pivot.x
@@ -590,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2552062979054599400, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2552062979054599400, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_ConstrainProportionsScale

@@ -8,6 +8,8 @@ public class ProjectileLogic : MonoBehaviour
     public Vector2 direction;
     protected Animator animator;
 
+    [SerializeField] public PlayerAbility parentAbility;
+
     public float Damage{ get; protected set; }
     [SerializeField] protected float speed, lifeTime;
 
@@ -23,5 +25,14 @@ public class ProjectileLogic : MonoBehaviour
     public void SetDamage(float damage)
     {
         Damage = damage;
+    }
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Cuando colisione con un objeto en el layer de "Enemies"
+        if (collision.gameObject.layer == 7)
+        {
+            parentAbility.AddExp();
+        }
     }
 }

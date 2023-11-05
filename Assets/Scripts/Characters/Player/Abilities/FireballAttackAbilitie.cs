@@ -16,6 +16,7 @@ public class FireballAttackAbilitie : PlayerAbility
     {
         var projectile = Instantiate(fireball, transform.position, Quaternion.identity);
         projectile.GetComponent<FireballLogic>().SetDamage(damage);
+        projectile.GetComponent<FireballLogic>().parentAbility = this;
         return base.ActivateAbility();
     }
 }

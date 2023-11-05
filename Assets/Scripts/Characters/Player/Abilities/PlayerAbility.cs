@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-
+//[System.Serializable]
 public class PlayerAbility : MonoBehaviour
 {
+    public int actualLevel = 1, maxLevel = 10;
+    public float actualExp = 0, targetExp = 15;
+
     // Tiempo entre activaciones de la habilidad.
     public float damage;
     public float cooldown;
@@ -12,6 +15,30 @@ public class PlayerAbility : MonoBehaviour
     {
         // Llama al método Activate cada "cooldown" segundos y lo repite continuamente.
         StartCoroutine(RepeatActivation());
+    }
+
+    public void AddExp()
+    {
+        actualExp++;
+
+        if(actualExp >= targetExp)
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        if (actualLevel < maxLevel)
+        {
+            actualLevel++;
+            actualExp = 0;
+            targetExp += 10;
+            damage *= 1.1f;
+            cooldown *= 0.95f;
+        }
+        else
+            return;
     }
 
     public virtual void SetAbilityStats(float d, float cd, GameObject obj = null)

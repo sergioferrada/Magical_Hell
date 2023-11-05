@@ -16,6 +16,7 @@ public class MrBeanAbilitie : PlayerAbility
     {
         var beanPrefab = Instantiate(bean, transform.position, Quaternion.identity);
         beanPrefab.GetComponent<MrBeansLogic>().SetDamage(damage);
+        beanPrefab.GetComponent<MrBeansLogic>().parentAbility = this;
         return base.ActivateAbility();
     }
 }

@@ -23,8 +23,10 @@ public class MrBeansLogic : ProjectileLogic
         transform.localScale = new Vector2(direction.x, transform.localScale.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
+
         if (!collision.gameObject.CompareTag("Enemy"))
         {
             foreach (ContactPoint2D contactPoint in collision.contacts)

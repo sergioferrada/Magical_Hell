@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d674f2e69a6c34db0b87d31c6c4fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
+  objectPrefab: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
+  abilityToAdd: {fileID: 0}
   damageAbilitiy: 1
   cooldownAbility: 2

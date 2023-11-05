@@ -10,8 +10,9 @@ public class KnifeLogic : ProjectileLogic
         base.Start();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D (collision);
         rb2d.velocity = Vector3.zero;
         GetComponent<Collider2D>().enabled = false;
         animator.Play("Impact_Animation");

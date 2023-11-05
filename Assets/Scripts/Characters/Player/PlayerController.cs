@@ -5,17 +5,33 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : CharacterBase
 {
-    public Transform attackPoint;
+    [Header("Combat Stats (Child)")]
+    [SerializeField] private Transform attackPoint;
+
+    [Header("Level Character Stats")]
+    [SerializeField] private float currentExperience, maxExperiencie;
+    [SerializeField] private int currentLevel, maxLevel;
+    //public Animator lvlUpAnimator;
+
     private HealthBarController healthBarController;
+    private ExpBarController expBarController;
+    private StatsHUDController statsHUDController;
 
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
-        GameManager.SetTotalPlayerLife(Life);
-        GameManager.SetPlayerMaxLife(MaxLife);
-        
-        healthBarController = GetComponent<HealthBarController>();
+        DifficultManager.Instance.SetTotalPlayerLife(Life);
+        DifficultManager.Instance.SetPlayerMaxLife(MaxLife);
+
+        healthBarController = GetComponent<HealthBarController>(); 
+        expBarController = GetComponent<ExpBarController>();
+        statsHUDController = GetComponent<StatsHUDController>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
     }
 
     private void Update()
@@ -28,6 +44,7 @@ public class PlayerController : CharacterBase
                 passedTime += Time.deltaTime;
         }
     }
+
     private void FixedUpdate()
     {
         // Physic Calculation
@@ -46,8 +63,7 @@ public class PlayerController : CharacterBase
             transform.localScale = new Vector2(moveX, transform.localScale.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay
-            && !CompareState(State.Injured))
+        if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay)
             SetState(State.ShortAttack);
 
         // Cambia los estados en función del movimiento o ataque
@@ -71,7 +87,7 @@ public class PlayerController : CharacterBase
 
     void MeleeAttack()
     {
-        GameManager.AddTotalAttacks();
+        DifficultManager.Instance.AddTotalAttacks();
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
 
         foreach (Collider2D enemy in hitEnemies) {
@@ -79,28 +95,88 @@ public class PlayerController : CharacterBase
             enemy.GetComponent<Enemy>().ReciveDamage(Damage);
             Vector2 direction = (enemy.GetComponent<Collider2D>().transform.position - transform.position).normalized;
             enemy.GetComponent<Rigidbody2D>().AddForce(direction * 25, ForceMode2D.Impulse);
-            GameManager.AddSuccefulAttack();
+            DifficultManager.Instance.AddSuccefulAttack();
         }
     }
 
     public void RecoverLife(float lifePoints)
     {
+        if (!SoundManager.Instance.IsClipPlaying("Health_Recover"))
+            SoundManager.Instance.PlaySound("Health_Recover", .7f);
+
         Life += lifePoints;
         if (Life > MaxLife) Life = MaxLife;
         healthBarController.UpdateHeartsHUD();
     }
 
+    public void AddExp(float exp)
+    {
+        if(!SoundManager.Instance.IsClipPlaying("Exp_Collected"))
+            SoundManager.Instance.PlaySound("Exp_Collected", .7f);
+
+        currentExperience += exp;
+
+        if(currentExperience >= maxExperiencie)
+        {
+            LevelUp();
+            currentExperience = 0;
+        }
+
+        expBarController.UpdateExpBarHUD();
+    }
+
+    public float GetCurrentExp()
+    {
+        return currentExperience;
+    }
+
+    public float GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+
+    public float GetMaxExp()
+    {
+        return maxExperiencie;
+    }
+
+    public void LevelUp()
+    {
+        if(currentLevel < maxLevel)
+        {
+            currentLevel++;
+            MaxLife += 1;
+            Damage += 0.5f;
+            MovementSpeed += 0.25f;
+            AttackDelay -= 0.15f;
+            maxExperiencie += 100;
+
+            if (PopUpDamagePrefab != null)
+            {
+                var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+                aux.GetComponent<PopUpController>().SetText("Level Up");
+                SoundManager.Instance.PlaySound("Level_Up");
+            }
+
+            healthBarController.UpdateHeartsHUD();
+            expBarController.UpdateExpBarHUD();
+            statsHUDController.UpdateStatsHUD();
+        }
+    }
+
     public override void ReciveDamage(float damage)
     {
+        //if(!SoundManager.Instance.IsClipPlaying("Player_Hurt"))
+        SoundManager.Instance.PlaySound("Player_Hurt");
+
         base.ReciveDamage(damage);
-        //PlayerStats.Instance.TakeDamage(damage);
-        GameManager.SetTotalPlayerLife(Life);
+        DifficultManager.Instance.SetTotalPlayerLife(Life);
         healthBarController.UpdateHeartsHUD();
     }
 
     protected override void Death()
     {
-        GameManager.SetGameState(GameManager.GameState.GameOver);
+        GameManager.Instance.SetActualGameState(GameManager.GameState.GameOver);
         base.Death();
     }
 

@@ -7,6 +7,6 @@ public class AnimationEventReceiver : MonoBehaviour
     public void CallChangeSceneEvent(string sceneName)
     {
         // Llama al evento estático de GameManager aquí.
-        GameManager.ChangeScene(sceneName);
+        GameManager.Instance.ChangeScene(sceneName);
     }
 }

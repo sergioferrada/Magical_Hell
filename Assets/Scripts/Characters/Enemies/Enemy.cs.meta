@@ -3,7 +3,9 @@ guid: a2fb30292646f5943aab6202e65e8541
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthItemPrefab: {instanceID: 0}
+  - PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

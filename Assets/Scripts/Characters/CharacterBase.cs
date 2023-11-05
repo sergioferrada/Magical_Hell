@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using static RoomsManager;
 
 public class CharacterBase : MonoBehaviour
 {
@@ -12,7 +12,6 @@ public class CharacterBase : MonoBehaviour
     #endregion
 
     #region CHARACTER STATS
-
     public enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death }
     
     [Header("Character Stats")]
@@ -25,11 +24,9 @@ public class CharacterBase : MonoBehaviour
     public float Life { get { return _baseLife; } protected set { _baseLife = value; } }
     public float MaxLife { get { return _maxLife; } protected set { _maxLife = value; } }
     public float MovementSpeed { get { return _baseMovementSpeed; } protected set { _baseMovementSpeed = value; } }
-    
     #endregion
 
     #region COMBAT STATS
-
     [Header("Combat Stats")]
     [SerializeField] protected LayerMask attackableLayers;
     [SerializeField] protected float _baseDamage;       
@@ -38,11 +35,16 @@ public class CharacterBase : MonoBehaviour
 
     public float Damage { get { return _baseDamage; } protected set { _baseDamage = value; } }
     public float AttackDelay { get { return _baseAttackDelay; } protected set { _baseAttackDelay = value; } }
+    #endregion
 
+    #region UI SETTINGS
+    [Header("UI Settings")]
+    [SerializeField] protected GameObject PopUpDamagePrefab;
     #endregion
 
     protected float passedTime;
-    protected Vector2 direction;
+    public Vector2 direction;
+    public Vector2 lastDirection;
     
 
     // Start is called before the first frame update
@@ -68,19 +70,27 @@ public class CharacterBase : MonoBehaviour
     {
         SetState(State.Injured);
         Life -= damage;
+
+        if (PopUpDamagePrefab != null)
+        {
+            var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+            aux.GetComponent<PopUpController>().SetText(damage.ToString());
+        }
+
         CheckDeath();
     }
 
     /// <summary>
     /// Check if the life of the character is equal or less than cero
     /// </summary>
-    protected void CheckDeath()
+    protected virtual void CheckDeath()
     {
         if (Life <= 0)
         {
             GetComponent<Collider2D>().enabled = false;
+            rb2d.simulated = false;
             SetState(State.Death);
-            roomsManager.CalculateEnemiesInScene();
+            RoomsManager.Instance.CalculateEnemiesInScene();
         }
     }
 

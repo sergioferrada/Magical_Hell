@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class MrBeansAbilitieItem : MonoBehaviour
 {
-    [SerializeField] private GameObject Bean;
+    [SerializeField] private GameObject BeanPrefab;
+    [SerializeField] private float damageAbilitiy;
+    [SerializeField] private float cooldownAbility;
+
     private Animator animator;
 
     private void Awake()
@@ -16,8 +19,12 @@ public class MrBeansAbilitieItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.AddComponent<MrBeanAbilitie>();
-            collision.gameObject.GetComponent<MrBeanAbilitie>().bean = Bean;
+            if (collision.GetComponent<MrBeanAbilitie>() == null)
+            {
+                var script = collision.gameObject.AddComponent<MrBeanAbilitie>();
+                script.SetAbilityStats(damageAbilitiy, cooldownAbility, BeanPrefab);
+            }
+
             animator.Play("MrBean_collection_item_animation");
             Destroy(gameObject, 1f);
         }

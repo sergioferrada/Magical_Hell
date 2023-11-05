@@ -7,7 +7,7 @@ using static GameManager;
 
 public class MainCameraController : MonoBehaviour
 {
-    [SerializeField] private CinemachineConfiner cinemachineConfiner;
+    [SerializeField] private CinemachineConfiner2D cinemachineConfiner;
     private GameObject cameraBound;
     private void Awake()
     {

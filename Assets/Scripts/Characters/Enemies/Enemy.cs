@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-using static GameManager;
 using UnityEngine;
 using System;
 
@@ -31,24 +30,28 @@ public class Enemy : CharacterBase
     [SerializeField] private DifficultyStats Hard;
     [SerializeField] private DifficultyStats Very_Hard;
 
-    private Dictionary<DifficultyLevel, DifficultyStats> difficultyStats;
+    private Dictionary<DifficultManager.DifficultyLevel, DifficultyStats> difficultyStats;
     #endregion
 
     [Header("Item Spawn Stats")]
     [SerializeField] private GameObject healthItemPrefab;
-    [SerializeField] [Range(0f, 100f)] private float spawnItemProbability; 
+    [SerializeField] [Range(0f, 100f)] private float spawnItemProbability;
+
+    [Header("Exp Item Stats")]
+    [SerializeField] private GameObject expItemPrefab;
+    [SerializeField] private float expAmount;
 
     protected override void Awake()
     {
         base.Awake();
         playerTransform = FindObjectOfType<PlayerController>().GetComponent<Transform>();
-        difficultyStats = new Dictionary<DifficultyLevel, DifficultyStats> {
+        difficultyStats = new Dictionary<DifficultManager.DifficultyLevel, DifficultyStats> {
 
-            { DifficultyLevel.Very_Easy,    Very_Easy   },
-            { DifficultyLevel.Easy,         Easy        },
-            { DifficultyLevel.Medium,       Medium      },
-            { DifficultyLevel.Hard,         Hard        },
-            { DifficultyLevel.Very_Hard,    Very_Hard   }
+            { DifficultManager.DifficultyLevel.Very_Easy,    Very_Easy   },
+            { DifficultManager.DifficultyLevel.Easy,         Easy        },
+            { DifficultManager.DifficultyLevel.Medium,       Medium      },
+            { DifficultManager.DifficultyLevel.Hard,         Hard        },
+            { DifficultManager.DifficultyLevel.Very_Hard,    Very_Hard   }
         };
 
         SetupCharacterStats();
@@ -66,7 +69,7 @@ public class Enemy : CharacterBase
 
     protected virtual void SetupCharacterStats()
     {
-        DifficultyStats selectedStats = difficultyStats[difficultyLevel];
+        DifficultyStats selectedStats = difficultyStats[DifficultManager.Instance.actualDifficultyLevel];
 
         Life += selectedStats.lifeExtraPoints;
         Damage  += (Damage * (selectedStats.damageMultiplicator / 100));
@@ -81,6 +84,20 @@ public class Enemy : CharacterBase
             transform.localScale = new Vector2(1, transform.localScale.y);
         else if (direction.x < 0)
             transform.localScale = new Vector2(-1, transform.localScale.y);
+    }
+
+    protected override void CheckDeath()
+    {
+        if(Life <= 0)
+        {
+            SoundManager.Instance.PlaySound("Enemy_Blood_2", .5f);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySound("Enemy_Hit");
+        }
+
+        base.CheckDeath();
     }
 
     protected virtual void ShortRangeAttack()
@@ -112,6 +129,7 @@ public class Enemy : CharacterBase
     protected override void Death()
     {
         SpawnHealthItem();
+        SpawnExpItems();
         base.Death();
     }
 
@@ -126,6 +144,16 @@ public class Enemy : CharacterBase
             // Instancia el prefab si el número aleatorio es menor o igual a la probabilidad
             Instantiate(healthItemPrefab, transform.position, Quaternion.identity);
         }
+    }
+
+    protected void SpawnExpItems()
+    {
+        float itemsAmount = expAmount / expItemPrefab.GetComponent<ExperienceItem>().GetItemExpPoints();
+        
+        for(int i = 0; i < itemsAmount; i++)
+        {
+            Instantiate(expItemPrefab, transform.position, Quaternion.identity);
+        }     
     }
 
     protected void ChaseGameObject(Transform objectiveTransform)
@@ -147,7 +175,7 @@ public class Enemy : CharacterBase
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {   
-        if (collision.gameObject.name == "Fireball")
+        if (collision.gameObject.layer == LayerMask.NameToLayer("P.Proyectiles"))
             ReciveDamage(collision.gameObject.GetComponent<ProjectileLogic>().Damage);
     }
 }

@@ -165,4 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b959327727027459b13b82be9e68e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bean: {fileID: 1767588983243712499, guid: 5d98a6ad558e56646852618b8028c47b, type: 3}
+  BeanPrefab: {fileID: 1767588983243712499, guid: 5d98a6ad558e56646852618b8028c47b, type: 3}
+  damageAbilitiy: 0.25
+  cooldownAbility: 5

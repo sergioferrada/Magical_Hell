@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SlimeController : Enemy
 {
+    [Header("Combat Stats (Child)")]
     [SerializeField] protected float attackDistance;
-    [SerializeField] protected float chaseDistance;
     [SerializeField] private float attackForce;
 
     private Vector2[] diagonalDirections = { new Vector2(1, 1), new Vector2(-1, 1), new Vector2(-1, -1), new Vector2(1, -1) };

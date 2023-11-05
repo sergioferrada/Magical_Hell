@@ -97,6 +97,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -115,7 +134,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &7831321240785804569
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,7 +151,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5900662657130347523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,4 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d674f2e69a6c34db0b87d31c6c4fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileAbilitie: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
+  projectile: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
+  damageAbilitiy: 1
+  cooldownAbility: 2

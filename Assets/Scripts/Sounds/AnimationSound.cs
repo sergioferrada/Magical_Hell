@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class AnimationSound : MonoBehaviour
 {
+    [SerializeField]
+    [Range(0.0f,1.0f)] private float SoundsEffectVolume = 1.0f;
 
-    public void PlayAudioWithVolume(AudioClip _clip, float volume)
-    {
-        SoundManager.Instance.PlaySoundWithVolume(_clip, volume);
-    }
     public void PlayAudioClip(AudioClip _clip)
     {
-        SoundManager.Instance.PlaySound(_clip);
+        SoundManager.Instance.PlaySound(_clip.name, SoundsEffectVolume);
     }
-
 }

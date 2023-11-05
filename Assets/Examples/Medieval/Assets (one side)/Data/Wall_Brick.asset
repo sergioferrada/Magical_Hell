@@ -29,5 +29,5 @@ MonoBehaviour:
     - rid: 3767989614650065817
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
-        label: 
+        label: Wall
         value: {fileID: 11400000, guid: 676b2525bf31dc6439be198604391b79, type: 2}

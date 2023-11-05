@@ -19,7 +19,9 @@ MonoBehaviour:
   childsBundles: []
   assets:
   - obj: {fileID: 4463209898789819071, guid: 5898a96b21976ac4d8c5593212efb496, type: 3}
-    probability: 0.5
+    probability: 0.8
+  - obj: {fileID: 4463209898789819071, guid: 2ef6b67a61046a94cb640a0efb5a093c, type: 3}
+    probability: 0.2
   characteristics:
   - rid: 3767989614650065898
   positioning: 1
@@ -29,5 +31,5 @@ MonoBehaviour:
     - rid: 3767989614650065898
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
-        label: 
+        label: Wall
         value: {fileID: 11400000, guid: 676b2525bf31dc6439be198604391b79, type: 2}

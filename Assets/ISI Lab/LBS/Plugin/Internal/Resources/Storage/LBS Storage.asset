@@ -261,14 +261,27 @@ MonoBehaviour:
   - type: MAPElitesPreset
     items:
     - {fileID: 11400000, guid: b90bb27f581fe354799c9c3b84f44eac, type: 2}
-  - type: Cinemachine.NoiseSettings
+  - type: TMPro.TMP_FontAsset
     items:
-    - {fileID: 11400000, guid: 8608ec81ee27a15488d33f9dad239e91, type: 2}
-    - {fileID: 11400000, guid: 20e46be82478fa24b90f748044c06b4b, type: 2}
-    - {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
-    - {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
-    - {fileID: 11400000, guid: 20a705aea2d80e0478fb89b6f43d8530, type: 2}
-    - {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
-    - {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    - {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112, type: 2}
-    - {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+    - {fileID: 11400000, guid: 14a874899abedc94288fd6d7a7635981, type: 2}
+    - {fileID: 11400000, guid: 628f31c9c57c79a43baa92bf75990a65, type: 2}
+    - {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+    - {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+    - {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+    - {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+    - {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  - type: EasyTransition.TransitionSettings
+    items:
+    - {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
+    - {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+    - {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
+    - {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
+    - {fileID: 11400000, guid: d641980330b54c243a644222c797e582, type: 2}
+    - {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
+    - {fileID: 11400000, guid: 9710edcf009d00943af961dd2a7ca7d3, type: 2}
+    - {fileID: 11400000, guid: 2eec88d4ca6df24419aab2fd6b04c543, type: 2}
+    - {fileID: 11400000, guid: 06fa0ad2bc756f44ab258bc74947381d, type: 2}
+    - {fileID: 11400000, guid: b0126e1e0c6c2a04895d564bd230dfb9, type: 2}
+    - {fileID: 11400000, guid: 3ad3e86dc386e60458fda4c93a2c3d62, type: 2}
+    - {fileID: 11400000, guid: c9f7b34f761c5c342ada8a4b2ab7a716, type: 2}

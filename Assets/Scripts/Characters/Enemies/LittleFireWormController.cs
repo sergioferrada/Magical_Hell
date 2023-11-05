@@ -5,7 +5,6 @@ using UnityEngine;
 public class LittleFireWormController : Enemy
 {
     [Header("Combat Stats (Child)")]
-
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float chaseDistance;
 

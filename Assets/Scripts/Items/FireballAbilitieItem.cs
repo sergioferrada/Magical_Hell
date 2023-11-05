@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FireballAbilitieItem : MonoBehaviour
 {
-    [SerializeField] private GameObject projectileAbilitie;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float damageAbilitiy;
+    [SerializeField] private float cooldownAbility;
     private Animator animator;
 
     private void Awake()
@@ -14,10 +16,13 @@ public class FireballAbilitieItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) { 
+        if (collision.CompareTag("Player")) {
 
-            collision.gameObject.AddComponent<FireballAttackAbilitie>();
-            collision.gameObject.GetComponent<FireballAttackAbilitie>().fireball = projectileAbilitie;
+            if (collision.GetComponent<FireballAttackAbilitie>() == null)
+            {
+                var script = collision.gameObject.AddComponent<FireballAttackAbilitie>();
+                script.SetAbilityStats(damageAbilitiy, cooldownAbility, projectile);
+            }
             animator.Play("Fireball_collected_Item_animation");
             Destroy(gameObject, 1f);
         }    

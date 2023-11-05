@@ -29,5 +29,5 @@ MonoBehaviour:
     - rid: 3767989614650065814
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
-        label: 
-        value: {fileID: 0}
+        label: Door
+        value: {fileID: 11400000, guid: d05b3c2ff0cdab94b92f355dc76947d8, type: 2}

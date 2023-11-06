@@ -232,12 +232,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9710edcf009d00943af961dd2a7ca7d3, type: 2}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
+      propertyPath: actualGameLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: tutorialCompleted
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: numberRoomsInLevel
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: TransitionManagerPrefab
@@ -584,6 +588,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1956203871301362346, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2552062979054599400, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -6.6762085
@@ -624,7 +632,8 @@ PrefabInstance:
       propertyPath: levelSelected
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2511516741338235286, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

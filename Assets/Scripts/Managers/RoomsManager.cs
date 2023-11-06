@@ -56,6 +56,8 @@ public class RoomsManager : MonoBehaviour
     private string roomName;
 
     private float timePassed;
+
+    private string[] lastTwoSceneNames = new string[2];
     #endregion
 
     private void Awake()
@@ -278,7 +280,32 @@ public class RoomsManager : MonoBehaviour
             sceneNames.Add(sceneName);
         }
 
-        return sceneNames[Random.Range(0, sceneNames.Count)];
+        string nextSceneName;
+
+        do
+        {
+            nextSceneName = sceneNames[Random.Range(0, sceneNames.Count)];
+        } while (IsDuplicateSceneName(nextSceneName));
+
+        StoreSceneName(nextSceneName);
+
+        return nextSceneName;
+    }
+
+    private bool IsDuplicateSceneName(string sceneName)
+    {
+        foreach (string name in lastTwoSceneNames)
+        {
+            if (name == sceneName)
+                return true;
+        }
+        return false;
+    }
+
+    private void StoreSceneName(string sceneName)
+    {
+        lastTwoSceneNames[0] = lastTwoSceneNames[1];
+        lastTwoSceneNames[1] = sceneName;
     }
 
     public int GetEnemiesEnScene()

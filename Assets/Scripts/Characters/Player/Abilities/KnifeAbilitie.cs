@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KnifeAbilitie : PlayerAbility
 {
-    public GameObject knifePrefab;
     private PlayerController player;
     private Vector2 knifeDirection = Vector2.right;
 
@@ -14,18 +13,12 @@ public class KnifeAbilitie : PlayerAbility
         base.Start();
     }
 
-    public override void SetAbilityStats(float d, float cd, GameObject obj)
-    {
-        base.SetAbilityStats(d, cd);
-        knifePrefab = obj;
-    }
-
     protected override IEnumerator ActivateAbility()
     {
         if(player.direction != Vector2.zero)
             knifeDirection = player.direction;
         
-        var projectile = Instantiate(knifePrefab, transform.position, Quaternion.identity);
+        var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity);
         projectile.GetComponent<KnifeLogic>().SetDamage(damage);
         projectile.GetComponent<KnifeLogic>().direction = knifeDirection;
         projectile.GetComponent<KnifeLogic>().parentAbility = this;

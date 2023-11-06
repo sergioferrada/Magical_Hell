@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
-//[System.Serializable]
 public class PlayerAbility : MonoBehaviour
 {
-    public int actualLevel = 1, maxLevel = 10;
-    public float actualExp = 0, targetExp = 15;
+    [SerializeField] public GameObject objectAttack;
+
+    [SerializeField] public int actualLevel = 1, maxLevel = 10;
+    [SerializeField] public float actualExp = 0, targetExp = 15;
 
     // Tiempo entre activaciones de la habilidad.
-    public float damage;
-    public float cooldown;
+    [SerializeField] public float damage = 0;
+    [SerializeField] public float cooldown = 0;
 
     protected virtual void Start()
     {
@@ -39,12 +40,6 @@ public class PlayerAbility : MonoBehaviour
         }
         else
             return;
-    }
-
-    public virtual void SetAbilityStats(float d, float cd, GameObject obj = null)
-    {
-        damage = d;
-        cooldown = cd;
     }
 
     private IEnumerator RepeatActivation()

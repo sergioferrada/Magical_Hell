@@ -162,7 +162,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.88, y: 2.88}
+  m_Size: {x: 1.3714286, y: 1.3714286}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -336,10 +336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d11f3c2da120c4aa1230af24c4bbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemsPrefabs:
-  - {fileID: 4777894191025894676, guid: 6a0f462dc0ed3254ab5276ac39baeb02, type: 3}
-  - {fileID: 2954159455026296100, guid: 976569d4fddfe274986ebb75ff58681d, type: 3}
-  - {fileID: 3564773670173310722, guid: 7f2be94ecabee5248b8cd53c7c168d8b, type: 3}
+  ItemsPrefab: {fileID: 5637323806660289952, guid: c0797f7e96f29a54fbb78579ad06dd72, type: 3}
+  AbilitiesPrefabs:
+  - {fileID: -8658818960291667176, guid: 35095c683e0dbde488d354e669bdb871, type: 3}
+  - {fileID: 4626015506776419013, guid: 5f16cd4ffbc1b6e4991e57931ab3017a, type: 3}
+  - {fileID: -5692733276475167763, guid: 8997d6a99a0aa1d42b8fb3eb32b4a9f5, type: 3}
+  - {fileID: 7018240265772920948, guid: d344a9ccc129ffa4a99bc8a2aa5cae88, type: 3}
+  - {fileID: -5768602162668401362, guid: 34126b64288d2ba4a867638ff20f3d2e, type: 3}
+  spawnRepeatedItems: 1
 --- !u!114 &5327909328120513080
 MonoBehaviour:
   m_ObjectHideFlags: 0

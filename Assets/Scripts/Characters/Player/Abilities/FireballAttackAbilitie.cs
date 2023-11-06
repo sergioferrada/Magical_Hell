@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class FireballAttackAbilitie : PlayerAbility
 {
-    public GameObject fireball;
-
-    public override void SetAbilityStats(float d, float cd, GameObject obj)
-    {
-        base.SetAbilityStats(d, cd);
-        fireball = obj;
-    }
-
     protected override IEnumerator ActivateAbility()
     {
-        var projectile = Instantiate(fireball, transform.position, Quaternion.identity);
+        SoundManager.Instance.PlaySound("Flame_Attack3");
+        var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity);
         projectile.GetComponent<FireballLogic>().SetDamage(damage);
         projectile.GetComponent<FireballLogic>().parentAbility = this;
         return base.ActivateAbility();

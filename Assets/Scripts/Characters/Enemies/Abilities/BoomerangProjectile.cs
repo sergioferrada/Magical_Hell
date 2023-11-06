@@ -45,7 +45,7 @@ public class BoomerangProjectile : ProjectileLogic
 
     private new void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

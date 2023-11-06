@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemSpawnController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] ItemsPrefabs;
+    [SerializeField] private GameObject ItemsPrefab;
+    [SerializeField] private PlayerAbility[] AbilitiesPrefabs;
+    [SerializeField] private bool spawnRepeatedItems = true;
+
     private Animator animator;
     private BoxCollider2D bc2d;
 
@@ -25,7 +29,36 @@ public class ItemSpawnController : MonoBehaviour
 
     private void SpawnAbilityItem()
     {
-        Instantiate(ItemsPrefabs[Random.Range(0,ItemsPrefabs.Length)], transform.position, Quaternion.identity);
+        if (spawnRepeatedItems)
+        {
+            var item = Instantiate(ItemsPrefab, transform.position - new Vector3(0.2f, 0.5f), Quaternion.identity);
+            var ability = AbilitiesPrefabs[Random.Range(0, AbilitiesPrefabs.Length)];
+            item.GetComponent<AbilityItemBase>().abilityToAdd = ability;
+            item.GetComponent<AbilityItemBase>().IconChild.sprite = ability.GetComponent<SpriteRenderer>().sprite;
+        }
+        else
+        {
+            PlayerController player = FindObjectOfType<PlayerController>();
+            var playerAbilities = player.GetComponents<PlayerAbility>();
+
+            List<PlayerAbility> list = AbilitiesPrefabs.ToList();
+
+            for (int i = 0; i < AbilitiesPrefabs.Length; i++)
+            {
+                foreach (var abilitie in playerAbilities)
+                {
+                    if (abilitie == AbilitiesPrefabs[i])
+                    {
+                        list.Remove(AbilitiesPrefabs[i]);
+                    }
+                }
+            }
+
+            AbilitiesPrefabs = list.ToArray();
+
+            var item = Instantiate(ItemsPrefab, transform.position, Quaternion.identity);
+            item.GetComponent<AbilityItemBase>().abilityToAdd = AbilitiesPrefabs[Random.Range(0, AbilitiesPrefabs.Length)];
+        }
     }
 
     private void DestroyChest()

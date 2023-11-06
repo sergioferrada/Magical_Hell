@@ -8,7 +8,7 @@ public class ProjectileLogic : MonoBehaviour
     public Vector2 direction;
     protected Animator animator;
 
-    [SerializeField] public PlayerAbility parentAbility;
+    public PlayerAbility parentAbility;
 
     public float Damage{ get; protected set; }
     [SerializeField] protected float speed, lifeTime;

@@ -12,7 +12,7 @@ public class ChestSpawn : MonoBehaviour
     {
         if (!active) { 
             active = true;
-            SoundManager.Instance.PlaySound("Item_Room_Completed_Sound", .7f);
+            SoundManager.Instance.PlaySound("Item_Room_Completed_Sound", .5f);
             Instantiate(ChestPrefab, transform.position, Quaternion.identity);
         }
     }

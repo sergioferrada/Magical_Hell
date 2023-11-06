@@ -103,9 +103,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1795600741275222841}
   - component: {fileID: 3353658247087732169}
+  - component: {fileID: 4838421354440830389}
   - component: {fileID: 1956203871301362346}
   - component: {fileID: 4095181152491075588}
-  - component: {fileID: 4838421354440830389}
   m_Layer: 5
   m_Name: Desk
   m_TagString: Untagged
@@ -143,40 +143,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433845566081863513}
   m_CullTransparentMesh: 1
---- !u!95 &1956203871301362346
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433845566081863513}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ede10241fc955543816b3e0122c802a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4095181152491075588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433845566081863513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2a9129b6addb54ba3a0c77a2dd0048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundsEffectVolume: 1
 --- !u!212 &4838421354440830389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -229,6 +195,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1956203871301362346
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433845566081863513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ede10241fc955543816b3e0122c802a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4095181152491075588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433845566081863513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2a9129b6addb54ba3a0c77a2dd0048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundsEffectVolume: 1
 --- !u!1 &475883342015300749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1475,6 @@ GameObject:
   - component: {fileID: 3270588360534823166}
   - component: {fileID: 5312150068404306993}
   - component: {fileID: 1108666109907083772}
-  - component: {fileID: 2511516741338235286}
   - component: {fileID: 2891054284738495811}
   m_Layer: 5
   m_Name: MainMenu
@@ -1569,27 +1568,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!95 &2511516741338235286
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223853523097477997}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e82332794f35f5147a3b80b61a2d8535, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2891054284738495811
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5be046ca2a8010841b8a403c1444e47a, type: 3}
   - {fileID: 8300000, guid: 9cf141832d77db04e909a7c1f167bb35, type: 3}
   - {fileID: 8300000, guid: 2c8d27040e489654e83f145275c1d39b, type: 3}
+  - {fileID: 8300000, guid: 57caa6a08158f694492edbed4efc0478, type: 3}
   effectsList:
   - {fileID: 8300000, guid: e866a8616e7e1d04d8b408b71ed16d3a, type: 3}
   - {fileID: 8300000, guid: 4ab66e7426628aa4781ea4aac8bc7249, type: 3}
@@ -76,6 +77,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 98a9a0fdc6bf70e4e9ba016daaf40d0e, type: 3}
   - {fileID: 8300000, guid: 97f0823b5846f924aa5323c93d846f4b, type: 3}
   - {fileID: 8300000, guid: 0973446ee70317f47841492dad14d3a1, type: 3}
+  - {fileID: 8300000, guid: 5324fef12d8be0b478b1c907e9514f5f, type: 3}
   guiEffectList:
   - {fileID: 8300000, guid: f731b677b8485c940b31b5b1786ec2d4, type: 3}
   - {fileID: 8300000, guid: 79a3126d9231c234a95002dd3e53f992, type: 3}

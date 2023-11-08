@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: numberRoomsInLevel
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: TransitionManagerPrefab

@@ -83,7 +83,7 @@ public class LittleFireWormController : Enemy
             // Instancia una bola de fuego en la dirección calculada.
             GameObject fireball = Instantiate(fireballPrefab, fireballSpawnPoint.position, Quaternion.identity);
             fireball.GetComponent<WormFireballLogic>().direction = projectileDirection;
-            fireball.GetComponent<WormFireballLogic>().SetDamage(projectileDamage);
+            fireball.GetComponent<WormFireballLogic>().damage = projectileDamage;
         }
     }
     private IEnumerator StopAttack()

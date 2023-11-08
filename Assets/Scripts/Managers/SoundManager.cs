@@ -63,7 +63,11 @@ public class SoundManager : MonoBehaviour
             switch (GameManager.Instance.actualGameLevel)
             {
                 case GameManager.GameLevel.Tutorial:
-                    StopMusicWithFade(2.0f);
+                    if (_musicSource.clip.name != "dungeon_air_Ambience")
+                    {
+                        PlayMusicWithFade("dungeon_air_Ambience", .5f);
+                    }
+                    
                     break;
 
                 case GameManager.GameLevel.Level_1:

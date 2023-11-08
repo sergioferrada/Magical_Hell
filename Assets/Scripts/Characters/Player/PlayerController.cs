@@ -7,11 +7,11 @@ public class PlayerController : CharacterBase
 {
     [Header("Combat Stats (Child)")]
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private MeleePlayerAttack meleeAttack;
 
     [Header("Level Character Stats")]
     [SerializeField] private float currentExperience, maxExperiencie;
     [SerializeField] private int currentLevel, maxLevel;
-    //public Animator lvlUpAnimator;
 
     private HealthBarController healthBarController;
     private ExpBarController expBarController;
@@ -64,7 +64,12 @@ public class PlayerController : CharacterBase
 
 
         if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay)
+        {
             SetState(State.ShortAttack);
+            meleeAttack.Activate();
+            meleeAttack.objectScale = 1;
+            meleeAttack.damage = Damage;
+        }
 
         // Cambia los estados en función del movimiento o ataque
         if (!CompareState(State.ShortAttack))
@@ -83,20 +88,6 @@ public class PlayerController : CharacterBase
     protected override void Move()
     {
         rb2d.velocity = new Vector2(direction.x * MovementSpeed, direction.y * MovementSpeed);
-    }
-
-    void MeleeAttack()
-    {
-        DifficultManager.Instance.AddTotalAttacks();
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackableLayers);
-
-        foreach (Collider2D enemy in hitEnemies) {
-
-            enemy.GetComponent<Enemy>().ReciveDamage(Damage);
-            Vector2 direction = (enemy.GetComponent<Collider2D>().transform.position - transform.position).normalized;
-            enemy.GetComponent<Rigidbody2D>().AddForce(direction * 25, ForceMode2D.Impulse);
-            DifficultManager.Instance.AddSuccefulAttack();
-        }
     }
 
     public void RecoverLife(float lifePoints)
@@ -199,13 +190,11 @@ public class PlayerController : CharacterBase
         if (collision.gameObject.layer == 7)
         {
             ReciveDamage(collision.gameObject.GetComponent<Enemy>().Damage);
-            Vector2 direction = (transform.position - collision.transform.position).normalized;
-            //rb2d.AddForce(direction * 25, ForceMode2D.Impulse);
         }
 
         if (collision.gameObject.layer == 10)
         {
-            ReciveDamage(collision.gameObject.GetComponent<ProjectileLogic>().Damage);
+            ReciveDamage(collision.gameObject.GetComponent<ProjectileBase>().damage);
         }
     }
 }

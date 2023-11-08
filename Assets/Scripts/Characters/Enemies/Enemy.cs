@@ -176,6 +176,12 @@ public class Enemy : CharacterBase
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {   
         if (collision.gameObject.layer == LayerMask.NameToLayer("P.Proyectiles"))
-            ReciveDamage(collision.gameObject.GetComponent<ProjectileLogic>().Damage);
+            ReciveDamage(collision.gameObject.GetComponent<DamageObjectBase>().damage);
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("P.Proyectiles"))
+            ReciveDamage(collision.gameObject.GetComponent<DamageObjectBase>().damage);
     }
 }

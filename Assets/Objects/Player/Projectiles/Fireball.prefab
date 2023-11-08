@@ -183,9 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a121da662eb6fb41adea0a865a91d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  objectScale: 1
+  parentAbility: {fileID: 0}
+  direction: {x: 0, y: 0}
   speed: 5
   lifeTime: 5
-  canExplode: 0
   timesItcanExplode: 3
   minFireballRange: 2
   maxFireballRange: 4

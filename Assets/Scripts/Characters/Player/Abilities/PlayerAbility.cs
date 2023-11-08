@@ -11,6 +11,7 @@ public class PlayerAbility : MonoBehaviour
     // Tiempo entre activaciones de la habilidad.
     [SerializeField] public float damage = 0;
     [SerializeField] public float cooldown = 0;
+    [SerializeField] public float damageObjectScale = 1;
 
     protected virtual void Start()
     {
@@ -22,24 +23,20 @@ public class PlayerAbility : MonoBehaviour
     {
         actualExp++;
 
-        if(actualExp >= targetExp)
-        {
+        if (actualExp >= targetExp && actualLevel < maxLevel)
+        { 
             LevelUp();
         }
     }
 
-    public void LevelUp()
+    public virtual void LevelUp()
     {
-        if (actualLevel < maxLevel)
-        {
-            actualLevel++;
-            actualExp = 0;
-            targetExp += 10;
-            damage *= 1.1f;
-            cooldown *= 0.95f;
-        }
-        else
-            return;
+        actualLevel++;
+        actualExp = 0;
+        targetExp += 10;
+        damage *= 1.1f;
+        cooldown *= 0.95f;
+        damageObjectScale += 0.5f;
     }
 
     private IEnumerator RepeatActivation()

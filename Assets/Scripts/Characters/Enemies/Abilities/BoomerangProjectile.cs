@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class BoomerangProjectile : ProjectileLogic
+public class BoomerangProjectile : ProjectileBase
 {
     private Vector2 initialPosition;
     private Vector2 targetPosition;
@@ -29,8 +29,9 @@ public class BoomerangProjectile : ProjectileLogic
 
         //Se calcula la direccion para el movimiento con corvatura
         direction = CalculateCurveDirection((Vector2)transform.position, targetPosition);
+
         // Mueve el proyectil en la dirección
-        rb2d.velocity = direction * speed;
+        SetProyectileVelocity(speed, direction);
     }
 
     private Vector2 CalculateCurveDirection(Vector2 initialPosition, Vector2 targetPosition)
@@ -43,7 +44,7 @@ public class BoomerangProjectile : ProjectileLogic
         return direction += curveDirection;
     }
 
-    private new void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {

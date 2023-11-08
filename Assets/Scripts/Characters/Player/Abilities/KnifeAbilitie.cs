@@ -19,7 +19,8 @@ public class KnifeAbilitie : PlayerAbility
             knifeDirection = player.direction;
         
         var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity);
-        projectile.GetComponent<KnifeLogic>().SetDamage(damage);
+        projectile.GetComponent<KnifeLogic>().damage = damage;
+        projectile.GetComponent<KnifeLogic>().objectScale = damageObjectScale;
         projectile.GetComponent<KnifeLogic>().direction = knifeDirection;
         projectile.GetComponent<KnifeLogic>().parentAbility = this;
 

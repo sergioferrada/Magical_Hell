@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeLogic : ProjectileLogic
+public class KnifeLogic : ProjectileBase
 {
 
     protected override void Start()
@@ -13,6 +13,7 @@ public class KnifeLogic : ProjectileLogic
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D (collision);
+
         rb2d.velocity = Vector3.zero;
         GetComponent<Collider2D>().enabled = false;
         animator.Play("Impact_Animation");

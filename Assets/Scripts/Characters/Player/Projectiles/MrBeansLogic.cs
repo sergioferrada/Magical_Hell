@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MrBeansLogic : ProjectileLogic
+public class MrBeansLogic : ProjectileBase
 {
     private List<Vector2> directions = new List<Vector2>();
 
@@ -32,7 +32,7 @@ public class MrBeansLogic : ProjectileLogic
             foreach (ContactPoint2D contactPoint in collision.contacts)
                 direction = Vector2.Reflect(direction, contactPoint.normal);
 
-            rb2d.velocity = speed * direction;
+            SetProyectileVelocity(speed, direction);
         }
 
         //Se redondean las coordenadas del vector par solo obtener valores de 1 o -1

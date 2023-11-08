@@ -64,7 +64,7 @@ public class Enemy2Controller : Enemy
     {
         base.MidRangeAttack();
         GameObject pl = Instantiate(Projectile, transform.position, transform.rotation);
-        pl.GetComponent<ProjectileLogic>().SetDamage(projectileDamage);
+        pl.GetComponent<ProjectileBase>().damage = projectileDamage;
         ResetAttack();
     }
 }

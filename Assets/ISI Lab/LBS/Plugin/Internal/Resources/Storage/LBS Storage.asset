@@ -271,6 +271,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
     - {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
     - {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - {fileID: 11400000, guid: dbd506fdf0e7047448c8ef831329f15a, type: 2}
   - type: EasyTransition.TransitionSettings
     items:
     - {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}

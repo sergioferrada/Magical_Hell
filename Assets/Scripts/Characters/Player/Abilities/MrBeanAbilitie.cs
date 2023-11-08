@@ -7,7 +7,8 @@ public class MrBeanAbilitie : PlayerAbility
     protected override IEnumerator ActivateAbility()
     {
         var beanPrefab = Instantiate(objectAttack, transform.position, Quaternion.identity);
-        beanPrefab.GetComponent<MrBeansLogic>().SetDamage(damage);
+        beanPrefab.GetComponent<MrBeansLogic>().damage = damage;
+        beanPrefab.GetComponent<MrBeansLogic>().objectScale = damageObjectScale;
         beanPrefab.GetComponent<MrBeansLogic>().parentAbility = this;
         return base.ActivateAbility();
     }

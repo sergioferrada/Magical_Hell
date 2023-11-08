@@ -66,6 +66,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level_2/Normal_Rooms/Large/LVL2_NR_L.unity
     guid: f849b218ae6775a459ef3905661f6fd0
   - enabled: 1
+    path: Assets/Scenes/Levels/Level_2/Normal_Rooms/Large/LVL2_NR_L 1.unity
+    guid: 7bed22d16e043764a8cd62dff82a69ec
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_2/Normal_Rooms/Large/LVL2_NR_L 2.unity
+    guid: f6513bfbfcab6a54ca53503d9cc90463
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_2/Normal_Rooms/Large/LVL2_NR_L 3.unity
+    guid: b2105bd09e5e6e841a43e8f2dae79e9d
+  - enabled: 1
     path: Assets/Scenes/Levels/Level_2/Normal_Rooms/Medium/LVL2_NR_M.unity
     guid: 36b836f8a108f9343a3bf9be9fa20eee
   - enabled: 1

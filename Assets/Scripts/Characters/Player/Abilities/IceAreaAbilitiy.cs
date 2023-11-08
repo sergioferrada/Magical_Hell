@@ -7,7 +7,9 @@ public class IceAreaAbilitiy : PlayerAbility
     protected override IEnumerator ActivateAbility()
     {
         var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity);
-        projectile.GetComponent<IceAreaLogic>().Damage = damage;
+        projectile.GetComponent<IceAreaLogic>().damage = damage;
+        projectile.GetComponent<IceAreaLogic>().objectScale = damageObjectScale;
+        projectile.GetComponent<IceAreaLogic>().parentAbility = this;
         return base.ActivateAbility();
     }
 }

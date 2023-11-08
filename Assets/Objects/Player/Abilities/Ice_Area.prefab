@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7567174327965687591}
   - component: {fileID: 5931013680965165937}
+  - component: {fileID: 7220000911223828385}
   - component: {fileID: -6309561600787153319}
   - component: {fileID: 3172486187151392504}
   - component: {fileID: 1892436717044837576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice_Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +88,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7220000911223828385
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188136107711161987}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.0129793
 --- !u!95 &-6309561600787153319
 Animator:
   serializedVersion: 5
@@ -120,11 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24563269b42c2314991e8dcb72df549b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
-  attackRange: 1
-  attackableLayers:
-    serializedVersion: 2
-    m_Bits: 128
+  damage: 1
+  objectScale: 1
+  parentAbility: {fileID: 0}
 --- !u!114 &1892436717044837576
 MonoBehaviour:
   m_ObjectHideFlags: 0

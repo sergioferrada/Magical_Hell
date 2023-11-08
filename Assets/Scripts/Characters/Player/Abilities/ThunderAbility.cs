@@ -9,6 +9,7 @@ public class ThunderAbility : PlayerAbility
 
     protected override IEnumerator ActivateAbility()
     {
+        SoundManager.Instance.PlaySound("Electric_Impact");
         for (int i = 0; i < numberOfProjectiles; i++)
         {
             float randomAngle = Random.Range(0f, 360f);
@@ -18,8 +19,9 @@ public class ThunderAbility : PlayerAbility
             Vector3 spawnPosition = transform.position + direction * randomRadius;
 
             var projectile = Instantiate(objectAttack, spawnPosition, Quaternion.identity);
-            projectile.GetComponent<ThunderLogic>().Damage = damage;
-            //projectile.GetComponent<ThunderLogic>().parentAbility = this;
+            projectile.GetComponent<ThunderLogic>().damage = damage;
+            projectile.GetComponent<ThunderLogic>().objectScale = damageObjectScale;
+            projectile.GetComponent<ThunderLogic>().parentAbility = this;
         }
 
         return base.ActivateAbility();

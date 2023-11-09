@@ -11,7 +11,6 @@ using LBS.Generator;
 using LBS.Behaviours;
 using LBS.Assisstants;
 using UnityEngine.EventSystems;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UIElements;
 
 namespace LBS.Components

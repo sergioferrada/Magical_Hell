@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LVL 1
-
-'
+  m_text: MAX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd506fdf0e7047448c8ef831329f15a, type: 2}
   m_sharedMaterial: {fileID: -6161679948298153319, guid: dbd506fdf0e7047448c8ef831329f15a, type: 2}
@@ -95,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 28.8
+  m_fontSizeBase: 28.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -281,10 +279,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -342,10 +340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ceb3feee3d769498e23ae516733fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ability: {fileID: 0}
   abilityIcon: {fileID: 5061394296303098092}
   levelText: {fileID: 2915886866670390766}
   expAbilityBar: {fileID: 1782608495508579020}
-  ability: {fileID: 0}
+  activate: 0
 --- !u!1 &8165492422880508648
 GameObject:
   m_ObjectHideFlags: 0

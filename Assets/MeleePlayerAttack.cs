@@ -9,6 +9,7 @@ public class MeleePlayerAttack : StationaryDamageObject
     public void Activate()
     {
         DifficultManager.Instance.AddTotalAttacks();
+        SoundManager.Instance.PlaySound("Melee_Deep_Whoosh_Sound", .7f);
         animator.Play("Attack_Animation");
     }
 

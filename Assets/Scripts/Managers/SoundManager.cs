@@ -78,23 +78,23 @@ public class SoundManager : MonoBehaviour
                     break;
 
                 case GameManager.GameLevel.Level_2:
-                    if (_musicSource.clip.name != "7 battle LOOP")
+                    if (_musicSource.clip.name != "Level_1_Battle_Song")
                     {
-                        PlayMusicWithFade("7 battle LOOP", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
                     }
                     break;
 
                 case GameManager.GameLevel.Level_3:
-                    if (_musicSource.clip.name != "7 battle LOOP")
+                    if (_musicSource.clip.name != "Level_1_Battle_Song")
                     {
-                        PlayMusicWithFade("7 battle LOOP", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
                     }
                     break;
 
                 case GameManager.GameLevel.Level_4:
-                    if (_musicSource.clip.name != "7 battle LOOP")
+                    if (_musicSource.clip.name != "Level_1_Battle_Song")
                     { 
-                        PlayMusicWithFade("7 battle LOOP", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
                     }
                     break;
             }

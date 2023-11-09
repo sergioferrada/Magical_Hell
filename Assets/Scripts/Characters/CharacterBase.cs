@@ -42,7 +42,7 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected GameObject PopUpDamagePrefab;
     #endregion
 
-    protected float passedTime;
+    public float passedTime;
     public Vector2 direction;
     public Vector2 lastDirection;
     

@@ -49,6 +49,7 @@ public class AbilityItemBase : MonoBehaviour
                 }
             }
 
+            collision.GetComponent<AbilitiesContainerController>().UpdateAbilitiesContainerHUD();
             animator.Play("Collected_Animation");
             SoundManager.Instance.PlaySound("eminyildirim_Holy_1_Sound");
             Destroy(gameObject, 1f);

@@ -23,20 +23,21 @@ public class MrBeansLogic : ProjectileBase
         transform.localScale = new Vector2(direction.x, transform.localScale.y);
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnCollisionEnter2D(collision);
+        base.OnTriggerEnter2D(collision);
 
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (collision.CompareTag("Wall"))
         {
-            foreach (ContactPoint2D contactPoint in collision.contacts)
-                direction = Vector2.Reflect(direction, contactPoint.normal);
-
+            // Calcula la normal en el punto de colisión
+            Vector2 collisionPoint = collision.ClosestPoint(transform.position);
+            Vector2 normal = (collisionPoint - (Vector2)transform.position).normalized;
+            direction = Vector2.Reflect(direction, normal).normalized;
             SetProyectileVelocity(speed, direction);
         }
 
-        //Se redondean las coordenadas del vector par solo obtener valores de 1 o -1
+        // Redondea las coordenadas del vector para obtener valores de 1 o -1
         direction.x = Mathf.Sign(direction.x);
-        transform.localScale = new Vector2(direction.x, transform.localScale.y);
+        transform.localScale = new Vector2(direction.x * transform.localScale.x, transform.localScale.y);
     }
 }

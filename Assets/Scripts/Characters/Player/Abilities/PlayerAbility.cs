@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerAbility : MonoBehaviour
 {
+    [SerializeField] private Image Icon;
+    [SerializeField] public Sprite IconSprite;
     [SerializeField] public GameObject objectAttack;
-
+    
     [SerializeField] public int actualLevel = 1, maxLevel = 10;
     [SerializeField] public float actualExp = 0, targetExp = 15;
 
@@ -19,10 +22,12 @@ public class PlayerAbility : MonoBehaviour
         StartCoroutine(RepeatActivation());
     }
 
+    public Image getIcon() { return Icon; }
+
     public void AddExp()
     {
         actualExp++;
-
+        GetComponent<AbilitiesContainerController>().UpdateAbilitiesContainerHUD();
         if (actualExp >= targetExp && actualLevel < maxLevel)
         { 
             LevelUp();
@@ -37,6 +42,8 @@ public class PlayerAbility : MonoBehaviour
         damage *= 1.1f;
         cooldown *= 0.95f;
         damageObjectScale += 0.5f;
+
+        GetComponent<AbilitiesContainerController>().UpdateAbilitiesContainerHUD();
     }
 
     private IEnumerator RepeatActivation()

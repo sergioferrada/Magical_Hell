@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3629922556704587957}
   m_Layer: 0
-  m_Name: AbilitiStatsContainer
+  m_Name: AbilitiesStatsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8074479361686186799, guid: 1bae3e4cf4197d044b94bf4d90670186, type: 3}
       propertyPath: m_Name
-      value: AbilitiesStats (4)
+      value: AbilitiesStats_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

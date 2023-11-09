@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38abe91ba347614eb04c1d90b150ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  IconSprite: {fileID: -1862804495, guid: ff8aa126207f2c046b41b89896e55c03, type: 3}
   objectAttack: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
   actualLevel: 1
   maxLevel: 10
@@ -104,3 +106,4 @@ MonoBehaviour:
   targetExp: 6
   damage: 1.5
   cooldown: 1.75
+  damageObjectScale: 1

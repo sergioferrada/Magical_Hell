@@ -16,6 +16,7 @@ public class PlayerController : CharacterBase
     private HealthBarController healthBarController;
     private ExpBarController expBarController;
     private StatsHUDController statsHUDController;
+    private CooldownBarController cooldownBarController;
 
     protected override void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerController : CharacterBase
         healthBarController = GetComponent<HealthBarController>(); 
         expBarController = GetComponent<ExpBarController>();
         statsHUDController = GetComponent<StatsHUDController>();
+        cooldownBarController = GetComponent<CooldownBarController>();
     }
 
     protected override void Start()
@@ -41,7 +43,10 @@ public class PlayerController : CharacterBase
             ProcessInputs();
             //Tiempo para el siguiente ataque
             if (passedTime < AttackDelay)
+            {
                 passedTime += Time.deltaTime;
+                cooldownBarController.UpdateHUD();
+            }
         }
     }
 
@@ -77,10 +82,13 @@ public class PlayerController : CharacterBase
             if (!CompareState(State.Injured))
             {
                 if (direction.magnitude > 0) SetState(State.Move);
-                else if (moveX == 0 && moveY == 0) SetState(State.Idle);
+                else if (moveX == 0 && moveY == 0) {
+                    
+                    SetState(State.Idle); 
+                    lastDirection = direction;
+                }
             }
         }
-        //else { moveX = 0; moveY = 0; }
 
         direction = new Vector2(moveX, moveY).normalized;
     }
@@ -152,6 +160,7 @@ public class PlayerController : CharacterBase
             healthBarController.UpdateHeartsHUD();
             expBarController.UpdateExpBarHUD();
             statsHUDController.UpdateStatsHUD();
+            cooldownBarController.UpdateHUD();
         }
     }
 

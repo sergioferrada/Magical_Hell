@@ -6,23 +6,26 @@ using UnityEngine.UI;
 
 public class AbilityStats : MonoBehaviour
 {
+    public PlayerAbility ability;
+
     public Image abilityIcon;
     public TMP_Text levelText;
     public Image expAbilityBar;
 
-    public PlayerAbility ability;
+    public bool activate = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        abilityIcon.enabled = false;
+        levelText.enabled = false;
+        expAbilityBar.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Activate()
     {
-        
+        activate = true;
+        abilityIcon.enabled = true;
+        levelText.enabled = true;
+        expAbilityBar.enabled = true;
     }
-
-
 }

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1870764528, guid: 0dc7148725a259c409921838cf78c6d2, type: 3}
+  m_Sprite: {fileID: 623504857, guid: 73fad20dcf94b9741a749794a8b0a550, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1608eea4ee563641ba25a4738c4907f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  IconSprite: {fileID: 623504857, guid: 73fad20dcf94b9741a749794a8b0a550, type: 3}
   objectAttack: {fileID: 7188136107711161987, guid: 4fb9a702762eadd4284e8e28bec965ce, type: 3}
   actualLevel: 1
   maxLevel: 10
@@ -104,5 +106,6 @@ MonoBehaviour:
   targetExp: 20
   damage: 1
   cooldown: 6
+  damageObjectScale: 1
   numberOfProjectiles: 2
   radius: 3

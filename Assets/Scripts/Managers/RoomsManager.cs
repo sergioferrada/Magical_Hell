@@ -256,40 +256,66 @@ public class RoomsManager : MonoBehaviour
 
     public string GetNextRoomName()
     {
+        string nextSceneName;
+
         string levelFolder = GameManager.Instance.actualGameLevel.ToString();
         string roomType = nextRoomType.ToString();
+        string roomSize = "Small";
 
-        string path = "Assets/Scenes/Levels/" + levelFolder;
+        string path = "Levels/" + levelFolder;
 
         if (nextRoomType == RoomType.Normal_Rooms)
         {
-            string[] roomSizes = { "Small", "Medium", "Large" };
-            string roomSize = roomSizes[Random.Range(0, roomSizes.Length)];
+            roomSize = GetRandomRoomSize();
             path += "/" + roomType + "/" + roomSize;
         }
         else if (nextRoomType == RoomType.Final_Rooms)
-            path += "/" + roomType;
-
-        List<string> sceneNames = new List<string>();
-        string[] sceneGuids = AssetDatabase.FindAssets("t:Scene", new[] { path });
-
-        foreach (string guid in sceneGuids)
         {
-            string scenePath = AssetDatabase.GUIDToAssetPath(guid);
-            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
-            sceneNames.Add(sceneName);
+            path += "/" + roomType;
         }
+        // Utiliza Resources.LoadAll para obtener todas las escenas en la carpeta
+        int sceneObjectsLength = Resources.LoadAll(path, typeof(Object)).Length;
 
-        string nextSceneName;
+        Dictionary<string, string> levelNameMappings = new Dictionary<string, string>
+        {
+            { "Level_1", "LVL1" },
+            { "Level_2", "LVL2" },
+            { "Level_3", "LVL3" },
+            { "Level_4", "LVL4" }
+        };
+
+        Dictionary<string, string> typeRoomNameMappings = new Dictionary<string, string>
+        {
+            { "Normal_Rooms", "NR" },
+            { "Final_Rooms", "FR" }
+        };
+
+        Dictionary<string, string> sizeNameMappings = new Dictionary<string, string>
+        {
+            { "Small", "S" },
+            { "Medium", "M" },
+            { "Large", "L" }
+        };
+
+        levelFolder = GetMappedValue(levelFolder, levelNameMappings);
+        roomType = GetMappedValue(roomType, typeRoomNameMappings);
+        roomSize = GetMappedValue(roomSize, sizeNameMappings);
 
         do
         {
-            nextSceneName = sceneNames[Random.Range(0, sceneNames.Count)];
+            nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
+
         } while (IsDuplicateSceneName(nextSceneName));
 
         StoreSceneName(nextSceneName);
 
         return nextSceneName;
+    }
+
+    private string GetRandomRoomSize()
+    {
+        string[] roomSizes = { "Small", "Medium", "Large" };
+        return roomSizes[Random.Range(0, roomSizes.Length)];
     }
 
     private bool IsDuplicateSceneName(string sceneName)
@@ -300,6 +326,29 @@ public class RoomsManager : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    private string GetMappedValue(string originalValue, Dictionary<string, string> mappings)
+    {
+        if (mappings.TryGetValue(originalValue, out string mappedValue))
+        {
+            return mappedValue;
+        }
+        return originalValue;
+    }
+
+    private string GenerateSceneName(string levelFolder, string roomType, string roomSize, int sceneObjectsLength)
+    {
+        if (nextRoomType == RoomType.Normal_Rooms)
+        {
+            return $"{levelFolder}_{roomType}_{roomSize}_{Random.Range(1, sceneObjectsLength)}";
+        }
+        else if (nextRoomType == RoomType.Final_Rooms)
+        {
+            return $"{levelFolder}_{roomType}_{Random.Range(1, sceneObjectsLength)}";
+        }
+
+        return "null";
     }
 
     private void StoreSceneName(string sceneName)

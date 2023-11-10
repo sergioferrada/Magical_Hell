@@ -301,13 +301,14 @@ public class RoomsManager : MonoBehaviour
         roomType = GetMappedValue(roomType, typeRoomNameMappings);
         roomSize = GetMappedValue(roomSize, sizeNameMappings);
 
-        do
-        {
+        //do
+        //{
             nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
 
-        } while (IsDuplicateSceneName(nextSceneName));
-
-        StoreSceneName(nextSceneName);
+        //} while (IsDuplicateSceneName(nextSceneName));
+        
+        //nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
+        //StoreSceneName(nextSceneName);
 
         return nextSceneName;
     }
@@ -320,11 +321,11 @@ public class RoomsManager : MonoBehaviour
 
     private bool IsDuplicateSceneName(string sceneName)
     {
-        foreach (string name in lastTwoSceneNames)
+        if (lastTwoSceneNames[0] == sceneName || lastTwoSceneNames[1] == sceneName)
         {
-            if (name == sceneName)
-                return true;
+            return true;
         }
+
         return false;
     }
 
@@ -353,8 +354,8 @@ public class RoomsManager : MonoBehaviour
 
     private void StoreSceneName(string sceneName)
     {
-        lastTwoSceneNames[0] = lastTwoSceneNames[1];
-        lastTwoSceneNames[1] = sceneName;
+        lastTwoSceneNames[0] = sceneName;
+        lastTwoSceneNames[1] = lastTwoSceneNames[0];
     }
 
     public int GetEnemiesEnScene()

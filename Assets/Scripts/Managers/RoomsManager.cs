@@ -258,25 +258,13 @@ public class RoomsManager : MonoBehaviour
     {
         string nextSceneName;
 
+        //Get the level and room data
         string levelFolder = GameManager.Instance.actualGameLevel.ToString();
         string roomType = nextRoomType.ToString();
-        string roomSize = "Small";
+        string roomSize = GetRandomRoomSize();
+        int sceneObjectsLength = LevelInfoReader.GetRoomCount(levelFolder, roomType, roomSize);
 
-        string path = "Levels/" + levelFolder;
-
-        if (nextRoomType == RoomType.Normal_Rooms)
-        {
-            roomSize = GetRandomRoomSize();
-            path += "/" + roomType + "/" + roomSize;
-        }
-        else if (nextRoomType == RoomType.Final_Rooms)
-        {
-            path += "/" + roomType;
-        }
-        // Utiliza Resources.LoadAll para obtener todas las escenas en la carpeta
-        int sceneObjectsLength = Resources.LoadAll(path, typeof(Object)).Length;
-
-        Dictionary<string, string> levelNameMappings = new Dictionary<string, string>
+        Dictionary<string, string> levelNameMappings = new()
         {
             { "Level_1", "LVL1" },
             { "Level_2", "LVL2" },
@@ -284,13 +272,13 @@ public class RoomsManager : MonoBehaviour
             { "Level_4", "LVL4" }
         };
 
-        Dictionary<string, string> typeRoomNameMappings = new Dictionary<string, string>
+        Dictionary<string, string> typeRoomNameMappings = new()
         {
             { "Normal_Rooms", "NR" },
             { "Final_Rooms", "FR" }
         };
 
-        Dictionary<string, string> sizeNameMappings = new Dictionary<string, string>
+        Dictionary<string, string> sizeNameMappings = new()
         {
             { "Small", "S" },
             { "Medium", "M" },
@@ -301,14 +289,13 @@ public class RoomsManager : MonoBehaviour
         roomType = GetMappedValue(roomType, typeRoomNameMappings);
         roomSize = GetMappedValue(roomSize, sizeNameMappings);
 
-        //do
-        //{
+        do
+        {
             nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
-
-        //} while (IsDuplicateSceneName(nextSceneName));
-        
-        //nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
-        //StoreSceneName(nextSceneName);
+        }
+        while (IsDuplicateSceneName(nextSceneName));
+       
+        StoreSceneName(nextSceneName);
 
         return nextSceneName;
     }
@@ -349,13 +336,13 @@ public class RoomsManager : MonoBehaviour
             return $"{levelFolder}_{roomType}_{Random.Range(1, sceneObjectsLength)}";
         }
 
-        return "null";
+        return "Default_Room";
     }
 
     private void StoreSceneName(string sceneName)
     {
-        lastTwoSceneNames[0] = sceneName;
         lastTwoSceneNames[1] = lastTwoSceneNames[0];
+        lastTwoSceneNames[0] = sceneName;
     }
 
     public int GetEnemiesEnScene()

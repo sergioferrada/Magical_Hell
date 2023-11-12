@@ -13,9 +13,7 @@ public class PlayerController : CharacterBase
     [SerializeField] private float currentExperience, maxExperiencie;
     [SerializeField] private int currentLevel, maxLevel;
 
-    private HealthBarController healthBarController;
-    private ExpBarController expBarController;
-    private StatsHUDController statsHUDController;
+    private PlayerHUDController playerHUDController;
     private CooldownBarController cooldownBarController;
 
     protected override void Awake()
@@ -25,9 +23,7 @@ public class PlayerController : CharacterBase
         DifficultManager.Instance.SetTotalPlayerLife(Life);
         DifficultManager.Instance.SetPlayerMaxLife(MaxLife);
 
-        healthBarController = GetComponent<HealthBarController>(); 
-        expBarController = GetComponent<ExpBarController>();
-        statsHUDController = GetComponent<StatsHUDController>();
+        playerHUDController = FindFirstObjectByType<PlayerHUDController>();
         cooldownBarController = GetComponent<CooldownBarController>();
     }
 
@@ -105,7 +101,7 @@ public class PlayerController : CharacterBase
 
         Life += lifePoints;
         if (Life > MaxLife) Life = MaxLife;
-        healthBarController.UpdateHeartsHUD();
+        playerHUDController.UpdateHeartsHUD();
     }
 
     public void AddExp(float exp)
@@ -121,7 +117,7 @@ public class PlayerController : CharacterBase
             currentExperience = 0;
         }
 
-        expBarController.UpdateExpBarHUD();
+        playerHUDController.UpdateExpBarHUD();
     }
 
     public float GetCurrentExp()
@@ -157,9 +153,9 @@ public class PlayerController : CharacterBase
                 SoundManager.Instance.PlaySound("Level_Up");
             }
 
-            healthBarController.UpdateHeartsHUD();
-            expBarController.UpdateExpBarHUD();
-            statsHUDController.UpdateStatsHUD();
+            playerHUDController.UpdateHeartsHUD();
+            playerHUDController.UpdateExpBarHUD();
+            playerHUDController.UpdateStatsHUD();
             cooldownBarController.UpdateHUD();
         }
     }
@@ -168,10 +164,12 @@ public class PlayerController : CharacterBase
     {
         //if(!SoundManager.Instance.IsClipPlaying("Player_Hurt"))
         SoundManager.Instance.PlaySound("Player_Hurt");
+        //playerHUDController.PlayAnimationHUD("Healthbar_Damage_Animation");
 
         base.ReciveDamage(damage);
         DifficultManager.Instance.SetTotalPlayerLife(Life);
-        healthBarController.UpdateHeartsHUD();
+        playerHUDController.UpdateHeartsHUD();
+        
     }
 
     protected override void Death()

@@ -195,11 +195,7 @@ GameObject:
   - component: {fileID: 3194067653391495545}
   - component: {fileID: 2464741246702999415}
   - component: {fileID: 2472868270435735239}
-  - component: {fileID: 5185363185309086866}
-  - component: {fileID: 5693303837337029239}
-  - component: {fileID: 8528335900076074761}
   - component: {fileID: 7406235563624609226}
-  - component: {fileID: 4254415863422790717}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -393,51 +389,6 @@ MonoBehaviour:
   maxExperiencie: 100
   currentLevel: 1
   maxLevel: 100
---- !u!114 &5185363185309086866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552590336122789749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c0f78e4acfe21a4594760304164796e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartsParent: {fileID: 0}
-  heartContainerPrefab: {fileID: 1000013667988280, guid: 677e3f20f0ab76a45bd59d5b73b0b446, type: 3}
---- !u!114 &5693303837337029239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552590336122789749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa8527cf78ea88b43aac113585603b07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressBar: {fileID: 0}
-  levelText: {fileID: 0}
---- !u!114 &8528335900076074761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552590336122789749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf58830bf8a5f0446932dd16d07dd753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageText: {fileID: 0}
-  speedMovementText: {fileID: 0}
-  projectileDamageText: {fileID: 0}
-  AttackDelayText: {fileID: 0}
-  HealthText: {fileID: 0}
 --- !u!114 &7406235563624609226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,31 +407,6 @@ MonoBehaviour:
   filledCompleted:
   - {fileID: 1858756032404320239}
   - {fileID: 8881458347342930334}
---- !u!114 &4254415863422790717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552590336122789749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2254c8a98a9d242906fbef38fddf68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  abilityStats:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerAbilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3409563032810462800
 GameObject:
   m_ObjectHideFlags: 0

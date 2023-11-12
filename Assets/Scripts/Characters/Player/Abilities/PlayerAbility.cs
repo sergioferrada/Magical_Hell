@@ -1,6 +1,25 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Xml.Serialization;
+
+[System.Serializable]
+public class SkillLevel
+{
+    public int level;
+    public float damageIncrease;
+    public float cooldownReduction;
+    public float objectScaleIncrease;
+    // Agrega otros stats según sea necesario
+
+    public SkillLevel(int level, float damageIncrease, float cooldownReduction, float objectScaleIncrease)
+    {
+        this.level = level;
+        this.damageIncrease = damageIncrease;
+        this.cooldownReduction = cooldownReduction;
+        this.objectScaleIncrease = objectScaleIncrease;
+    }
+}
 
 public class PlayerAbility : MonoBehaviour
 {
@@ -9,7 +28,7 @@ public class PlayerAbility : MonoBehaviour
     [SerializeField] public GameObject objectAttack;
     
     [SerializeField] public int actualLevel = 1, maxLevel = 10;
-    [SerializeField] public float actualExp = 0, targetExp = 15;
+    [SerializeField] public float actualExp = 0, targetExp = 0;
 
     // Tiempo entre activaciones de la habilidad.
     [SerializeField] public float damage = 0;
@@ -18,6 +37,7 @@ public class PlayerAbility : MonoBehaviour
 
     protected virtual void Start()
     {
+        ApplySkillLevel();
         // Llama al método Activate cada "cooldown" segundos y lo repite continuamente.
         StartCoroutine(RepeatActivation());
     }
@@ -27,7 +47,7 @@ public class PlayerAbility : MonoBehaviour
     public void AddExp()
     {
         actualExp++;
-        GetComponent<AbilitiesContainerController>().UpdateAbilitiesContainerHUD();
+        FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
         if (actualExp >= targetExp && actualLevel < maxLevel)
         { 
             LevelUp();
@@ -39,11 +59,13 @@ public class PlayerAbility : MonoBehaviour
         actualLevel++;
         actualExp = 0;
         targetExp += 10;
-        damage *= 1.1f;
-        cooldown *= 0.95f;
-        damageObjectScale += 0.5f;
+        ApplySkillLevel();
+        FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
+    }
 
-        GetComponent<AbilitiesContainerController>().UpdateAbilitiesContainerHUD();
+    protected virtual void ApplySkillLevel()
+    {
+
     }
 
     private IEnumerator RepeatActivation()

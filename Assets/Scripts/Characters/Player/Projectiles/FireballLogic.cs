@@ -7,7 +7,7 @@ public class FireballLogic : ProjectileBase
     public int timesItcanExplode;
     public int minFireballRange, maxFireballRange;
 
-    public int timesExploded;
+    private int timesExploded;
 
     protected override void Awake()
     {

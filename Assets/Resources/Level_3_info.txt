@@ -1,0 +1,5 @@
+Normal_Rooms:
+	Small: 4
+	Medium: 3
+	Large: 3
+Final_Rooms: 1

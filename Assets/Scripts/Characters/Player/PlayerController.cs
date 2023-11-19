@@ -6,11 +6,12 @@ using UnityEngine.EventSystems;
 public class PlayerController : CharacterBase
 {
     [Header("Combat Stats (Child)")]
-    [SerializeField] private Transform attackPoint;
     [SerializeField] private MeleePlayerAttack meleeAttack;
+    [SerializeField] public float ImpulseForce;
 
     [Header("Level Character Stats")]
-    [SerializeField] private float currentExperience, maxExperiencie;
+    [SerializeField] private float currentExperience;
+    [SerializeField] private float maxExperiencie;
     [SerializeField] private int currentLevel, maxLevel;
 
     private PlayerHUDController playerHUDController;
@@ -61,15 +62,19 @@ public class PlayerController : CharacterBase
         float moveY = Input.GetAxisRaw("Vertical");
 
         if (moveX != 0)
-            transform.localScale = new Vector2(moveX, transform.localScale.y);
-
+        {
+            // Verifica si moveX es negativo antes de cambiar la escala
+            if (moveX < 0)      transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            else if (moveX > 0) transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay)
         {
             SetState(State.ShortAttack);
-            meleeAttack.Activate();
-            meleeAttack.objectScale = 1;
             meleeAttack.damage = Damage;
+            meleeAttack.impulseForce = ImpulseForce;
+            meleeAttack.objectScale = AttackRange;
+            meleeAttack.Activate();
         }
 
         // Cambia los estados en función del movimiento o ataque
@@ -141,15 +146,23 @@ public class PlayerController : CharacterBase
         {
             currentLevel++;
             MaxLife += 1;
-            Damage += 0.5f;
-            MovementSpeed += 0.25f;
-            AttackDelay -= 0.15f;
+            Damage += .5f;
+            MovementSpeed += .15f;
+            ImpulseForce += .25f;
+            AttackRange += .05f;
+
+            if(AttackDelay > .5)
+                AttackDelay -= 0.15f;
+
             maxExperiencie += 100;
+
+
+            RecoverLife(1);
 
             if (PopUpDamagePrefab != null)
             {
                 var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
-                aux.GetComponent<PopUpController>().SetText("Level Up");
+                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up");
                 SoundManager.Instance.PlaySound("Level_Up");
             }
 
@@ -183,14 +196,6 @@ public class PlayerController : CharacterBase
         passedTime = 0;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Cuando colisione con un objeto en el layer de "Enemies"
@@ -198,6 +203,20 @@ public class PlayerController : CharacterBase
         {
             ReciveDamage(collision.gameObject.GetComponent<Enemy>().Damage);
         }
+
+        if (collision.gameObject.layer == 10)
+        {
+            ReciveDamage(collision.gameObject.GetComponent<ProjectileBase>().damage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ////Cuando colisione con un objeto en el layer de "Enemies"
+        //if (collision.gameObject.layer == 7)
+        //{
+        //    ReciveDamage(collision.gameObject.GetComponent<Enemy>().Damage);
+        //}
 
         if (collision.gameObject.layer == 10)
         {

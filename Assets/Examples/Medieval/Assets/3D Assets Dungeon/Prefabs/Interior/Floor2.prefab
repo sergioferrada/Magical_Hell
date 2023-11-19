@@ -31,7 +31,7 @@ Transform:
   - {fileID: 4506225094342622697}
   - {fileID: 4536056889482231912}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2762750322142381045
 PrefabInstance:
@@ -130,6 +130,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: aa189eafed3391244a83e70c2d5499f7, type: 3}
       propertyPath: m_Name
       value: fi_vil_forge_scrap10 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aa189eafed3391244a83e70c2d5499f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa189eafed3391244a83e70c2d5499f7, type: 3}
       propertyPath: m_RootOrder

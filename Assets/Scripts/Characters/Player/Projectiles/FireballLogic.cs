@@ -28,7 +28,7 @@ public class FireballLogic : ProjectileBase
             for (int i = 0; i < Random.Range(minFireballRange, maxFireballRange); i++)
             {
                 GameObject projectile = Instantiate(gameObject, transform.position, Quaternion.Euler(direction));
-                var fireballScript = projectile.gameObject.GetComponent<FireballLogic>();
+                var fireballScript = projectile.GetComponent<FireballLogic>();
 
                 fireballScript.timesExploded += 1;
                 fireballScript.damage = damage * .5f;
@@ -50,13 +50,28 @@ public class FireballLogic : ProjectileBase
                    
         }
 
-        animator.Play("Fireball_Explosion");
+        //DestroyProjectile();
     }
 
-    private void Explote()
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
+        //Cuando colisione con un objeto en el layer de "Enemies"
+        if (collision.gameObject.layer == 7)
+        {
+            //Si el objeto colisonado tiene menos o la misma cantidad de vida que el daño
+            if (collision.gameObject.GetComponent<Enemy>().Life <= damage)
+                ExploteInMore();
+
+            DestroyProjectile();
+        }
+    }
+
+    protected override void DestroyProjectile()
+    {
+        //GetComponent<CircleCollider2D>().enabled = false;
+        animator.Play("Fireball_Explosion");
         rb2d.velocity = Vector2.zero;
-        GetComponent<CircleCollider2D>().enabled = false;
         Destroy(gameObject, .4f);
     }
 }

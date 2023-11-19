@@ -8,6 +8,7 @@ public class ProjectileBase : DamageObjectBase
 
     public Vector2 direction;
     public float speed, lifeTime;
+    public int currentCollidedObjects, maxCollidableObjects;
 
     protected override void Awake()
     {
@@ -26,5 +27,23 @@ public class ProjectileBase : DamageObjectBase
     protected virtual void SetProyectileVelocity(float speed, Vector2 direction)
     {
         rb2d.velocity = speed * direction;
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        {
+            currentCollidedObjects++;
+
+            if(currentCollidedObjects >= maxCollidableObjects)
+                DestroyProjectile();
+        }
+    }
+
+    protected virtual void DestroyProjectile()
+    {
+
     }
 }

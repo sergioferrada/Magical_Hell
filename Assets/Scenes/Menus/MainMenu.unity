@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: numberRoomsInLevel
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: TransitionManagerPrefab
@@ -402,7 +402,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 350603593291008499, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_fontColor32.rgba
+      value: 4283595173
+      objectReference: {fileID: 0}
+    - target: {fileID: 359773999964145250, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_fontColor32.rgba
       value: 5405093
+      objectReference: {fileID: 0}
+    - target: {fileID: 489618303690748001, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 44.974
+      objectReference: {fileID: 0}
+    - target: {fileID: 489618303690748001, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -517.51294
       objectReference: {fileID: 0}
     - target: {fileID: 1336910897331111267, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -494,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377394800100949541, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 458389925
+      value: 5405093
       objectReference: {fileID: 0}
     - target: {fileID: 1395947312688396001, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_Enabled
@@ -622,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7456781565118105947, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 16777215
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7970240888994961221, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: sceneName

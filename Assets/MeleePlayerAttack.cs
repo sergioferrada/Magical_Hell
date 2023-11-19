@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MeleePlayerAttack : StationaryDamageObject
 {
-    public float impulseForce = 25;
+    public float impulseForce;
 
     public void Activate()
     {
+        transform.localScale = (Vector2.one * objectScale);
         DifficultManager.Instance.AddTotalAttacks();
         SoundManager.Instance.PlaySound("Melee_Deep_Whoosh_Sound", .7f);
         animator.Play("Attack_Animation");

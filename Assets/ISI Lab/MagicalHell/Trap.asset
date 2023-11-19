@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fb3215f5e8c1242aa1598a18cd8a53, type: 3}
+  m_Name: Trap
+  m_EditorClassIdentifier: 
+  isPreset: 0
+  type: 2
+  color: {r: 1, g: 0.7534226, b: 0, a: 0}
+  icon: {fileID: 2800000, guid: 16a716e143b08f84b80e84df098084d2, type: 3}
+  childsBundles: []
+  assets:
+  - obj: {fileID: 9071797004794727569, guid: 989f9552311433a47bf8eacb7f78cc16, type: 3}
+    probability: 1
+  characteristics:
+  - rid: 997974174050287648
+  positioning: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 997974174050287648
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Traps
+        value: {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}

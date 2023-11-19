@@ -4775,6 +4775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Bricks
       objectReference: {fileID: 0}
+    - target: {fileID: 8246553601687682373, guid: fd8abdffaeeb4214bb10d5f90c11a0ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10334,19 +10338,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9195312
+      value: 0.4396381
       objectReference: {fileID: 0}
     - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.375
+      value: 0.63364124
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46083
       objectReference: {fileID: 0}
     - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5299
+      value: -4.02
       objectReference: {fileID: 0}
     - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3451
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 6739468977348938849, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10382,7 +10390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966889494570105883, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_Name
-      value: CameraBounds
+      value: EnemyLimits
       objectReference: {fileID: 0}
     - target: {fileID: 7152700173254914449, guid: 2d6378c6789c67d47bcc64bd60b7134f, type: 3}
       propertyPath: m_Enabled

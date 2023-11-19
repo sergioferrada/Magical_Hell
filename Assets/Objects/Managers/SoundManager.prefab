@@ -33,7 +33,7 @@ Transform:
   - {fileID: 8132680935459007357}
   - {fileID: 7461108208851648269}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8480038151114019506
 MonoBehaviour:
@@ -82,6 +82,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7f35af4a68807cc4f8a28d2a7d107754, type: 3}
   - {fileID: 8300000, guid: b552e1d6ba52a4746aba29c8974991bc, type: 3}
   - {fileID: 8300000, guid: a71ec491808ac234ba50c5cb4ea63385, type: 3}
+  - {fileID: 8300000, guid: 772c2b90c77456643913a30b6fec0c7f, type: 3}
+  - {fileID: 8300000, guid: 35685c328c3f39742b9fe0a73e2b7233, type: 3}
   guiEffectList:
   - {fileID: 8300000, guid: f731b677b8485c940b31b5b1786ec2d4, type: 3}
   - {fileID: 8300000, guid: 79a3126d9231c234a95002dd3e53f992, type: 3}

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fb3215f5e8c1242aa1598a18cd8a53, type: 3}
+  m_Name: Bloody_Decoration
+  m_EditorClassIdentifier: 
+  isPreset: 0
+  type: 2
+  color: {r: 0.754717, g: 0.0073901545, b: 0, a: 0}
+  icon: {fileID: 2800000, guid: caec24cd544db6b438fef52afdcc9ca7, type: 3}
+  childsBundles: []
+  assets:
+  - obj: {fileID: 3340211634435293643, guid: 80f34c89684b0d54fa35b730c28680c4, type: 3}
+    probability: 1
+  characteristics:
+  - rid: 9195371203362554810
+  positioning: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 9195371203362554810
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Decoration_Bloody
+        value: {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}

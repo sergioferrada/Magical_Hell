@@ -31,10 +31,11 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected LayerMask attackableLayers;
     [SerializeField] protected float _baseDamage;       
     [SerializeField] protected float _baseAttackDelay;  
-    [SerializeField] protected float attackRange;
+    [SerializeField] protected float _attackRange;
 
     public float Damage { get { return _baseDamage; } protected set { _baseDamage = value; } }
     public float AttackDelay { get { return _baseAttackDelay; } protected set { _baseAttackDelay = value; } }
+    public float AttackRange { get { return _attackRange; } protected set { _attackRange = value; } }
     #endregion
 
     #region UI SETTINGS
@@ -74,7 +75,7 @@ public class CharacterBase : MonoBehaviour
         if (PopUpDamagePrefab != null)
         {
             var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
-            aux.GetComponent<PopUpController>().SetText(damage.ToString());
+            aux.GetComponent<PopUpController>().PopUpTextSprite(damage.ToString());
         }
 
         CheckDeath();

@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1059397629
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1862804495, guid: ff8aa126207f2c046b41b89896e55c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.04930821, y: -0.04021029}
@@ -189,7 +189,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   speed: 5
   lifeTime: 5
+  currentCollidedObjects: 0
+  maxCollidableObjects: 0
   timesItcanExplode: 3
   minFireballRange: 2
   maxFireballRange: 4
-  timesExploded: 0

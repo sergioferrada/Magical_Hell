@@ -15,11 +15,6 @@ public class AbilityItemBase : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    protected void Start()
-    {
-        
-    }
-
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

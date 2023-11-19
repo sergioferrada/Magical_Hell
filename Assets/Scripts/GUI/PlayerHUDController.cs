@@ -119,18 +119,20 @@ public class PlayerHUDController : MonoBehaviour
     #region STATS HUD
     [Header("Player Stats HUD")]
     [SerializeField] private TMP_Text damageText;
+    [SerializeField] private TMP_Text attackDelayText;
+    [SerializeField] private TMP_Text areaText;
+    [SerializeField] private TMP_Text forceImpulseText;
     [SerializeField] private TMP_Text speedMovementText;
-    [SerializeField] private TMP_Text projectileDamageText;
-    [SerializeField] private TMP_Text AttackDelayText;
-    [SerializeField] private TMP_Text HealthText;
+    [SerializeField] private TMP_Text healthText;
 
     public void UpdateStatsHUD()
     {
         damageText.text = player.Damage.ToString();
         speedMovementText.text = player.MovementSpeed.ToString();
-        projectileDamageText.text = player.Damage.ToString();
-        AttackDelayText.text = player.AttackDelay.ToString();
-        HealthText.text = player.MaxLife.ToString();
+        areaText.text = player.AttackRange.ToString();
+        forceImpulseText.text = player.ImpulseForce.ToString();
+        attackDelayText.text = player.AttackDelay.ToString();
+        healthText.text = player.MaxLife.ToString();
     }
     #endregion
 

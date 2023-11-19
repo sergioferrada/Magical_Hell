@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: MagicalHell
   m_EditorClassIdentifier: 
   mapElites:
-    xSampleCount: 5
-    ySampleCount: 5
+    xSampleCount: 3
+    ySampleCount: 3
     devest: 0.5
     xEvaluator:
-      rid: 997974174050287632
+      rid: 9195371215609135458
     yEvaluator:
-      rid: 997974174050287633
+      rid: 9195371195721580843
     optimizer:
       rid: 997974174050287626
     changedSample: 
@@ -35,7 +35,7 @@ MonoBehaviour:
         population:
           rid: 997974174050287627
         evaluator:
-          rid: 997974174050287631
+          rid: 9195371196574335787
         selection:
           rid: 997974174050287628
         termination:
@@ -56,51 +56,103 @@ MonoBehaviour:
       type: {class: GenerationNumberTermination, ns: ISILab.AI.Optimization.Terminations, asm: LBS}
     - rid: 997974174050287630
       type: {class: AreaCrossover, ns: , asm: LBS}
-    - rid: 997974174050287631
-      type: {class: TrapDistribution, ns: , asm: Assembly-CSharp}
-    - rid: 997974174050287632
-      type: {class: DecorationDistribution, ns: , asm: Assembly-CSharp}
-    - rid: 997974174050287633
-      type: {class: DecorationRatio, ns: , asm: Assembly-CSharp}
     - rid: 997974174050287635
       type: {class: RoulleteWheelMutation, ns: , asm: LBS}
       data:
         mutations:
-        - rid: 997974174050287644
-        - rid: 997974174050287647
-        - rid: 997974174050287645
+        - rid: 9195371202558820510
+        - rid: 9195371198183637252
+        - rid: 9195371207258014368
         - rid: 997974174050287646
-    - rid: 997974174050287637
-      type: {class: ExhaustiveAddGene, ns: , asm: LBS}
     - rid: 997974174050287639
       type: {class: ExhaustiveMoveGene, ns: , asm: LBS}
       data:
         range: 1
-    - rid: 997974174050287641
-      type: {class: ExhaustiveRemoveGene, ns: , asm: LBS}
     - rid: 997974174050287643
       type: {class: ExhaustiveSwapGene, ns: , asm: LBS}
-    - rid: 997974174050287644
-      type: {class: WeightedMutation, ns: , asm: LBS}
-      data:
-        mutation:
-          rid: 997974174050287637
-        weight: 0.2
-    - rid: 997974174050287645
-      type: {class: WeightedMutation, ns: , asm: LBS}
-      data:
-        mutation:
-          rid: 997974174050287641
-        weight: 0.2
     - rid: 997974174050287646
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
           rid: 997974174050287643
         weight: 0.8
-    - rid: 997974174050287647
+    - rid: 9195371195721580843
+      type: {class: TrapDistribution, ns: , asm: Assembly-CSharp}
+      data:
+        SpawnCharacteristic:
+          rid: 9195371196574335947
+        trapsCharacteristic:
+          rid: 9195371196574335948
+    - rid: 9195371196574335787
+      type: {class: TrapDistribution, ns: , asm: Assembly-CSharp}
+      data:
+        SpawnCharacteristic:
+          rid: 9195371196574335949
+        trapsCharacteristic:
+          rid: 9195371196574335950
+    - rid: 9195371196574335947
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Spawn
+        value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+    - rid: 9195371196574335948
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Traps
+        value: {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
+    - rid: 9195371196574335949
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Spawn
+        value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+    - rid: 9195371196574335950
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Traps
+        value: {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
+    - rid: 9195371198183637252
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
           rid: 997974174050287639
-        weight: 0.5
+        weight: 0.3
+    - rid: 9195371202558820509
+      type: {class: ExhaustiveAddGene, ns: , asm: LBS}
+    - rid: 9195371202558820510
+      type: {class: WeightedMutation, ns: , asm: LBS}
+      data:
+        mutation:
+          rid: 9195371202558820509
+        weight: 0.1
+    - rid: 9195371207258014367
+      type: {class: ExhaustiveRemoveGene, ns: , asm: LBS}
+    - rid: 9195371207258014368
+      type: {class: WeightedMutation, ns: , asm: LBS}
+      data:
+        mutation:
+          rid: 9195371207258014367
+        weight: 0.4
+    - rid: 9195371215609135458
+      type: {class: DecorationDistribution, ns: , asm: Assembly-CSharp}
+      data:
+        spawnCharacteristic:
+          rid: 9195371215609135459
+        decorationCharacteristic:
+          rid: 9195371215609135460
+        decoration2Characteristic:
+          rid: 9195371215609135461
+    - rid: 9195371215609135459
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Spawn
+        value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+    - rid: 9195371215609135460
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Decoration_Nature
+        value: {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}
+    - rid: 9195371215609135461
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Decoration_Bloody
+        value: {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}

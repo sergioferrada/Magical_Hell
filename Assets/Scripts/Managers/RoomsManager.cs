@@ -75,44 +75,47 @@ public class RoomsManager : MonoBehaviour
 
     private void Start()
     {
-        float PlayedRooms = GameManager.Instance.numberOfPlayedRooms;
-        float RoomsInLevel = GameManager.Instance.numberRoomsInLevel;
-
-        if (CompareRoomStates(RoomState.PreLoadRoom))
+        if (GameManager.Instance.CompareGameStates(GameManager.GameState.Playing))
         {
-            if (PlayedRooms == RoomsInLevel - 1)
-            {
-                SetNextRoomType(RoomType.Final_Rooms);
-            }
-            else
-            {
-                SetNextRoomType(RoomType.Normal_Rooms);
-            }
+            float PlayedRooms = GameManager.Instance.numberOfPlayedRooms;
+            float RoomsInLevel = GameManager.Instance.numberRoomsInLevel;
 
-            if(PlayedRooms == RoomsInLevel)
+            if (CompareRoomStates(RoomState.PreLoadRoom))
             {
-                SetActualRoomType(RoomType.Final_Rooms);
+                if (PlayedRooms == RoomsInLevel - 1)
+                {
+                    SetNextRoomType(RoomType.Final_Rooms);
+                }
+                else
+                {
+                    SetNextRoomType(RoomType.Normal_Rooms);
+                }
+
+                if (PlayedRooms == RoomsInLevel)
+                {
+                    SetActualRoomType(RoomType.Final_Rooms);
+                }
+                else
+                {
+                    SetActualRoomType(RoomType.Normal_Rooms);
+                }
+
+                SetRoomName(SceneManager.GetActiveScene().name);
+
+                if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
+                {
+                    DifficultManager.Instance.CalculateDynamicDifficult();
+                    DifficultManager.Instance.ResetTimePerRoom();
+                    DifficultManager.Instance.ResetTotalAttacks();
+                    DifficultManager.Instance.ResetSuccefulAttacks();
+                }
+
+                ActivateSpawnsInScene();
+                CalculateEnemiesInScene();
+                CalculateExpectedTimeRoom();
+
+                SetRoomState(RoomState.PlayingRoom);
             }
-            else
-            {
-                SetActualRoomType(RoomType.Normal_Rooms);
-            }
-
-            SetRoomName(SceneManager.GetActiveScene().name);
-
-            if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
-            {
-                DifficultManager.Instance.CalculateDynamicDifficult();
-                DifficultManager.Instance.ResetTimePerRoom();
-                DifficultManager.Instance.ResetTotalAttacks();
-                DifficultManager.Instance.ResetSuccefulAttacks();
-            }
-
-            ActivateSpawnsInScene();
-            CalculateEnemiesInScene();
-            CalculateExpectedTimeRoom();
-
-            SetRoomState(RoomState.PlayingRoom);
         }
     }
 
@@ -160,20 +163,63 @@ public class RoomsManager : MonoBehaviour
 
         Enemy[] enemiesInEscene = FindObjectsOfType<Enemy>();
         PlayerController player = FindObjectOfType<PlayerController>();
+        PlayerAbility[] playerAbilities = player.GetComponents<PlayerAbility>();
+
+        float totalPlayerDamage = 0;
+        float totalPlayerDelay = 0;
+
+        foreach(var ability in playerAbilities)
+        {
+            totalPlayerDamage += ability.damage;
+            totalPlayerDelay += ability.cooldown;
+        }
+
+        totalPlayerDamage += player.Damage;
+        totalPlayerDelay += player.AttackDelay;
 
         foreach (var enemy in enemiesInEscene)
         {
             if (enemy is BatController) extraTime = 3f;
             else if (enemy is SlimeController) extraTime = 5f;
-            else if(enemy is Enemy1Controller) extraTime = 3f;
+            else if (enemy is Enemy1Controller) extraTime = 3f;
             else if (enemy is Enemy2Controller) extraTime = 3f;
             else if (enemy is FireWormController) extraTime = 15f;
 
-            auxTimeExpected += (enemy.Life / player.Damage * player.AttackDelay) + extraTime;
+            auxTimeExpected += (enemy.Life / (totalPlayerDamage) * (totalPlayerDelay)) + extraTime;
         }
 
         DifficultManager.Instance.SetMaxExpectedTime(auxTimeExpected);
     }
+
+    //public static void CalculateExpectedTimeRoom()
+    //{
+    //    float auxTimeExpected = 0;
+    //    float extraTime = 0;
+
+    //    Enemy[] enemiesInEscene = FindObjectsOfType<Enemy>();
+    //    PlayerController player = FindObjectOfType<PlayerController>();
+    //    //PlayerAbility[] playerAbilities = player.GetComponents<PlayerAbility>();
+
+    //    //float playerTotalDamage = player.Damage;
+
+    //    //foreach(var ability in playerAbilities)
+    //    //{
+    //    //    playerTotalDamage += ability.damage;
+    //    //}
+
+    //    foreach (var enemy in enemiesInEscene)
+    //    {
+    //        if (enemy is BatController) extraTime = 3f;
+    //        else if (enemy is SlimeController) extraTime = 5f;
+    //        else if (enemy is Enemy1Controller) extraTime = 3f;
+    //        else if (enemy is Enemy2Controller) extraTime = 3f;
+    //        else if (enemy is FireWormController) extraTime = 15f;
+
+    //        auxTimeExpected += (enemy.Life / player.Damage * player.AttackDelay) + extraTime;
+    //    }
+
+    //    DifficultManager.Instance.SetMaxExpectedTime(auxTimeExpected);
+    //}
 
     private void ActivateSpawnsInScene()
     {

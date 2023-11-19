@@ -16,10 +16,10 @@ public class MainCameraController : MonoBehaviour
 
     public void Start()
     {
-        cameraBound = GameObject.FindGameObjectWithTag("CameraBounds");
+        //cameraBound = GameObject.FindGameObjectWithTag("CameraBounds");
 
-        if (cinemachineConfiner.m_BoundingShape2D == null)
-            cinemachineConfiner.m_BoundingShape2D = cameraBound.GetComponent<Collider2D>();
+        //if (cinemachineConfiner.m_BoundingShape2D == null)
+        //    cinemachineConfiner.m_BoundingShape2D = cameraBound.GetComponent<Collider2D>();
     }
 
     private void OnEnable()

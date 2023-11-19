@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CooldownBarController : MonoBehaviour
 {
     private float currentTime, totalTime;
-    public Image[] cooldownBars;
-    public Image[] filledCompleted;
+    public Image cooldownBars;
+    public Image filledCompleted;
 
     private PlayerController playerController;
 
@@ -21,22 +21,18 @@ public class CooldownBarController : MonoBehaviour
         currentTime = playerController.passedTime;
         totalTime = playerController.AttackDelay;
 
-        cooldownBars[0].fillAmount = currentTime / totalTime;
-        cooldownBars[1].fillAmount = currentTime / totalTime;
+        cooldownBars.fillAmount = currentTime / totalTime;
 
-        if (cooldownBars[0].fillAmount >= 1 && cooldownBars[1].fillAmount >= 1)
+        if (cooldownBars.fillAmount >= 1)
         {
-            filledCompleted[0].enabled = true;
-            filledCompleted[1].enabled = true;
-            cooldownBars[0].enabled = false;
-            cooldownBars[1].enabled = false;
+            SoundManager.Instance.PlaySound("Meele_Attack_Enable_Sound", .5f);
+            filledCompleted.enabled = true;
+            cooldownBars.enabled = false;
         }
         else
         {
-            filledCompleted[0].enabled = false;
-            filledCompleted[1].enabled = false;
-            cooldownBars[0].enabled = true;
-            cooldownBars[1].enabled = true;
+            filledCompleted.enabled = false;
+            cooldownBars.enabled = true;
         }
     }
 

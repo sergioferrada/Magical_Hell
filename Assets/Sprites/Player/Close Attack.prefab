@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6580111115007201837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5657, y: 1.5657, z: 1.5657}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 989712940284734645}
@@ -120,7 +120,7 @@ Transform:
   - {fileID: 3531639326658028760}
   - {fileID: 441235412751992583}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &792832228854923131
 CircleCollider2D:
@@ -193,6 +193,8 @@ MonoBehaviour:
   damage: 1
   objectScale: 1
   parentAbility: {fileID: 0}
+  impulseForce: 25
+  areaAttack: 1
 --- !u!1 &6866001405837849995
 GameObject:
   m_ObjectHideFlags: 0

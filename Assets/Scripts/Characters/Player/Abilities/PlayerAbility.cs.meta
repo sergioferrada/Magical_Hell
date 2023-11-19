@@ -3,7 +3,10 @@ guid: e81c99215b1e7434d99ba7c73a332c4e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - IconSprite: {instanceID: 0}
+  - objectAttack: {instanceID: 0}
+  - PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

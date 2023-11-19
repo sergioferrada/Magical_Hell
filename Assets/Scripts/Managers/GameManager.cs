@@ -5,6 +5,8 @@ using EasyTransition;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject TransitionManagerPrefab;
+    public string versionNumber;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -24,6 +26,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        int firstGroupNumber = Random.Range(100, 300);
+        int secondGroupNumber = Random.Range(100, 300);
+
+        versionNumber = firstGroupNumber.ToString() + "1" + secondGroupNumber.ToString();
+
         if (Instance == null)
         {
             Instance = this;
@@ -125,5 +132,17 @@ public class GameManager : MonoBehaviour
         //SoundManager.Instance.PlayGUISound("Transition_Sound");
         TransitionManager.Instance().Transition(SceneName, transition, 0.0f);  
         //SceneManager.LoadScene(SceneName);
+    }
+
+    // Función para pausar el tiempo
+    public void PauseTime()
+    {
+        Time.timeScale = 0f;
+    }
+
+    // Función para reanudar el tiempo
+    public void ResumeTime()
+    {
+        Time.timeScale = 1f;
     }
 }

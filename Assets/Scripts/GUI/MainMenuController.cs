@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static GUIManager;
 
 public class MainMenuController : GUIBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        SetCurrentCanvas(gameObject);
-    }
+    public TMP_Text versionText;
 
-                                                                                                                                                                                             
+    private void Awake()
+    {
+        versionText.SetText(" Version " + GameManager.Instance.versionNumber);
+    }                                                                                                                                                                                             
 }

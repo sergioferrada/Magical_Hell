@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38abe91ba347614eb04c1d90b150ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
   IconSprite: {fileID: -1862804495, guid: ff8aa126207f2c046b41b89896e55c03, type: 3}
   objectAttack: {fileID: 1361801719277694276, guid: c101bb2fe09c506489400973b03b11b4, type: 3}
   actualLevel: 1
@@ -107,64 +106,15 @@ MonoBehaviour:
   damage: 0
   cooldown: 0
   damageObjectScale: 0
-  SkillLevels:
-  - level: 1
-    damageIncrease: 1.5
-    cooldownReduction: 1.75
-    objectScaleIncrease: 1
-    timesItCanExplodeIncrease: 3
-    newVariable2: 0
-  - level: 2
-    damageIncrease: 2
-    cooldownReduction: 1.75
-    objectScaleIncrease: 1
-    timesItCanExplodeIncrease: 3
-    newVariable2: 0
-  - level: 3
-    damageIncrease: 3
-    cooldownReduction: 1.5
-    objectScaleIncrease: 1
-    timesItCanExplodeIncrease: 3
-    newVariable2: 0
-  - level: 4
-    damageIncrease: 4.5
-    cooldownReduction: 1.5
-    objectScaleIncrease: 1.5
-    timesItCanExplodeIncrease: 4
-    newVariable2: 0
-  - level: 5
-    damageIncrease: 6
-    cooldownReduction: 1.35
-    objectScaleIncrease: 1.5
-    timesItCanExplodeIncrease: 4
-    newVariable2: 0
-  - level: 6
-    damageIncrease: 7.5
-    cooldownReduction: 1.35
-    objectScaleIncrease: 1.65
-    timesItCanExplodeIncrease: 5
-    newVariable2: 0
-  - level: 7
-    damageIncrease: 8.5
-    cooldownReduction: 1.25
-    objectScaleIncrease: 1.65
-    timesItCanExplodeIncrease: 5
-    newVariable2: 0
-  - level: 8
-    damageIncrease: 10
-    cooldownReduction: 1
-    objectScaleIncrease: 1.65
-    timesItCanExplodeIncrease: 5
-    newVariable2: 0
-  - level: 9
-    damageIncrease: 10
-    cooldownReduction: 0.85
-    objectScaleIncrease: 1.85
-    timesItCanExplodeIncrease: 5
-    newVariable2: 0
-  - level: 10
-    damageIncrease: 12
-    cooldownReduction: 0.75
-    objectScaleIncrease: 2
-    timesItCanExplodeIncrease: 6
-    newVariable2: 0
+  PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
+  timesItCanExplode: 0
+  minRangeIncrease: 0
+  maxRangeIncrease: 0
+  SkillLevelsStats:
+  - level: 0
+    damageIncrease: 0
+    cooldownReduction: 0
+    objectScaleIncrease: 0
+    timesItCanExplodeIncrease: 0
+    minRangeIncrease: 0
+    maxRangeIncrease: 0

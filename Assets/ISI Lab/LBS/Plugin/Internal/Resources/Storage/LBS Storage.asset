@@ -46,6 +46,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1c34483075e8bb54d8aa70274f2eddfe, type: 2}
     - {fileID: 11400000, guid: 8d03f9563098ae048a81b709940e56c0, type: 2}
     - {fileID: 11400000, guid: b354587b73f945f4188c7dc7026de4ef, type: 2}
+    - {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+    - {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
+    - {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}
+    - {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}
   - type: LBS.Bundles.Bundle
     items:
     - {fileID: 11400000, guid: c0e28f3a70727474a81b860669e32870, type: 2}
@@ -89,6 +93,25 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 42341a3540ac70c4facf9af69443846f, type: 2}
     - {fileID: 11400000, guid: 7b90f4d0252201846bd91e420b463ff8, type: 2}
     - {fileID: 11400000, guid: 61643f41efe2f834398a0c7b7e0dbaba, type: 2}
+    - {fileID: 11400000, guid: 1dc59e53f76b9ee44b6244b094d74744, type: 2}
+    - {fileID: 11400000, guid: c41460928275c73438d380b7872c5074, type: 2}
+    - {fileID: 11400000, guid: b11160223520f4a4baed03a0bd40cd7b, type: 2}
+    - {fileID: 11400000, guid: ce39f4ba7b7fda3408d32aa7abc97a1c, type: 2}
+    - {fileID: 11400000, guid: b800290e6f123184a94c9efc965cecca, type: 2}
+    - {fileID: 11400000, guid: 5745d3a3ecbb02e46a29992356e3803f, type: 2}
+    - {fileID: 11400000, guid: 3cf6a54fa6285b54b896f2845e678e07, type: 2}
+    - {fileID: 11400000, guid: 7fc2cb5647e2c7b4abdb9997ba52c0ec, type: 2}
+    - {fileID: 11400000, guid: ed903165f67624c479c6e8d3e2e39663, type: 2}
+    - {fileID: 11400000, guid: a8cc3b88fe64634409ed72d10966b936, type: 2}
+    - {fileID: 11400000, guid: 22cc1229f7e86d940b61e1604fc5c55d, type: 2}
+    - {fileID: 11400000, guid: c07a56b913ad4204cb50b11e081200ca, type: 2}
+    - {fileID: 11400000, guid: 59baa91901228f04eae217a02a676a89, type: 2}
+    - {fileID: 11400000, guid: df8987ec1dd84c8428387b36ae63f70e, type: 2}
+    - {fileID: 11400000, guid: b382545b5629c364cae6658e315f466e, type: 2}
+    - {fileID: 11400000, guid: 90ed0b9f9862cfb4297ed9612038c304, type: 2}
+    - {fileID: 11400000, guid: d76847603b3b69c4eaf78e98597727f4, type: 2}
+    - {fileID: 11400000, guid: bdad3e0912701b74ea7b3c4fc03974e4, type: 2}
+    - {fileID: 11400000, guid: 681b152735746b34ebe660974838f587, type: 2}
   - type: LBSIdentifierBundle
     items:
     - {fileID: 11400000, guid: 9677f21f7b05c1644aa4ae3ec270eea4, type: 2}
@@ -261,6 +284,7 @@ MonoBehaviour:
   - type: MAPElitesPreset
     items:
     - {fileID: 11400000, guid: b90bb27f581fe354799c9c3b84f44eac, type: 2}
+    - {fileID: 11400000, guid: 6f517b4ac3f52a44ba9c3ec69cbad0dd, type: 2}
   - type: TMPro.TMP_FontAsset
     items:
     - {fileID: 11400000, guid: 14a874899abedc94288fd6d7a7635981, type: 2}

@@ -4,36 +4,39 @@ using UnityEngine.UI;
 using System.Xml.Serialization;
 
 [System.Serializable]
-public class SkillLevel
+public class SkillLevelStatistics
 {
-    public int level;
-    public float damageIncrease;
-    public float cooldownReduction;
-    public float objectScaleIncrease;
-    // Agrega otros stats según sea necesario
+    public float damage;
+    public float cooldown;
+    public float objectScale;
 
-    public SkillLevel(int level, float damageIncrease, float cooldownReduction, float objectScaleIncrease)
+    public SkillLevelStatistics(float damage, float cooldown, float objectScale)
     {
-        this.level = level;
-        this.damageIncrease = damageIncrease;
-        this.cooldownReduction = cooldownReduction;
-        this.objectScaleIncrease = objectScaleIncrease;
+        this.damage = damage;
+        this.cooldown = cooldown;
+        this.objectScale = objectScale;
     }
 }
 
 public class PlayerAbility : MonoBehaviour
 {
-    [SerializeField] private Image Icon;
-    [SerializeField] public Sprite IconSprite;
-    [SerializeField] public GameObject objectAttack;
-    
-    [SerializeField] public int actualLevel = 1, maxLevel = 10;
-    [SerializeField] public float actualExp = 0, targetExp = 0;
+    public Sprite IconSprite;
+    public GameObject objectAttack;
 
-    // Tiempo entre activaciones de la habilidad.
-    [SerializeField] public float damage = 0;
-    [SerializeField] public float cooldown = 0;
-    [SerializeField] public float damageObjectScale = 1;
+    [Header("Ability Level Stats")]
+    public int actualLevel = 1;
+    public int maxLevel = 10;
+    public float actualExp = 0, targetExp = 0;
+
+    [Header("Ability Stats")]
+    public float damage = 0;
+    public float cooldown = 0;
+    public float damageObjectScale = 1;
+
+    #region UI SETTINGS
+    [Header("UI Settings")]
+    public GameObject PopUpDamagePrefab;
+    #endregion
 
     protected virtual void Start()
     {
@@ -41,8 +44,6 @@ public class PlayerAbility : MonoBehaviour
         // Llama al método Activate cada "cooldown" segundos y lo repite continuamente.
         StartCoroutine(RepeatActivation());
     }
-
-    public Image getIcon() { return Icon; }
 
     public void AddExp()
     {
@@ -56,17 +57,24 @@ public class PlayerAbility : MonoBehaviour
 
     public virtual void LevelUp()
     {
-        actualLevel++;
-        actualExp = 0;
-        targetExp += 10;
-        ApplySkillLevel();
-        FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
+        if (actualLevel < maxLevel)
+        {
+            actualLevel++;
+            actualExp = 0;
+            targetExp += 10;
+            ApplySkillLevel();
+            FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
+
+            if (PopUpDamagePrefab != null)
+            {
+                var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", IconSprite);
+                SoundManager.Instance.PlaySound("Level_Up");
+            }
+        }
     }
 
-    protected virtual void ApplySkillLevel()
-    {
-
-    }
+    protected virtual void ApplySkillLevel(){}
 
     private IEnumerator RepeatActivation()
     {
@@ -89,8 +97,11 @@ public class PlayerAbility : MonoBehaviour
     {
         if (!IsOnCooldown)
         {
-            StartCoroutine(ActivateAbility());
-            StartCoroutine(Cooldown());
+            if (RoomsManager.Instance.actualRoomState == RoomsManager.RoomState.PlayingRoom)
+            {
+                StartCoroutine(ActivateAbility());
+                StartCoroutine(Cooldown());
+            }
         }
     }
 
@@ -104,5 +115,24 @@ public class PlayerAbility : MonoBehaviour
     public bool IsOnCooldown
     {
         get { return IsInvoking("Cooldown"); }
+    }
+
+    protected Enemy FindNearestEnemy()
+    {
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        float minDistance = float.MaxValue;
+        Enemy nearestEnemy = null;
+
+        foreach (var enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearestEnemy = enemy;
+            }
+        }
+
+        return nearestEnemy;
     }
 }

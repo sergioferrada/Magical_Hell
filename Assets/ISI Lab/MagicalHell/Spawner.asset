@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPreset: 0
   type: 2
-  color: {r: 0, g: 0, b: 0, a: 0}
-  icon: {fileID: 0}
+  color: {r: 1, g: 0, b: 0, a: 0}
+  icon: {fileID: 2800000, guid: 80d313a2485a63f4f9182655efdfa899, type: 3}
   childsBundles: []
   assets:
   - obj: {fileID: 5801812513979993744, guid: 917670c7ac14cb941a7c1d1098f0caa1, type: 3}
-    probability: 0
+    probability: 1
   characteristics:
-  - rid: 997974174050287648
+  - rid: 9195371196574335951
   positioning: 0
   references:
     version: 2
     RefIds:
-    - rid: 997974174050287648
+    - rid: 9195371196574335951
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
-        label: 
+        label: Spawn
         value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}

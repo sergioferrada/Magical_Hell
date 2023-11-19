@@ -19,7 +19,7 @@ public class DifficultManager : MonoBehaviour
 
     public DifficultyLevel actualDifficultyLevel;
 
-    private float dynamicDifficultValue = 2f;
+    private float dynamicDifficultValue = 1f;
     private int consecutiveDifficultyIncreaseCount = 0;
     private int consecutiveDifficultyDecreaseCount = 0;
 

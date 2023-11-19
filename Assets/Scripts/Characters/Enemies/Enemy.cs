@@ -41,6 +41,8 @@ public class Enemy : CharacterBase
     [SerializeField] private GameObject expItemPrefab;
     [SerializeField] private float expAmount;
 
+    private Vector2 initialPos;
+
     protected override void Awake()
     {
         base.Awake();
@@ -60,6 +62,7 @@ public class Enemy : CharacterBase
     protected override void Start()
     {
         base.Start();
+        initialPos = transform.position;
     }
 
     protected virtual void Update()
@@ -80,10 +83,11 @@ public class Enemy : CharacterBase
 
     private void SetLookDirection()
     {
-        if (direction.x >= 0)
-            transform.localScale = new Vector2(1, transform.localScale.y);
-        else if (direction.x < 0)
-            transform.localScale = new Vector2(-1, transform.localScale.y);
+        if (direction.x != 0)
+        {
+            if (direction.x < 0) transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            else if (direction.x > 0) transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+        }
     }
 
     protected override void CheckDeath()
@@ -102,7 +106,7 @@ public class Enemy : CharacterBase
 
     protected virtual void ShortRangeAttack()
     {
-        Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(transform.position, attackRange, attackableLayers);
+        Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(transform.position, AttackRange, attackableLayers);
         foreach (Collider2D character in hitCharacters)
         {
             character.GetComponent<PlayerController>().ReciveDamage(Damage);
@@ -170,7 +174,7 @@ public class Enemy : CharacterBase
         if (transform == null)
             return;
 
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -183,5 +187,8 @@ public class Enemy : CharacterBase
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("P.Proyectiles"))
             ReciveDamage(collision.gameObject.GetComponent<DamageObjectBase>().damage);
+
+        if (collision.CompareTag("CameraBounds"))
+            transform.position = initialPos;
     }
 }

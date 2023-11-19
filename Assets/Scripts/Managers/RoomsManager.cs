@@ -191,36 +191,6 @@ public class RoomsManager : MonoBehaviour
         DifficultManager.Instance.SetMaxExpectedTime(auxTimeExpected);
     }
 
-    //public static void CalculateExpectedTimeRoom()
-    //{
-    //    float auxTimeExpected = 0;
-    //    float extraTime = 0;
-
-    //    Enemy[] enemiesInEscene = FindObjectsOfType<Enemy>();
-    //    PlayerController player = FindObjectOfType<PlayerController>();
-    //    //PlayerAbility[] playerAbilities = player.GetComponents<PlayerAbility>();
-
-    //    //float playerTotalDamage = player.Damage;
-
-    //    //foreach(var ability in playerAbilities)
-    //    //{
-    //    //    playerTotalDamage += ability.damage;
-    //    //}
-
-    //    foreach (var enemy in enemiesInEscene)
-    //    {
-    //        if (enemy is BatController) extraTime = 3f;
-    //        else if (enemy is SlimeController) extraTime = 5f;
-    //        else if (enemy is Enemy1Controller) extraTime = 3f;
-    //        else if (enemy is Enemy2Controller) extraTime = 3f;
-    //        else if (enemy is FireWormController) extraTime = 15f;
-
-    //        auxTimeExpected += (enemy.Life / player.Damage * player.AttackDelay) + extraTime;
-    //    }
-
-    //    DifficultManager.Instance.SetMaxExpectedTime(auxTimeExpected);
-    //}
-
     private void ActivateSpawnsInScene()
     {
         //Buscar spawn del jugador

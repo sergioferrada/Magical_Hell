@@ -26,13 +26,7 @@ public class DecorationDistribution : IRangedEvaluator
 
     public float Evaluate(IOptimizable evaluable)
     {
-        var chrom = evaluable as BundleTilemapChromosome;
-
-        if (chrom == null)
-        {
-            throw new Exception("Wrong Chromosome Type");
-        }
-
+        var chrom = evaluable as BundleTilemapChromosome ?? throw new Exception("Wrong Chromosome Type");
         float fitness = 0;
 
         var genes = chrom.GetGenes().Cast<BundleData>().ToList();
@@ -50,51 +44,49 @@ public class DecorationDistribution : IRangedEvaluator
             }
         }
 
-        if (spawnersPos.Count == 0)
+        if (spawnersPos.Count < 1)
         {
-            Debug.LogWarning("Map is not suitable for the evaluation, spawners count: " + spawnersPos.Count() + " = 0");
+            Debug.LogWarning("Map is not suitable for the evaluation, spawners count: " + spawnersPos.Count + " = 0");
             return MaxValue;
         }
 
         float dist_1 = 2.0f;
-        float dist_2 = 5.0f;
+        float dist_2 = 4.5f;
         int flag = 0;
-
-        Debug.Log("Genes: " + genes.Count);
-        Debug.Log("Spawns: " + spawnersPos.Count);
 
         for (int i = 0; i < genes.Count; i++)
         {
-            //if (genes[i].Characteristics.Contains(decorationCharacteristic))
-            //    flag = 0;
-
-            if (genes[i].Characteristics.Contains(decoration2Characteristic))
-                flag = 0;
-
-            foreach (var spawn in spawnersPos)
+            if (genes[i] != null)
             {
-                //Calcular distancia
-                var dist = FlatDistance(i, spawn, chrom);
+                //Debug.Log(" Caracteristica Gen: " + genes[i].Characteristics.Contains(decorationCharacteristic));
+                if (genes[i].Characteristics.Contains(decorationCharacteristic) || genes[i].Characteristics.Contains(decoration2Characteristic))
+                    flag = 0;
 
-                //Comparar distancia con un minimo para aumentar el fitness
-                if (dist < dist_1)
+                foreach (var spawn in spawnersPos)
                 {
-                    flag = 1;
-                    break;
+                    //Calcular distancia
+                    var dist = FlatDistance(i, spawn, chrom);
+
+                    //Comparar distancia con un minimo para aumentar el fitness
+                    if (dist < dist_1)
+                    {
+                        flag = 1;
+                        break;
+                    }
+
+                    if (dist < dist_2)
+                    {
+                        flag = 2;
+                    }
                 }
-                
-                if (dist < dist_2)
-                {
-                    flag = 2;
-                } 
-            }
 
-            if      (flag == 0 && genes[i].Characteristics.Contains(decorationCharacteristic))  fitness += 0;
-            else if (flag == 1 && genes[i].Characteristics.Contains(decorationCharacteristic))  fitness += 1;
-            else if (flag == 2 && genes[i].Characteristics.Contains(decorationCharacteristic))  fitness += .5f;
-            else if (flag == 0 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness += 1;
-            else if (flag == 1 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness -= 1;
-            else if (flag == 2 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness -= .5f;
+                if      (flag == 0 && genes[i].Characteristics.Contains(decorationCharacteristic)) fitness--;
+                else if (flag == 1 && genes[i].Characteristics.Contains(decorationCharacteristic)) fitness++;
+                else if (flag == 2 && genes[i].Characteristics.Contains(decorationCharacteristic)) fitness += 0.5f;
+                else if (flag == 0 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness++;
+                else if (flag == 1 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness--;
+                else if (flag == 2 && genes[i].Characteristics.Contains(decoration2Characteristic)) fitness -= 0f;
+            }
         }
 
         return fitness / genes.Count;

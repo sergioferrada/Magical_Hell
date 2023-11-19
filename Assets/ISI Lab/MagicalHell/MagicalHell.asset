@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MagicalHell
   m_EditorClassIdentifier: 
   mapElites:
-    xSampleCount: 3
-    ySampleCount: 3
+    xSampleCount: 2
+    ySampleCount: 2
     devest: 0.5
     xEvaluator:
       rid: 9195371215609135458
@@ -35,7 +35,7 @@ MonoBehaviour:
         population:
           rid: 997974174050287627
         evaluator:
-          rid: 9195371196574335787
+          rid: 9195371217738007549
         selection:
           rid: 997974174050287628
         termination:
@@ -60,7 +60,7 @@ MonoBehaviour:
       type: {class: RoulleteWheelMutation, ns: , asm: LBS}
       data:
         mutations:
-        - rid: 9195371202558820510
+        - rid: 9195371217525932602
         - rid: 9195371198183637252
         - rid: 9195371207258014368
         - rid: 997974174050287646
@@ -83,13 +83,6 @@ MonoBehaviour:
           rid: 9195371196574335947
         trapsCharacteristic:
           rid: 9195371196574335948
-    - rid: 9195371196574335787
-      type: {class: TrapDistribution, ns: , asm: Assembly-CSharp}
-      data:
-        SpawnCharacteristic:
-          rid: 9195371196574335949
-        trapsCharacteristic:
-          rid: 9195371196574335950
     - rid: 9195371196574335947
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
@@ -100,30 +93,12 @@ MonoBehaviour:
       data:
         label: Traps
         value: {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
-    - rid: 9195371196574335949
-      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
-      data:
-        label: Spawn
-        value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
-    - rid: 9195371196574335950
-      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
-      data:
-        label: Traps
-        value: {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
     - rid: 9195371198183637252
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
           rid: 997974174050287639
         weight: 0.3
-    - rid: 9195371202558820509
-      type: {class: ExhaustiveAddGene, ns: , asm: LBS}
-    - rid: 9195371202558820510
-      type: {class: WeightedMutation, ns: , asm: LBS}
-      data:
-        mutation:
-          rid: 9195371202558820509
-        weight: 0.1
     - rid: 9195371207258014367
       type: {class: ExhaustiveRemoveGene, ns: , asm: LBS}
     - rid: 9195371207258014368
@@ -149,10 +124,42 @@ MonoBehaviour:
     - rid: 9195371215609135460
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
+        label: Decoration_Bloody
+        value: {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}
+    - rid: 9195371215609135461
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
         label: Decoration_Nature
         value: {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}
-    - rid: 9195371215609135461
+    - rid: 9195371217525932601
+      type: {class: ExhaustiveAddGene, ns: , asm: LBS}
+    - rid: 9195371217525932602
+      type: {class: WeightedMutation, ns: , asm: LBS}
+      data:
+        mutation:
+          rid: 9195371217525932601
+        weight: 0.3
+    - rid: 9195371217738007549
+      type: {class: DecorationDistribution, ns: , asm: Assembly-CSharp}
+      data:
+        spawnCharacteristic:
+          rid: 9195371217738007550
+        decorationCharacteristic:
+          rid: 9195371217738007551
+        decoration2Characteristic:
+          rid: 9195371217756356608
+    - rid: 9195371217738007550
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Spawn
+        value: {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+    - rid: 9195371217738007551
       type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
       data:
         label: Decoration_Bloody
         value: {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}
+    - rid: 9195371217756356608
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Decoration_Nature
+        value: {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}

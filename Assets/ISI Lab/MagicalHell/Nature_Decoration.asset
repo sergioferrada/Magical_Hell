@@ -19,7 +19,17 @@ MonoBehaviour:
   childsBundles: []
   assets:
   - obj: {fileID: 3340211634435293643, guid: 0c152106050138246975f7e00564accb, type: 3}
-    probability: 1
+    probability: 0.7
+  - obj: {fileID: 3340211634435293643, guid: ba38f0bd4eab24247b614ad757eb113e, type: 3}
+    probability: 0.5
+  - obj: {fileID: 3340211634435293643, guid: cbf9d18866abd29489af9102a49bda6a, type: 3}
+    probability: 0.2
+  - obj: {fileID: 3340211634435293643, guid: cc06b2c66e3905645a9521afadf3df8d, type: 3}
+    probability: 0.2
+  - obj: {fileID: 3340211634435293643, guid: 5ea6dd66ab84bdd4996a17b4d501d7f0, type: 3}
+    probability: 0.2
+  - obj: {fileID: 3340211634435293643, guid: d9368f1b190e4f540b28ad39c9d355a0, type: 3}
+    probability: 0.2
   characteristics:
   - rid: 9195371203362554810
   positioning: 0

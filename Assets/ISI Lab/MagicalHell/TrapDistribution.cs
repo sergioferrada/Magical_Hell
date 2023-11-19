@@ -23,13 +23,7 @@ public class TrapDistribution : IRangedEvaluator
 
     public float Evaluate(IOptimizable evaluable)
     {
-        var chrom = evaluable as BundleTilemapChromosome;
-
-        if (chrom == null)
-        {
-            throw new Exception("Wrong Chromosome Type");
-        }
-
+        var chrom = evaluable as BundleTilemapChromosome ?? throw new Exception("Wrong Chromosome Type");
         float fitness = 0;
 
         var genes = chrom.GetGenes().Cast<BundleData>().ToList();
@@ -52,9 +46,6 @@ public class TrapDistribution : IRangedEvaluator
                 }
             }
         }
-        Debug.Log("----Trap Distribution----");
-        Debug.Log("Spawns: " + spawnersPos.Count);
-        Debug.Log("Traps: " + spawnersPos.Count);
 
         if (spawnersPos.Count < 1)
         {
@@ -85,10 +76,10 @@ public class TrapDistribution : IRangedEvaluator
                 {
                     fitness++;
                 }
-                //else
-                //{
-                //    fitness--;
-                //}  
+                else
+                {
+                    fitness--;
+                }  
             }
         }
 

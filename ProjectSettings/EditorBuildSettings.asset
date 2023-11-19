@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Large/LVL1_NR_L_1.unity
     guid: 6bf3c9e130ef4914fa3a4c2996500a60
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Large/LVL1_NR_L_2.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Large/Easy/LVL1_NR_L_E_1.unity
     guid: 24e67c6c7a6a34545a96ab6d331edf64
   - enabled: 1
     path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Large/LVL1_NR_L_3.unity
@@ -36,28 +36,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Medium/LVL1_NR_M_2.unity
     guid: f298b313fe8a0464d8dc14480b588e4e
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Medium/LVL1_NR_M_3.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Medium/Easy/LVL1_NR_M_E_1.unity
     guid: 6115880abdf49b44aa779fd7541e93c0
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Medium/LVL1_NR_M_4.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Medium/Easy/LVL1_NR_M_E_2.unity
     guid: b01715724b0accd4cbe9861e30645a41
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_1.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/Easy/LVL1_NR_S_E_1.unity
     guid: 6d472423a2d0c0843a2db5a0adcf3a31
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_2.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/Easy/LVL1_NR_S_E_2.unity
     guid: a21f1be0eccb50d44969f4da6401dcba
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_3.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/Easy/LVL1_NR_S_E_3.unity
     guid: 3d741fdb1f1c35a428b6abe59bc909e1
   - enabled: 1
     path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_4.unity
     guid: 7d4b6ab537ddab94cb58f090520d2636
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_5.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_4.unity
     guid: f3bf3ccd8b567e047bf03ab04f801f54
   - enabled: 1
-    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/LVL1_NR_S_6.unity
+    path: Assets/Scenes/Levels/Level_1/Normal_Rooms/Small/Easy/LVL1_NR_S_E_4.unity
     guid: f30e02f358c891e448ad198f7338c811
   - enabled: 1
     path: Assets/Scenes/Levels/Level_1/Final_Rooms/LVL1_FR_1.unity

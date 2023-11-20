@@ -40,6 +40,6 @@ public class LevelInfoReader : MonoBehaviour
         }
 
         // Valor predeterminado si no se encuentra el archivo o el formato es incorrecto
-        return -1;
+        return 1;
     }
 }

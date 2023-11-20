@@ -26,6 +26,7 @@ MonoBehaviour:
   maskType: SchemaBehaviour
   blackList:
   - {fileID: 11400000, guid: 1fc2f774bb547bd42b6f7d6f363ae8da, type: 2}
+  - {fileID: 11400000, guid: 671888d159a08c9429abb8bad2f8e3e2, type: 2}
   references:
     version: 2
     RefIds:

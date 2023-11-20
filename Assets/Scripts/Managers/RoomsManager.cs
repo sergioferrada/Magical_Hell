@@ -272,13 +272,8 @@ public class RoomsManager : MonoBehaviour
 
     public string GetNextRoomName()
     {
-        string nextSceneName;
-
-        //Get the level and room data
-        string levelFolder = GameManager.Instance.actualGameLevel.ToString();
-        string roomType = nextRoomType.ToString();
-        string roomSize = GetRandomRoomSize();
-        int sceneObjectsLength = LevelInfoReader.GetRoomCount(levelFolder, roomType, roomSize);
+        string nextSceneName, levelFolder, roomType, roomSize, levelDifficulty;
+        int sceneObjectsLength;
 
         Dictionary<string, string> levelNameMappings = new()
         {
@@ -301,13 +296,32 @@ public class RoomsManager : MonoBehaviour
             { "Large", "L" }
         };
 
-        levelFolder = GetMappedValue(levelFolder, levelNameMappings);
-        roomType = GetMappedValue(roomType, typeRoomNameMappings);
-        roomSize = GetMappedValue(roomSize, sizeNameMappings);
+        Dictionary<string, string> difficultyMappings = new()
+        {
+            { "Very_Easy", "E" },
+            { "Easy", "E" },
+            { "Medium", "M" },
+            { "Hard", "H" },
+            { "Very_Hard", "H" }
+        };
 
         do
         {
-            nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, sceneObjectsLength);
+            //Get the level and room data
+            levelFolder = GameManager.Instance.actualGameLevel.ToString();
+            roomType = nextRoomType.ToString();
+            roomSize = GetRandomRoomSize();
+            levelDifficulty = DifficultManager.Instance.actualDifficultyLevel.ToString();
+            sceneObjectsLength = LevelInfoReader.GetRoomCount(levelFolder, roomType, roomSize);
+
+            //Mapping level and room data
+            levelFolder = GetMappedValue(levelFolder, levelNameMappings);
+            roomType = GetMappedValue(roomType, typeRoomNameMappings);
+            roomSize = GetMappedValue(roomSize, sizeNameMappings);
+            levelDifficulty = GetMappedValue(levelDifficulty, difficultyMappings);
+
+            //Generate Scene Name
+            nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, levelDifficulty, sceneObjectsLength);
         }
         while (IsDuplicateSceneName(nextSceneName));
        
@@ -341,11 +355,11 @@ public class RoomsManager : MonoBehaviour
         return originalValue;
     }
 
-    private string GenerateSceneName(string levelFolder, string roomType, string roomSize, int sceneObjectsLength)
+    private string GenerateSceneName(string levelFolder, string roomType, string roomSize, string levelDifficulty, int sceneObjectsLength)
     {
         if (nextRoomType == RoomType.Normal_Rooms)
         {
-            return $"{levelFolder}_{roomType}_{roomSize}_{Random.Range(1, sceneObjectsLength)}";
+            return $"{levelFolder}_{roomType}_{roomSize}_{levelDifficulty}_{Random.Range(1, sceneObjectsLength)}";
         }
         else if (nextRoomType == RoomType.Final_Rooms)
         {

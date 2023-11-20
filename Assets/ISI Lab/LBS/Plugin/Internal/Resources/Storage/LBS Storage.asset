@@ -50,6 +50,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bf29579318b37a34fbb7af4bb2630642, type: 2}
     - {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}
     - {fileID: 11400000, guid: 13dbc14da2795e44c817dcb9eb21f99c, type: 2}
+    - {fileID: 11400000, guid: 671888d159a08c9429abb8bad2f8e3e2, type: 2}
   - type: LBS.Bundles.Bundle
     items:
     - {fileID: 11400000, guid: c0e28f3a70727474a81b860669e32870, type: 2}
@@ -112,6 +113,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d76847603b3b69c4eaf78e98597727f4, type: 2}
     - {fileID: 11400000, guid: bdad3e0912701b74ea7b3c4fc03974e4, type: 2}
     - {fileID: 11400000, guid: 681b152735746b34ebe660974838f587, type: 2}
+    - {fileID: 11400000, guid: 4bd328fe0b729d74dafbfff59bcafee1, type: 2}
   - type: LBSIdentifierBundle
     items:
     - {fileID: 11400000, guid: 9677f21f7b05c1644aa4ae3ec270eea4, type: 2}

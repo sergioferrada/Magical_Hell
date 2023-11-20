@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fb3215f5e8c1242aa1598a18cd8a53, type: 3}
+  m_Name: Player Spawn
+  m_EditorClassIdentifier: 
+  isPreset: 0
+  type: 2
+  color: {r: 0, g: 0, b: 0, a: 0}
+  icon: {fileID: 2800000, guid: 7b42df1f43a18a44f84e4ee7bd456482, type: 3}
+  childsBundles: []
+  assets:
+  - obj: {fileID: 5996164541874962507, guid: ee7459b08f1077c4fb3d71d131e2a25f, type: 3}
+    probability: 1
+  characteristics:
+  - rid: 9195371226893647872
+  positioning: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 9195371226893647872
+      type: {class: LBSTagsCharacteristic, ns: , asm: LBS}
+      data:
+        label: Player_Spawn
+        value: {fileID: 11400000, guid: 671888d159a08c9429abb8bad2f8e3e2, type: 2}

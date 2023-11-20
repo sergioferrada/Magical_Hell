@@ -19,7 +19,7 @@ MonoBehaviour:
   childsBundles: []
   assets:
   - obj: {fileID: 3340211634435293643, guid: 0c152106050138246975f7e00564accb, type: 3}
-    probability: 0.7
+    probability: 1
   - obj: {fileID: 3340211634435293643, guid: ba38f0bd4eab24247b614ad757eb113e, type: 3}
     probability: 0.5
   - obj: {fileID: 3340211634435293643, guid: cbf9d18866abd29489af9102a49bda6a, type: 3}

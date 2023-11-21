@@ -114,6 +114,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bdad3e0912701b74ea7b3c4fc03974e4, type: 2}
     - {fileID: 11400000, guid: 681b152735746b34ebe660974838f587, type: 2}
     - {fileID: 11400000, guid: 4bd328fe0b729d74dafbfff59bcafee1, type: 2}
+    - {fileID: 11400000, guid: 0d4ad206842f5a04ab7ee7d10272954f, type: 2}
   - type: LBSIdentifierBundle
     items:
     - {fileID: 11400000, guid: 9677f21f7b05c1644aa4ae3ec270eea4, type: 2}

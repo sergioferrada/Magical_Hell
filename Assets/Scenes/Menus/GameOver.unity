@@ -135,6 +135,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 4192295294431219371, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692979636699349958, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_text
+      value: Reintentar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692979636699349958, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5244679863964593948, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -218,6 +230,14 @@ PrefabInstance:
     - target: {fileID: 5244679863964593948, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173688162693375078, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_text
+      value: ' Menu Principal'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173688162693375078, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

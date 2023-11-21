@@ -20,6 +20,10 @@ MonoBehaviour:
   assets:
   - obj: {fileID: 3340211634435293643, guid: 3d1d431ea745bb7438402fa5b99349f5, type: 3}
     probability: 1
+  - obj: {fileID: 3340211634435293643, guid: d8bab13de05218549a289e73c4061826, type: 3}
+    probability: 0.1
+  - obj: {fileID: 3340211634435293643, guid: e5d4fb0356cd1b340865dc72f07e6739, type: 3}
+    probability: 0.1
   characteristics:
   - rid: 9195371103807864837
   positioning: 0

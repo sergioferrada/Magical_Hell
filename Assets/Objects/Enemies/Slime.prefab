@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1934600187
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4367289792872251007, guid: d4e8a5c5eececab46942986a743fd7d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_Bits: 64
   _baseDamage: 1
   _baseAttackDelay: 1.5
-  attackRange: 0.8
+  _attackRange: 0
   PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
   passedTime: 0
   direction: {x: 0, y: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
     damageMultiplicator: 0
     speedMultiplicator: 0
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 1, b: 0.5882353, a: 0}
+    color: {r: 1, g: 1, b: 1, a: 0}
   Easy:
     lifeExtraPoints: 1
     damageMultiplicator: 5
@@ -304,8 +304,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934600187
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.64705884}

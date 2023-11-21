@@ -30,7 +30,7 @@ public class DoorLogic : MonoBehaviour
     {
         if (collision.gameObject.layer == 6 && activate)
         {
-            if(!dynamicRoomsActivate)
+            if (!dynamicRoomsActivate)
             {
                 GameManager.Instance.GoToNextRoom(nextRoomName);
                 return;

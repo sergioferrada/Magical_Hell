@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934600187
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.64705884}
@@ -191,8 +191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934600187
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -1157213371, guid: 09ef77a5fbe62544183dec1f0b8f2d81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -277,7 +277,7 @@ Animator:
   m_GameObject: {fileID: 8878675889749090585}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f4697531cf3b3543a278cb5f3211033, type: 2}
+  m_Controller: {fileID: 9100000, guid: 621c962b1dc7e304f8b8625c06726ca4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -309,8 +309,9 @@ MonoBehaviour:
     m_Bits: 64
   _baseDamage: 2
   _baseAttackDelay: 2
-  attackRange: 1.5
+  _attackRange: 1
   PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
+  passedTime: 0
   direction: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
   Very_Easy:
@@ -318,7 +319,7 @@ MonoBehaviour:
     damageMultiplicator: 0
     speedMultiplicator: 0
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 1, b: 0.5882353, a: 0}
+    color: {r: 1, g: 1, b: 1, a: 0}
   Easy:
     lifeExtraPoints: 1
     damageMultiplicator: 5

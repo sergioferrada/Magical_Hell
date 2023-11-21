@@ -9,6 +9,7 @@ public class AnimationSound : MonoBehaviour
 
     public void PlayAudioClip(AudioClip _clip)
     {
-        SoundManager.Instance.PlaySound(_clip.name, SoundsEffectVolume);
+        if(!SoundManager.Instance.IsClipPlaying(_clip.name))
+            SoundManager.Instance.PlaySound(_clip.name, SoundsEffectVolume);
     }
 }

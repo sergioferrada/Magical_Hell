@@ -31,6 +31,7 @@ public class Enemy : CharacterBase
     [SerializeField] private DifficultyStats Very_Hard;
 
     private Dictionary<DifficultManager.DifficultyLevel, DifficultyStats> difficultyStats;
+    private Dictionary<GameManager.GameLevel, DifficultyStats> difficultyStatsByGameLevel;
     #endregion
 
     [Header("Item Spawn Stats")]
@@ -47,6 +48,7 @@ public class Enemy : CharacterBase
     {
         base.Awake();
         playerTransform = FindObjectOfType<PlayerController>().GetComponent<Transform>();
+
         difficultyStats = new Dictionary<DifficultManager.DifficultyLevel, DifficultyStats> {
 
             { DifficultManager.DifficultyLevel.Very_Easy,    Very_Easy   },
@@ -54,6 +56,15 @@ public class Enemy : CharacterBase
             { DifficultManager.DifficultyLevel.Medium,       Medium      },
             { DifficultManager.DifficultyLevel.Hard,         Hard        },
             { DifficultManager.DifficultyLevel.Very_Hard,    Very_Hard   }
+        };
+
+        difficultyStatsByGameLevel = new Dictionary<GameManager.GameLevel, DifficultyStats> {
+
+            { GameManager.GameLevel.Tutorial,    Very_Easy   },
+            { GameManager.GameLevel.Level_1,         Easy    },
+            { GameManager.GameLevel.Level_2,       Medium    },
+            { GameManager.GameLevel.Level_3,         Hard    },
+            { GameManager.GameLevel.Level_4,    Very_Hard    }
         };
 
         SetupCharacterStats();
@@ -72,7 +83,12 @@ public class Enemy : CharacterBase
 
     protected virtual void SetupCharacterStats()
     {
-        DifficultyStats selectedStats = difficultyStats[DifficultManager.Instance.actualDifficultyLevel];
+        DifficultyStats selectedStats = Medium;
+
+        if (GameManager.Instance.dynamicDifficultActivate)
+            selectedStats = difficultyStats[DifficultManager.Instance.actualDifficultyLevel];
+        else if (!GameManager.Instance.dynamicDifficultActivate)
+            selectedStats = difficultyStatsByGameLevel[GameManager.Instance.actualGameLevel];
 
         Life += selectedStats.lifeExtraPoints;
         Damage  += (Damage * (selectedStats.damageMultiplicator / 100));

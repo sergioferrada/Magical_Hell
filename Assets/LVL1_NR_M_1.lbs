@@ -23,1032 +23,32 @@
               "tiles": {
                 "$id": "6",
                 "$type": "System.Collections.Generic.List`1[[LBS.Components.TileMap.LBSTile, LBS]], mscorlib",
-                "$values": [
-                  {
-                    "$id": "7",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -7
-                  },
-                  {
-                    "$id": "8",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
-                    "y": -6
-                  },
-                  {
-                    "$id": "9",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 4,
-                    "y": -6
-                  },
-                  {
-                    "$id": "10",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -6
-                  },
-                  {
-                    "$id": "11",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -6
-                  },
-                  {
-                    "$id": "12",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -6
-                  },
-                  {
-                    "$id": "13",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 9,
-                    "y": -6
-                  },
-                  {
-                    "$id": "14",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -6
-                  },
-                  {
-                    "$id": "15",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -5
-                  },
-                  {
-                    "$id": "16",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -4
-                  },
-                  {
-                    "$id": "17",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 9,
-                    "y": -4
-                  },
-                  {
-                    "$id": "18",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -3
-                  },
-                  {
-                    "$id": "19",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -3
-                  },
-                  {
-                    "$id": "20",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -3
-                  },
-                  {
-                    "$id": "21",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -2
-                  },
-                  {
-                    "$id": "22",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -2
-                  },
-                  {
-                    "$id": "23",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -2
-                  },
-                  {
-                    "$id": "24",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -7
-                  },
-                  {
-                    "$id": "25",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -7
-                  },
-                  {
-                    "$id": "26",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -6
-                  },
-                  {
-                    "$id": "27",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -5
-                  },
-                  {
-                    "$id": "28",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
-                    "y": -3
-                  },
-                  {
-                    "$id": "29",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -3
-                  },
-                  {
-                    "$id": "30",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
-                    "y": -3
-                  },
-                  {
-                    "$id": "31",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
-                    "y": -6
-                  }
-                ]
+                "$values": []
               },
               "id": "TileMapModule"
             },
             {
-              "$id": "32",
+              "$id": "7",
               "$type": "BundleTileMap, LBS",
               "tiles": {
-                "$id": "33",
+                "$id": "8",
                 "$type": "System.Collections.Generic.List`1[[TileBundlePair, LBS]], mscorlib",
-                "$values": [
-                  {
-                    "$id": "34",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "7"
-                    },
-                    "bData": {
-                      "$id": "35",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "36",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "37",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Spawn",
-                            "label": "Spawn"
-                          }
-                        ]
-                      },
-                      "bundleName": "Spawner"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "38",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "8"
-                    },
-                    "bData": {
-                      "$id": "39",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "40",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "41",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Nature",
-                            "label": "Decoration_Nature"
-                          }
-                        ]
-                      },
-                      "bundleName": "Nature_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "42",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "9"
-                    },
-                    "bData": {
-                      "$id": "43",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "44",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "45",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "46",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "10"
-                    },
-                    "bData": {
-                      "$id": "47",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "48",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "49",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Nature",
-                            "label": "Decoration_Nature"
-                          }
-                        ]
-                      },
-                      "bundleName": "Nature_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "50",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "11"
-                    },
-                    "bData": {
-                      "$id": "51",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "52",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "53",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "54",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "12"
-                    },
-                    "bData": {
-                      "$id": "55",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "56",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "57",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "58",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "13"
-                    },
-                    "bData": {
-                      "$ref": "51"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "59",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "14"
-                    },
-                    "bData": {
-                      "$id": "60",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "61",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "62",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Nature",
-                            "label": "Decoration_Nature"
-                          }
-                        ]
-                      },
-                      "bundleName": "Nature_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "63",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "15"
-                    },
-                    "bData": {
-                      "$id": "64",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "65",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "66",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Spawn",
-                            "label": "Spawn"
-                          }
-                        ]
-                      },
-                      "bundleName": "Spawner"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "67",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "16"
-                    },
-                    "bData": {
-                      "$id": "68",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "69",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "70",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Spawn",
-                            "label": "Spawn"
-                          }
-                        ]
-                      },
-                      "bundleName": "Spawner"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "71",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "17"
-                    },
-                    "bData": {
-                      "$id": "72",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "73",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "74",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "75",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "18"
-                    },
-                    "bData": {
-                      "$id": "76",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "77",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "78",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "79",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "19"
-                    },
-                    "bData": {
-                      "$id": "80",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "81",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "82",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "83",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "20"
-                    },
-                    "bData": {
-                      "$ref": "55"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "84",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "21"
-                    },
-                    "bData": {
-                      "$id": "85",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "86",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "87",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Spawn",
-                            "label": "Spawn"
-                          }
-                        ]
-                      },
-                      "bundleName": "Spawner"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "88",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "22"
-                    },
-                    "bData": {
-                      "$id": "89",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "90",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "91",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Traps",
-                            "label": "Traps"
-                          }
-                        ]
-                      },
-                      "bundleName": "Trap"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "92",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "23"
-                    },
-                    "bData": {
-                      "$id": "93",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "94",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "95",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Traps",
-                            "label": "Traps"
-                          }
-                        ]
-                      },
-                      "bundleName": "Trap"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "96",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "24"
-                    },
-                    "bData": {
-                      "$id": "97",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "98",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "99",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Traps",
-                            "label": "Traps"
-                          }
-                        ]
-                      },
-                      "bundleName": "Trap"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "100",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "25"
-                    },
-                    "bData": {
-                      "$id": "101",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "102",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "103",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Traps",
-                            "label": "Traps"
-                          }
-                        ]
-                      },
-                      "bundleName": "Trap"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "104",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "26"
-                    },
-                    "bData": {
-                      "$id": "105",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "106",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "107",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "108",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "27"
-                    },
-                    "bData": {
-                      "$id": "109",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "110",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "111",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "112",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "28"
-                    },
-                    "bData": {
-                      "$id": "113",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "114",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "115",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "116",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "29"
-                    },
-                    "bData": {
-                      "$id": "117",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "118",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "119",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "120",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "30"
-                    },
-                    "bData": {
-                      "$id": "121",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "122",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "123",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Nature",
-                            "label": "Decoration_Nature"
-                          }
-                        ]
-                      },
-                      "bundleName": "Nature_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  },
-                  {
-                    "$id": "124",
-                    "$type": "TileBundlePair, LBS",
-                    "tile": {
-                      "$ref": "31"
-                    },
-                    "bData": {
-                      "$id": "125",
-                      "$type": "LBS.Components.TileMap.BundleData, LBS",
-                      "characteristics": {
-                        "$id": "126",
-                        "$type": "System.Collections.Generic.List`1[[LBSCharacteristic, LBS]], mscorlib",
-                        "$values": [
-                          {
-                            "$id": "127",
-                            "$type": "LBSTagsCharacteristic, LBS",
-                            "tagName": "Decoration_Bloody",
-                            "label": "Decoration_Bloody"
-                          }
-                        ]
-                      },
-                      "bundleName": "Bloody_Decoration"
-                    },
-                    "rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    },
-                    "Rotation": {
-                      "x": 1.0,
-                      "y": 0.0
-                    }
-                  }
-                ]
+                "$values": []
               },
               "id": "BundleTileMap",
               "Tiles": {
                 "$type": "System.Collections.Generic.List`1[[TileBundlePair, LBS]], mscorlib",
-                "$values": [
-                  {
-                    "$ref": "34"
-                  },
-                  {
-                    "$ref": "38"
-                  },
-                  {
-                    "$ref": "42"
-                  },
-                  {
-                    "$ref": "46"
-                  },
-                  {
-                    "$ref": "50"
-                  },
-                  {
-                    "$ref": "54"
-                  },
-                  {
-                    "$ref": "58"
-                  },
-                  {
-                    "$ref": "59"
-                  },
-                  {
-                    "$ref": "63"
-                  },
-                  {
-                    "$ref": "67"
-                  },
-                  {
-                    "$ref": "71"
-                  },
-                  {
-                    "$ref": "75"
-                  },
-                  {
-                    "$ref": "79"
-                  },
-                  {
-                    "$ref": "83"
-                  },
-                  {
-                    "$ref": "84"
-                  },
-                  {
-                    "$ref": "88"
-                  },
-                  {
-                    "$ref": "92"
-                  },
-                  {
-                    "$ref": "96"
-                  },
-                  {
-                    "$ref": "100"
-                  },
-                  {
-                    "$ref": "104"
-                  },
-                  {
-                    "$ref": "108"
-                  },
-                  {
-                    "$ref": "112"
-                  },
-                  {
-                    "$ref": "116"
-                  },
-                  {
-                    "$ref": "120"
-                  },
-                  {
-                    "$ref": "124"
-                  }
-                ]
+                "$values": []
               }
             }
           ]
         },
         "behaviours": {
-          "$id": "128",
+          "$id": "9",
           "$type": "System.Collections.Generic.List`1[[LBS.Behaviours.LBSBehaviour, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "129",
+              "$id": "10",
               "$type": "PopulationBehaviour, LBS",
               "visible": true,
               "name": "Population Behavior"
@@ -1056,11 +56,11 @@
           ]
         },
         "assitants": {
-          "$id": "130",
+          "$id": "11",
           "$type": "System.Collections.Generic.List`1[[LBS.Assisstants.LBSAssistant, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "131",
+              "$id": "12",
               "$type": "AssistantMapElite, LBS",
               "visible": true,
               "name": "A",
@@ -1069,17 +69,17 @@
           ]
         },
         "generatorRules": {
-          "$id": "132",
+          "$id": "13",
           "$type": "System.Collections.Generic.List`1[[LBS.Generator.LBSGeneratorRule, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "133",
+              "$id": "14",
               "$type": "LBS.Generator.PopulationRuleGenerator, LBS"
             }
           ]
         },
         "settings": {
-          "$id": "134",
+          "$id": "15",
           "$type": "LBS.Generator.Generator3D+Settings, LBS",
           "scale": {
             "x": 2.0,
@@ -1098,7 +98,7 @@
         }
       },
       {
-        "$id": "135",
+        "$id": "16",
         "$type": "LBS.Components.LBSLayer, LBS",
         "visible": true,
         "blocked": false,
@@ -1106,396 +106,246 @@
         "id": "Interior",
         "name": "Room",
         "modules": {
-          "$id": "136",
+          "$id": "17",
           "$type": "System.Collections.Generic.List`1[[LBS.Components.LBSModule, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "137",
+              "$id": "18",
               "$type": "LBS.Components.TileMap.TileMapModule, LBS",
               "tiles": {
-                "$id": "138",
+                "$id": "19",
                 "$type": "System.Collections.Generic.List`1[[LBS.Components.TileMap.LBSTile, LBS]], mscorlib",
                 "$values": [
                   {
-                    "$id": "139",
+                    "$id": "20",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 4,
-                    "y": -6
+                    "x": 6,
+                    "y": -8
                   },
                   {
-                    "$id": "140",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 4,
-                    "y": -5
-                  },
-                  {
-                    "$id": "141",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 4,
-                    "y": -4
-                  },
-                  {
-                    "$id": "142",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 4,
-                    "y": -3
-                  },
-                  {
-                    "$id": "143",
+                    "$id": "21",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 6,
                     "y": -7
                   },
                   {
-                    "$id": "144",
+                    "$id": "22",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 6,
+                    "y": -6
+                  },
+                  {
+                    "$id": "23",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 6,
+                    "y": -5
+                  },
+                  {
+                    "$id": "24",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 6,
+                    "y": -4
+                  },
+                  {
+                    "$id": "25",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 6,
+                    "y": -3
+                  },
+                  {
+                    "$id": "26",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 6,
+                    "y": -2
+                  },
+                  {
+                    "$id": "27",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -8
+                  },
+                  {
+                    "$id": "28",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 7,
                     "y": -7
                   },
                   {
-                    "$id": "145",
+                    "$id": "29",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -6
+                  },
+                  {
+                    "$id": "30",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -5
+                  },
+                  {
+                    "$id": "31",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -4
+                  },
+                  {
+                    "$id": "32",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -3
+                  },
+                  {
+                    "$id": "33",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 7,
+                    "y": -2
+                  },
+                  {
+                    "$id": "34",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 8,
+                    "y": -8
+                  },
+                  {
+                    "$id": "35",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 8,
                     "y": -7
                   },
                   {
-                    "$id": "146",
+                    "$id": "36",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
+                    "x": 8,
                     "y": -6
                   },
                   {
-                    "$id": "147",
+                    "$id": "37",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
-                    "y": -4
-                  },
-                  {
-                    "$id": "148",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
-                    "y": -3
-                  },
-                  {
-                    "$id": "149",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -6
-                  },
-                  {
-                    "$id": "150",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -4
-                  },
-                  {
-                    "$id": "151",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -3
-                  },
-                  {
-                    "$id": "152",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
-                    "y": -6
-                  },
-                  {
-                    "$id": "153",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
+                    "x": 8,
                     "y": -5
                   },
                   {
-                    "$id": "154",
+                    "$id": "38",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
+                    "x": 8,
                     "y": -4
                   },
                   {
-                    "$id": "155",
+                    "$id": "39",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 3,
+                    "x": 8,
                     "y": -3
                   },
                   {
-                    "$id": "156",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 10,
-                    "y": -5
-                  },
-                  {
-                    "$id": "157",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 11,
-                    "y": -5
-                  },
-                  {
-                    "$id": "158",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -2
-                  },
-                  {
-                    "$id": "159",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -2
-                  },
-                  {
-                    "$id": "160",
+                    "$id": "40",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 8,
                     "y": -2
                   },
                   {
-                    "$id": "161",
+                    "$id": "41",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -6
+                    "x": 9,
+                    "y": -8
                   },
                   {
-                    "$id": "162",
+                    "$id": "42",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -5
+                    "x": 9,
+                    "y": -7
                   },
                   {
-                    "$id": "163",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -4
-                  },
-                  {
-                    "$id": "164",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 5,
-                    "y": -3
-                  },
-                  {
-                    "$id": "165",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -6
-                  },
-                  {
-                    "$id": "166",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -5
-                  },
-                  {
-                    "$id": "167",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -4
-                  },
-                  {
-                    "$id": "168",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 6,
-                    "y": -3
-                  },
-                  {
-                    "$id": "169",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -6
-                  },
-                  {
-                    "$id": "170",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 7,
-                    "y": -3
-                  },
-                  {
-                    "$id": "171",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -6
-                  },
-                  {
-                    "$id": "172",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -5
-                  },
-                  {
-                    "$id": "173",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -4
-                  },
-                  {
-                    "$id": "174",
-                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
-                    "x": 8,
-                    "y": -3
-                  },
-                  {
-                    "$id": "175",
+                    "$id": "43",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 9,
                     "y": -6
                   },
                   {
-                    "$id": "176",
+                    "$id": "44",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 9,
                     "y": -5
                   },
                   {
-                    "$id": "177",
+                    "$id": "45",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 9,
                     "y": -4
                   },
                   {
-                    "$id": "178",
+                    "$id": "46",
                     "$type": "LBS.Components.TileMap.LBSTile, LBS",
                     "x": 9,
                     "y": -3
+                  },
+                  {
+                    "$id": "47",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 9,
+                    "y": -2
+                  },
+                  {
+                    "$id": "48",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -8
+                  },
+                  {
+                    "$id": "49",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -7
+                  },
+                  {
+                    "$id": "50",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -6
+                  },
+                  {
+                    "$id": "51",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -5
+                  },
+                  {
+                    "$id": "52",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -4
+                  },
+                  {
+                    "$id": "53",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -3
+                  },
+                  {
+                    "$id": "54",
+                    "$type": "LBS.Components.TileMap.LBSTile, LBS",
+                    "x": 10,
+                    "y": -2
                   }
                 ]
               },
               "id": "TileMapModule"
             },
             {
-              "$id": "179",
+              "$id": "55",
               "$type": "ConnectedTileMapModule, LBS",
               "connectedDirections": 4,
               "pairs": {
-                "$id": "180",
+                "$id": "56",
                 "$type": "System.Collections.Generic.List`1[[TileConnectionsPair, LBS]], mscorlib",
                 "$values": [
                   {
-                    "$id": "181",
+                    "$id": "57",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "139"
+                      "$ref": "20"
                     },
                     "connections": {
-                      "$id": "182",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "183",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "183"
-                    }
-                  },
-                  {
-                    "$id": "184",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "140"
-                    },
-                    "connections": {
-                      "$id": "185",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "186",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "186"
-                    }
-                  },
-                  {
-                    "$id": "187",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "141"
-                    },
-                    "connections": {
-                      "$id": "188",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "189",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "189"
-                    }
-                  },
-                  {
-                    "$id": "190",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "142"
-                    },
-                    "connections": {
-                      "$id": "191",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "192",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "192"
-                    }
-                  },
-                  {
-                    "$id": "193",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "143"
-                    },
-                    "connections": {
-                      "$id": "194",
+                      "$id": "58",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Empty",
@@ -1505,7 +355,7 @@
                       ]
                     },
                     "editedByIA": {
-                      "$id": "195",
+                      "$id": "59",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -1515,17 +365,197 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "195"
+                      "$ref": "59"
                     }
                   },
                   {
-                    "$id": "196",
+                    "$id": "60",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "144"
+                      "$ref": "21"
                     },
                     "connections": {
-                      "$id": "197",
+                      "$id": "61",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "62",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "62"
+                    }
+                  },
+                  {
+                    "$id": "63",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "22"
+                    },
+                    "connections": {
+                      "$id": "64",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "65",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "65"
+                    }
+                  },
+                  {
+                    "$id": "66",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "23"
+                    },
+                    "connections": {
+                      "$id": "67",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "68",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "69",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "24"
+                    },
+                    "connections": {
+                      "$id": "70",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "71",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "71"
+                    }
+                  },
+                  {
+                    "$id": "72",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "25"
+                    },
+                    "connections": {
+                      "$id": "73",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "74",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "74"
+                    }
+                  },
+                  {
+                    "$id": "75",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "26"
+                    },
+                    "connections": {
+                      "$id": "76",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Wall",
+                        "Wall",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "77",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "77"
+                    }
+                  },
+                  {
+                    "$id": "78",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "27"
+                    },
+                    "connections": {
+                      "$id": "79",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Empty",
@@ -1535,7 +565,7 @@
                       ]
                     },
                     "editedByIA": {
-                      "$id": "198",
+                      "$id": "80",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -1545,27 +575,207 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "198"
+                      "$ref": "80"
                     }
                   },
                   {
-                    "$id": "199",
+                    "$id": "81",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "145"
+                      "$ref": "28"
                     },
                     "connections": {
-                      "$id": "200",
+                      "$id": "82",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "83",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "83"
+                    }
+                  },
+                  {
+                    "$id": "84",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "29"
+                    },
+                    "connections": {
+                      "$id": "85",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "86",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "86"
+                    }
+                  },
+                  {
+                    "$id": "87",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "30"
+                    },
+                    "connections": {
+                      "$id": "88",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "89",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "89"
+                    }
+                  },
+                  {
+                    "$id": "90",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "31"
+                    },
+                    "connections": {
+                      "$id": "91",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "92",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "92"
+                    }
+                  },
+                  {
+                    "$id": "93",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "32"
+                    },
+                    "connections": {
+                      "$id": "94",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "95",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "95"
+                    }
+                  },
+                  {
+                    "$id": "96",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "33"
+                    },
+                    "connections": {
+                      "$id": "97",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
                         "Wall",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "98",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "98"
+                    }
+                  },
+                  {
+                    "$id": "99",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "34"
+                    },
+                    "connections": {
+                      "$id": "100",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
                         "Empty",
                         "Empty",
                         "Wall"
                       ]
                     },
                     "editedByIA": {
-                      "$id": "201",
+                      "$id": "101",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -1575,47 +785,17 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "201"
+                      "$ref": "101"
                     }
                   },
                   {
-                    "$id": "202",
+                    "$id": "102",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "146"
+                      "$ref": "35"
                     },
                     "connections": {
-                      "$id": "203",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "204",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "204"
-                    }
-                  },
-                  {
-                    "$id": "205",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "147"
-                    },
-                    "connections": {
-                      "$id": "206",
+                      "$id": "103",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Empty",
@@ -1625,7 +805,7 @@
                       ]
                     },
                     "editedByIA": {
-                      "$id": "207",
+                      "$id": "104",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -1635,257 +815,17 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "207"
+                      "$ref": "104"
                     }
                   },
                   {
-                    "$id": "208",
+                    "$id": "105",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "148"
+                      "$ref": "36"
                     },
                     "connections": {
-                      "$id": "209",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "210",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "210"
-                    }
-                  },
-                  {
-                    "$id": "211",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "149"
-                    },
-                    "connections": {
-                      "$id": "212",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Wall",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "213",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "213"
-                    }
-                  },
-                  {
-                    "$id": "214",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "150"
-                    },
-                    "connections": {
-                      "$id": "215",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Wall",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "216",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "216"
-                    }
-                  },
-                  {
-                    "$id": "217",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "151"
-                    },
-                    "connections": {
-                      "$id": "218",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Wall",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "219",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "219"
-                    }
-                  },
-                  {
-                    "$id": "220",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "152"
-                    },
-                    "connections": {
-                      "$id": "221",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Wall",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "222",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "222"
-                    }
-                  },
-                  {
-                    "$id": "223",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "153"
-                    },
-                    "connections": {
-                      "$id": "224",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "225",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "225"
-                    }
-                  },
-                  {
-                    "$id": "226",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "154"
-                    },
-                    "connections": {
-                      "$id": "227",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "228",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "228"
-                    }
-                  },
-                  {
-                    "$id": "229",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "155"
-                    },
-                    "connections": {
-                      "$id": "230",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "231",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "231"
-                    }
-                  },
-                  {
-                    "$id": "232",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "156"
-                    },
-                    "connections": {
-                      "$id": "233",
+                      "$id": "106",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Empty",
@@ -1895,7 +835,7 @@
                       ]
                     },
                     "editedByIA": {
-                      "$id": "234",
+                      "$id": "107",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -1905,107 +845,527 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "234"
+                      "$ref": "107"
                     }
                   },
                   {
-                    "$id": "235",
+                    "$id": "108",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "157"
+                      "$ref": "37"
                     },
                     "connections": {
-                      "$id": "236",
+                      "$id": "109",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "110",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "110"
+                    }
+                  },
+                  {
+                    "$id": "111",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "38"
+                    },
+                    "connections": {
+                      "$id": "112",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "113",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "113"
+                    }
+                  },
+                  {
+                    "$id": "114",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "39"
+                    },
+                    "connections": {
+                      "$id": "115",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "116",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "116"
+                    }
+                  },
+                  {
+                    "$id": "117",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "40"
+                    },
+                    "connections": {
+                      "$id": "118",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
                         "Door",
                         "Empty",
-                        "Empty",
                         "Empty"
                       ]
                     },
                     "editedByIA": {
-                      "$id": "237",
+                      "$id": "119",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
+                        true,
                         false,
                         true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "119"
+                    }
+                  },
+                  {
+                    "$id": "120",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "41"
+                    },
+                    "connections": {
+                      "$id": "121",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Wall"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "122",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
                         true,
                         true
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "237"
+                      "$ref": "122"
                     }
                   },
                   {
-                    "$id": "238",
+                    "$id": "123",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
+                      "$ref": "42"
+                    },
+                    "connections": {
+                      "$id": "124",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "125",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "125"
+                    }
+                  },
+                  {
+                    "$id": "126",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "43"
+                    },
+                    "connections": {
+                      "$id": "127",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "128",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "128"
+                    }
+                  },
+                  {
+                    "$id": "129",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "44"
+                    },
+                    "connections": {
+                      "$id": "130",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "131",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "131"
+                    }
+                  },
+                  {
+                    "$id": "132",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "45"
+                    },
+                    "connections": {
+                      "$id": "133",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "134",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "134"
+                    }
+                  },
+                  {
+                    "$id": "135",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "46"
+                    },
+                    "connections": {
+                      "$id": "136",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "137",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "137"
+                    }
+                  },
+                  {
+                    "$id": "138",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "47"
+                    },
+                    "connections": {
+                      "$id": "139",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Empty",
+                        "Wall",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "140",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "140"
+                    }
+                  },
+                  {
+                    "$id": "141",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "48"
+                    },
+                    "connections": {
+                      "$id": "142",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Wall"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "143",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "143"
+                    }
+                  },
+                  {
+                    "$id": "144",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "49"
+                    },
+                    "connections": {
+                      "$id": "145",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "146",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "146"
+                    }
+                  },
+                  {
+                    "$id": "147",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "50"
+                    },
+                    "connections": {
+                      "$id": "148",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "149",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "149"
+                    }
+                  },
+                  {
+                    "$id": "150",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "51"
+                    },
+                    "connections": {
+                      "$id": "151",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "152",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "152"
+                    }
+                  },
+                  {
+                    "$id": "153",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "52"
+                    },
+                    "connections": {
+                      "$id": "154",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "155",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
+                      "$ref": "155"
+                    }
+                  },
+                  {
+                    "$id": "156",
+                    "$type": "TileConnectionsPair, LBS",
+                    "tile": {
+                      "$ref": "53"
+                    },
+                    "connections": {
+                      "$id": "157",
+                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                      "$values": [
+                        "Wall",
+                        "Empty",
+                        "Empty",
+                        "Empty"
+                      ]
+                    },
+                    "editedByIA": {
+                      "$id": "158",
+                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
+                      "$values": [
+                        true,
+                        true,
+                        true,
+                        true
+                      ]
+                    },
+                    "EditedByIA": {
                       "$ref": "158"
-                    },
-                    "connections": {
-                      "$id": "239",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "240",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "240"
                     }
                   },
                   {
-                    "$id": "241",
+                    "$id": "159",
                     "$type": "TileConnectionsPair, LBS",
                     "tile": {
-                      "$ref": "159"
+                      "$ref": "54"
                     },
                     "connections": {
-                      "$id": "242",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "243",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "243"
-                    }
-                  },
-                  {
-                    "$id": "244",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "160"
-                    },
-                    "connections": {
-                      "$id": "245",
+                      "$id": "160",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Wall",
@@ -2015,7 +1375,7 @@
                       ]
                     },
                     "editedByIA": {
-                      "$id": "246",
+                      "$id": "161",
                       "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
                       "$values": [
                         true,
@@ -2025,547 +1385,7 @@
                       ]
                     },
                     "EditedByIA": {
-                      "$ref": "246"
-                    }
-                  },
-                  {
-                    "$id": "247",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
                       "$ref": "161"
-                    },
-                    "connections": {
-                      "$id": "248",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "249",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "249"
-                    }
-                  },
-                  {
-                    "$id": "250",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "162"
-                    },
-                    "connections": {
-                      "$id": "251",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "252",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "252"
-                    }
-                  },
-                  {
-                    "$id": "253",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "163"
-                    },
-                    "connections": {
-                      "$id": "254",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "255",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "255"
-                    }
-                  },
-                  {
-                    "$id": "256",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "164"
-                    },
-                    "connections": {
-                      "$id": "257",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "258",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "258"
-                    }
-                  },
-                  {
-                    "$id": "259",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "165"
-                    },
-                    "connections": {
-                      "$id": "260",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "261",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "261"
-                    }
-                  },
-                  {
-                    "$id": "262",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "166"
-                    },
-                    "connections": {
-                      "$id": "263",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Wall",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "264",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "264"
-                    }
-                  },
-                  {
-                    "$id": "265",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "167"
-                    },
-                    "connections": {
-                      "$id": "266",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Wall",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "267",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "267"
-                    }
-                  },
-                  {
-                    "$id": "268",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "168"
-                    },
-                    "connections": {
-                      "$id": "269",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "270",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "270"
-                    }
-                  },
-                  {
-                    "$id": "271",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "169"
-                    },
-                    "connections": {
-                      "$id": "272",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "273",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "273"
-                    }
-                  },
-                  {
-                    "$id": "274",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "170"
-                    },
-                    "connections": {
-                      "$id": "275",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "276",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "276"
-                    }
-                  },
-                  {
-                    "$id": "277",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "171"
-                    },
-                    "connections": {
-                      "$id": "278",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "279",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "279"
-                    }
-                  },
-                  {
-                    "$id": "280",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "172"
-                    },
-                    "connections": {
-                      "$id": "281",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "282",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "282"
-                    }
-                  },
-                  {
-                    "$id": "283",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "173"
-                    },
-                    "connections": {
-                      "$id": "284",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Wall",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "285",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "285"
-                    }
-                  },
-                  {
-                    "$id": "286",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "174"
-                    },
-                    "connections": {
-                      "$id": "287",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "288",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "288"
-                    }
-                  },
-                  {
-                    "$id": "289",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "175"
-                    },
-                    "connections": {
-                      "$id": "290",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Wall"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "291",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "291"
-                    }
-                  },
-                  {
-                    "$id": "292",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "176"
-                    },
-                    "connections": {
-                      "$id": "293",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "294",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "294"
-                    }
-                  },
-                  {
-                    "$id": "295",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "177"
-                    },
-                    "connections": {
-                      "$id": "296",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Empty",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "297",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "297"
-                    }
-                  },
-                  {
-                    "$id": "298",
-                    "$type": "TileConnectionsPair, LBS",
-                    "tile": {
-                      "$ref": "178"
-                    },
-                    "connections": {
-                      "$id": "299",
-                      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-                      "$values": [
-                        "Empty",
-                        "Wall",
-                        "Empty",
-                        "Empty"
-                      ]
-                    },
-                    "editedByIA": {
-                      "$id": "300",
-                      "$type": "System.Collections.Generic.List`1[[System.Boolean, mscorlib]], mscorlib",
-                      "$values": [
-                        true,
-                        true,
-                        true,
-                        true
-                      ]
-                    },
-                    "EditedByIA": {
-                      "$ref": "300"
                     }
                   }
                 ]
@@ -2573,14 +1393,14 @@
               "id": "ConnectedTileMapModule"
             },
             {
-              "$id": "301",
+              "$id": "162",
               "$type": "SectorizedTileMapModule, LBS",
               "zones": {
-                "$id": "302",
+                "$id": "163",
                 "$type": "System.Collections.Generic.List`1[[Zone, LBS]], mscorlib",
                 "$values": [
                   {
-                    "$id": "303",
+                    "$id": "164",
                     "$type": "Zone, LBS",
                     "id": "Zone: 0",
                     "color": {
@@ -2590,18 +1410,18 @@
                       "a": 1.0
                     },
                     "pivot": {
-                      "x": 7.5,
+                      "x": 8.5,
                       "y": -4.0
                     },
                     "insideStyles": {
-                      "$id": "304",
+                      "$id": "165",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
-                        "Castle_Wooden"
+                        "Castle_Pixel_V2"
                       ]
                     },
                     "outsideStyles": {
-                      "$id": "305",
+                      "$id": "166",
                       "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                       "$values": [
                         "Castle_Brick"
@@ -2611,407 +1431,357 @@
                 ]
               },
               "pairs": {
-                "$id": "306",
+                "$id": "167",
                 "$type": "System.Collections.Generic.List`1[[TileZonePair, LBS]], mscorlib",
                 "$values": [
                   {
-                    "$id": "307",
+                    "$id": "168",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "139"
+                      "$ref": "20"
                     },
                     "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "308",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "140"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "309",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "141"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "310",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "142"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "311",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "143"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "312",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "144"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "313",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "145"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "314",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "146"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "315",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "147"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "316",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "148"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "317",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "149"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "318",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "150"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "319",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "151"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "320",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "152"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "321",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "153"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "322",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "154"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "323",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "155"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "324",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "156"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "325",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "157"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "326",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "158"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "327",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "159"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "328",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "160"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "329",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "161"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "330",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "162"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "331",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
-                      "$ref": "163"
-                    },
-                    "zone": {
-                      "$ref": "303"
-                    }
-                  },
-                  {
-                    "$id": "332",
-                    "$type": "TileZonePair, LBS",
-                    "tile": {
                       "$ref": "164"
-                    },
-                    "zone": {
-                      "$ref": "303"
                     }
                   },
                   {
-                    "$id": "333",
+                    "$id": "169",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "165"
+                      "$ref": "21"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "334",
+                    "$id": "170",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "166"
+                      "$ref": "22"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "335",
+                    "$id": "171",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "167"
+                      "$ref": "23"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "336",
+                    "$id": "172",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "168"
+                      "$ref": "24"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "337",
+                    "$id": "173",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "169"
+                      "$ref": "25"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "338",
+                    "$id": "174",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "170"
+                      "$ref": "26"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "339",
+                    "$id": "175",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "171"
+                      "$ref": "27"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "340",
+                    "$id": "176",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "172"
+                      "$ref": "28"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "341",
+                    "$id": "177",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "173"
+                      "$ref": "29"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "342",
+                    "$id": "178",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "174"
+                      "$ref": "30"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "343",
+                    "$id": "179",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "175"
+                      "$ref": "31"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "344",
+                    "$id": "180",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "176"
+                      "$ref": "32"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "345",
+                    "$id": "181",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "177"
+                      "$ref": "33"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     }
                   },
                   {
-                    "$id": "346",
+                    "$id": "182",
                     "$type": "TileZonePair, LBS",
                     "tile": {
-                      "$ref": "178"
+                      "$ref": "34"
                     },
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "183",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "35"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "184",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "36"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "185",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "37"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "186",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "38"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "187",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "39"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "188",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "40"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "189",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "41"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "190",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "42"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "191",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "43"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "192",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "44"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "193",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "45"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "194",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "46"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "195",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "47"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "196",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "48"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "197",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "49"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "198",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "50"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "199",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "51"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "200",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "52"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "201",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "53"
+                    },
+                    "zone": {
+                      "$ref": "164"
+                    }
+                  },
+                  {
+                    "$id": "202",
+                    "$type": "TileZonePair, LBS",
+                    "tile": {
+                      "$ref": "54"
+                    },
+                    "zone": {
+                      "$ref": "164"
                     }
                   }
                 ]
@@ -3019,30 +1789,30 @@
               "id": "SectorizedTileMapModule"
             },
             {
-              "$id": "347",
+              "$id": "203",
               "$type": "ConnectedZonesModule, LBS",
               "edges": {
-                "$id": "348",
+                "$id": "204",
                 "$type": "System.Collections.Generic.List`1[[ZoneEdge, LBS]], mscorlib",
                 "$values": []
               },
               "id": "ConnectedZonesModule"
             },
             {
-              "$id": "349",
+              "$id": "205",
               "$type": "ConstrainsZonesModule, LBS",
               "pairs": {
-                "$id": "350",
+                "$id": "206",
                 "$type": "System.Collections.Generic.List`1[[ConstraintPair, LBS]], mscorlib",
                 "$values": [
                   {
-                    "$id": "351",
+                    "$id": "207",
                     "$type": "ConstraintPair, LBS",
                     "zone": {
-                      "$ref": "303"
+                      "$ref": "164"
                     },
                     "constraint": {
-                      "$id": "352",
+                      "$id": "208",
                       "$type": "Constraint, LBS",
                       "minWidth": 3.0,
                       "minHeight": 3.0,
@@ -3057,17 +1827,20 @@
           ]
         },
         "behaviours": {
-          "$id": "353",
+          "$id": "209",
           "$type": "System.Collections.Generic.List`1[[LBS.Behaviours.LBSBehaviour, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "354",
+              "$id": "210",
               "$type": "SchemaBehaviour, LBS",
               "visible": true,
               "name": "Schema behaviour",
               "Connections": {
                 "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
                 "$values": [
+                  "Wall",
+                  "Door",
+                  "Empty",
                   "Wall",
                   "Door",
                   "Empty"
@@ -3077,48 +1850,48 @@
           ]
         },
         "assitants": {
-          "$id": "355",
+          "$id": "211",
           "$type": "System.Collections.Generic.List`1[[LBS.Assisstants.LBSAssistant, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "356",
+              "$id": "212",
               "$type": "HillClimbingAssistant, LBS",
               "visibleConstraints": false,
               "visible": true,
               "name": "HillClimbing",
               "TileMapMod": {
-                "$ref": "137"
+                "$ref": "18"
               },
               "AreasMod": {
-                "$ref": "301"
+                "$ref": "162"
               },
               "GraphMod": {
-                "$ref": "347"
+                "$ref": "203"
               },
               "ConstrainsZonesMod": {
-                "$ref": "349"
+                "$ref": "205"
               }
             }
           ]
         },
         "generatorRules": {
-          "$id": "357",
+          "$id": "213",
           "$type": "System.Collections.Generic.List`1[[LBS.Generator.LBSGeneratorRule, LBS]], mscorlib",
           "$values": [
             {
-              "$id": "358",
+              "$id": "214",
               "$type": "SchemaRuleGenerator, LBS",
               "deltaWall": 1.0
             },
             {
-              "$id": "359",
+              "$id": "215",
               "$type": "SchemaRuleGeneratorExteriror, LBS",
               "deltaWall": 1.0
             }
           ]
         },
         "settings": {
-          "$id": "360",
+          "$id": "216",
           "$type": "LBS.Generator.Generator3D+Settings, LBS",
           "scale": {
             "x": 2.0,
@@ -3139,7 +1912,7 @@
     ]
   },
   "quests": {
-    "$id": "361",
+    "$id": "217",
     "$type": "System.Collections.Generic.List`1[[LBSQuest, LBS]], mscorlib",
     "$values": []
   }

@@ -12,15 +12,21 @@ public class WormFireballLogic : ProjectileBase
         rb2d.velocity = speed * direction;
     }
 
-    private new void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        animator.Play("Fireball_Explosion");
+        base.OnTriggerEnter2D(collision);
+        //Cuando colisione con un objeto en el layer de "Enemies"
+        if (collision.gameObject.layer == 6)
+        {
+            DestroyProjectile();
+        }
     }
 
-    private void Explote()
+    protected override void DestroyProjectile()
     {
-        rb2d.velocity = new Vector2(0,0);
-        GetComponent<CircleCollider2D>().enabled = false;
+        //GetComponent<CircleCollider2D>().enabled = false;
+        animator.Play("Fireball_Explosion");
+        rb2d.velocity = Vector2.zero;
         Destroy(gameObject, .4f);
     }
 }

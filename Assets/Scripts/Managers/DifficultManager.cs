@@ -30,9 +30,9 @@ public class DifficultManager : MonoBehaviour
     public float successfulAttacksPerRoom { get; private set; }
     public float totalAttacks { get; private set; }
 
-    private float lifeWeight = 4.5f;
-    private float timeWeight = 4.5f;
-    private float accuracyWeight = 1.0f;
+    private float lifeWeight = 2.5f;
+    private float timeWeight = 2.5f;
+    private float accuracyWeight = .6f;
 
     #endregion
 
@@ -83,8 +83,8 @@ public class DifficultManager : MonoBehaviour
 
         float difference = (((totalDifficulty + dynamicDifficultValue) / 2) * 0.95f) - dynamicDifficultValue;
 
-        if (Math.Abs(difference) >= 0.15)
-            dynamicDifficultValue += Mathf.Sign(difference) * 0.15f;
+        if (Math.Abs(difference) >= 0.25)
+            dynamicDifficultValue += Mathf.Sign(difference) * 0.25f;
 
         if (totalDifficulty > dynamicDifficultValue + 0.5f)
         {

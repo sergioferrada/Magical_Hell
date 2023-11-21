@@ -54,6 +54,9 @@ TagManager:
   - name: Decoration Objects
     uniqueID: 4047706025
     locked: 0
+  - name: Midle Enviroment
+    uniqueID: 3266770419
+    locked: 0
   - name: Items
     uniqueID: 1759848935
     locked: 0

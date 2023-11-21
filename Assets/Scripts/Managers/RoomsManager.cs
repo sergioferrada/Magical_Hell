@@ -104,10 +104,13 @@ public class RoomsManager : MonoBehaviour
 
                 if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
                 {
-                    DifficultManager.Instance.CalculateDynamicDifficult();
-                    DifficultManager.Instance.ResetTimePerRoom();
-                    DifficultManager.Instance.ResetTotalAttacks();
-                    DifficultManager.Instance.ResetSuccefulAttacks();
+                    if (GameManager.Instance.dynamicDifficultActivate)
+                    {
+                        DifficultManager.Instance.CalculateDynamicDifficult();
+                        DifficultManager.Instance.ResetTimePerRoom();
+                        DifficultManager.Instance.ResetTotalAttacks();
+                        DifficultManager.Instance.ResetSuccefulAttacks();
+                    }
                 }
 
                 ActivateSpawnsInScene();
@@ -179,11 +182,11 @@ public class RoomsManager : MonoBehaviour
 
         foreach (var enemy in enemiesInEscene)
         {
-            if (enemy is BatController) extraTime = 3f;
-            else if (enemy is SlimeController) extraTime = 5f;
-            else if (enemy is Enemy1Controller) extraTime = 3f;
-            else if (enemy is Enemy2Controller) extraTime = 3f;
-            else if (enemy is FireWormController) extraTime = 15f;
+            if (enemy is BatController) extraTime = 2f;
+            else if (enemy is SlimeController) extraTime = 4f;
+            else if (enemy is Enemy1Controller) extraTime = 2f;
+            else if (enemy is Enemy2Controller) extraTime = 2f;
+            else if (enemy is FireWormController) extraTime = 12f;
 
             auxTimeExpected += (enemy.Life / (totalPlayerDamage) * (totalPlayerDelay)) + extraTime;
         }
@@ -357,6 +360,11 @@ public class RoomsManager : MonoBehaviour
 
     private string GenerateSceneName(string levelFolder, string roomType, string roomSize, string levelDifficulty, int sceneObjectsLength)
     {
+        if(levelFolder == "LVL4")
+        {
+            return "LVL4_FR_1";
+        }
+
         if (nextRoomType == RoomType.Normal_Rooms)
         {
             return $"{levelFolder}_{roomType}_{roomSize}_{levelDifficulty}_{Random.Range(1, sceneObjectsLength)}";

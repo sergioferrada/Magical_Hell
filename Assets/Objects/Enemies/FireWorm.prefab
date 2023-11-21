@@ -101,8 +101,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934600187
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.64705884}
@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1046043453694598983}
   - component: {fileID: 395228788515171995}
+  - component: {fileID: 8166345050123786960}
   - component: {fileID: 3303851066690708045}
   - component: {fileID: -7211437012151103171}
   - component: {fileID: 5337381517388171004}
@@ -190,8 +191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934600187
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -1157213371, guid: 9fe5f4000d60862479bad1c969cbff37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,6 +205,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &8166345050123786960
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878675889749090585}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.139516, y: -0.08632138}
+  m_Size: {x: 3.7854855, y: 2.4651039}
+  m_Direction: 1
 --- !u!50 &3303851066690708045
 Rigidbody2D:
   serializedVersion: 4
@@ -273,7 +309,7 @@ MonoBehaviour:
     m_Bits: 64
   _baseDamage: 5
   _baseAttackDelay: 1
-  _attackRange: 0
+  _attackRange: 3
   PopUpDamagePrefab: {fileID: 8421275860427104137, guid: 7ec1d29bd2e6286438feb935c30f8f91, type: 3}
   passedTime: 0
   direction: {x: 0, y: 0}
@@ -283,7 +319,7 @@ MonoBehaviour:
     damageMultiplicator: 0
     speedMultiplicator: 0
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 1, b: 0.5882353, a: 0}
+    color: {r: 1, g: 1, b: 1, a: 0}
   Easy:
     lifeExtraPoints: 1
     damageMultiplicator: 5

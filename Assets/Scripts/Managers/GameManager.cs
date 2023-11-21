@@ -5,6 +5,7 @@ using EasyTransition;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject TransitionManagerPrefab;
+    public bool dynamicDifficultActivate;
     public string versionNumber;
 
     private void OnEnable()
@@ -26,10 +27,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        int idVersion = Random.Range(1, 3);
+
+        dynamicDifficultActivate = (idVersion == 1);
+
         int firstGroupNumber = Random.Range(100, 300);
         int secondGroupNumber = Random.Range(100, 300);
 
-        versionNumber = firstGroupNumber.ToString() + "1" + secondGroupNumber.ToString();
+        versionNumber = firstGroupNumber.ToString() + idVersion + secondGroupNumber.ToString();
 
         if (Instance == null)
         {
@@ -60,6 +65,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(FindObjectOfType<MainCameraController>().gameObject);
             Destroy(FindObjectOfType<SimpleUIController>().gameObject);
+            //DifficultManager.Instance.SetDynamicDifficult(1.75f);
+            //DifficultManager.Instance.MapDifficultyLevel();
             ChangeScene("GameOver");
         }
 

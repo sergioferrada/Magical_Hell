@@ -30,12 +30,12 @@ public class PlayerSpawner : MonoBehaviour
         // Si el jugador ya esta en escena moverlo al spawn
         if (playerInScene != null)
         {
-            playerInScene.transform.position = transform.position;
+            playerInScene.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
         // Si no se encuentra al jugador, instanciarlo desde el prefab
         else if (playerPrefab != null && playerInScene == null)
         {
-            Instantiate(playerPrefab, transform.position, Quaternion.identity);
+            Instantiate(playerPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         }
 
         DeactivateSpawn();

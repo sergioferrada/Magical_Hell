@@ -175,14 +175,23 @@ public class PlayerController : CharacterBase
 
     public override void ReciveDamage(float damage)
     {
-        //if(!SoundManager.Instance.IsClipPlaying("Player_Hurt"))
+        SetState(State.Injured);
+
+        if (!SoundManager.Instance.IsClipPlaying("Player_Hurt"))
         SoundManager.Instance.PlaySound("Player_Hurt");
         //playerHUDController.PlayAnimationHUD("Healthbar_Damage_Animation");
 
-        base.ReciveDamage(damage);
+        Life -= damage;
+
+        if (PopUpDamagePrefab != null)
+        {
+            var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+            aux.GetComponent<PopUpController>().PopUpTextSprite(damage.ToString(), Color.red);
+        }
+        CheckDeath();
+
         DifficultManager.Instance.SetTotalPlayerLife(Life);
         playerHUDController.UpdateHeartsHUD();
-        
     }
 
     protected override void Death()

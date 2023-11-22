@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(FindObjectOfType<MainCameraController>().gameObject);
             Destroy(FindObjectOfType<SimpleUIController>().gameObject);
-            //DifficultManager.Instance.SetDynamicDifficult(1.75f);
-            //DifficultManager.Instance.MapDifficultyLevel();
-            ChangeScene("GameOver");
+            DifficultManager.Instance.SetDynamicDifficult(1.75f);
+            DifficultManager.Instance.MapDifficultyLevel();
+            TransitionManager.Instance().Transition("GameOver", transition, 0.0f);
         }
 
         actualGameState = newGameState;

@@ -68,7 +68,7 @@ public class PlayerAbility : MonoBehaviour
             if (PopUpDamagePrefab != null)
             {
                 var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
-                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", IconSprite);
+                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", default, IconSprite);
                 SoundManager.Instance.PlaySound("Level_Up");
             }
         }

@@ -616,6 +616,38 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1722870799}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ChangeSceneButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Play_Button_Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685022797662391673, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4223853523097477997, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_Name
       value: MainMenu
@@ -644,9 +676,25 @@ PrefabInstance:
       propertyPath: levelSelected
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8906393800119987195, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 8164549
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2511516741338235286, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8096152877292591669, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+--- !u!114 &1722870799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7970240888994961221, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+  m_PrefabInstance: {fileID: 1463952238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d13aa23be43e7841bdddf95bf6d4a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

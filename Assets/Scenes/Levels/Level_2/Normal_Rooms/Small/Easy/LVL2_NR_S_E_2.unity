@@ -4921,11 +4921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992339940303800677, guid: d2b51e45fc9967a43acaecc67e6f8f12, type: 3}
       propertyPath: nextRoomName
-      value: LVL2_NR_S_M_3
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8992339940303800677, guid: d2b51e45fc9967a43acaecc67e6f8f12, type: 3}
       propertyPath: dynamicRoomsActivate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

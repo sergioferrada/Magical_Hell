@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 1328809580036920289, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4192295294431219371, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
@@ -238,6 +242,14 @@ PrefabInstance:
     - target: {fileID: 6173688162693375078, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716601307626772702, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716601307626772702, guid: d94c7d1c7f3f1d64684f6ce2df1aa05b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -37,7 +37,7 @@ public class ChangeSceneButton : MonoBehaviour
         yield return new WaitForSeconds(delayDuration);
         GameManager.Instance.SetActualGameState(gameState);
         GameManager.Instance.SetGameLevel(levelSelected);
-        SceneManager.LoadScene(sceneName);
+        GameManager.Instance.ChangeScene(sceneName);
     }
 
     public void GoToInitialRoom()
@@ -73,5 +73,10 @@ public class ChangeSceneButton : MonoBehaviour
     public void ActivateAnimation(string animationName)
     {
         parentAnimator.Play(animationName);
+    }
+
+    public void PlayButtonSound(string clipName)
+    {
+        SoundManager.Instance.PlayGUISound(clipName);
     }
 }

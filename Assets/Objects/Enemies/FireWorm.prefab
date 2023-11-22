@@ -344,9 +344,9 @@ MonoBehaviour:
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
     color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
-  healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
+  healthItemPrefab: {fileID: 2147775893084472149, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
   spawnItemProbability: 0
-  expItemPrefab: {fileID: 3954567864300934791, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}
+  expItemPrefab: {fileID: 8160568610309731123, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}
   expAmount: 1000
   attackDistance: 5
   chaseDistance: 30

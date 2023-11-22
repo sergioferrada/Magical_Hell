@@ -10,7 +10,7 @@ public class MainMenuController : GUIBase
 {
     public TMP_Text versionText;
 
-    private void Awake()
+    private void Start()
     {
         versionText.SetText(" Version " + GameManager.Instance.versionNumber);
     }                                                                                                                                                                                             

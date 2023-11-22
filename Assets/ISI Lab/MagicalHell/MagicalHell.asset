@@ -36,29 +36,23 @@ MonoBehaviour:
       type: {class: GeneticAlgorithm, ns: ISILab.AI.Optimization, asm: LBS}
       data:
         population:
-          rid: 997974174050287627
+          rid: -2
         evaluator:
           rid: 9195371217738007549
         selection:
           rid: 997974174050287628
         termination:
-          rid: 997974174050287629
+          rid: -2
         crossover:
-          rid: 997974174050287630
+          rid: -2
         mutation:
           rid: 997974174050287635
         crossoverProbability: 1
         mutationProbability: 0.05
-    - rid: 997974174050287627
-      type: {class: Population, ns: ISILab.AI.Optimization.Populations, asm: LBS}
     - rid: 997974174050287628
       type: {class: TournamentSelection, ns: ISILab.AI.Optimization.Selections, asm: LBS}
       data:
         m_minNumberChromosomes: 2
-    - rid: 997974174050287629
-      type: {class: GenerationNumberTermination, ns: ISILab.AI.Optimization.Terminations, asm: LBS}
-    - rid: 997974174050287630
-      type: {class: AreaCrossover, ns: , asm: LBS}
     - rid: 997974174050287635
       type: {class: RoulleteWheelMutation, ns: , asm: LBS}
       data:
@@ -71,13 +65,11 @@ MonoBehaviour:
       type: {class: ExhaustiveMoveGene, ns: , asm: LBS}
       data:
         range: 1
-    - rid: 997974174050287643
-      type: {class: ExhaustiveSwapGene, ns: , asm: LBS}
     - rid: 997974174050287646
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
-          rid: 997974174050287643
+          rid: -2
         weight: 0.8
     - rid: 9195371195721580843
       type: {class: TrapDistribution, ns: , asm: Assembly-CSharp}
@@ -102,13 +94,11 @@ MonoBehaviour:
         mutation:
           rid: 997974174050287639
         weight: 0.3
-    - rid: 9195371207258014367
-      type: {class: ExhaustiveRemoveGene, ns: , asm: LBS}
     - rid: 9195371207258014368
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
-          rid: 9195371207258014367
+          rid: -2
         weight: 0.4
     - rid: 9195371215609135458
       type: {class: DecorationDistribution, ns: , asm: Assembly-CSharp}
@@ -134,13 +124,11 @@ MonoBehaviour:
       data:
         label: Decoration_Nature
         value: {fileID: 11400000, guid: f1b4391df50bb2c438d036b54ce30856, type: 2}
-    - rid: 9195371217525932601
-      type: {class: ExhaustiveAddGene, ns: , asm: LBS}
     - rid: 9195371217525932602
       type: {class: WeightedMutation, ns: , asm: LBS}
       data:
         mutation:
-          rid: 9195371217525932601
+          rid: -2
         weight: 0.3
     - rid: 9195371217738007549
       type: {class: DecorationDistribution, ns: , asm: Assembly-CSharp}

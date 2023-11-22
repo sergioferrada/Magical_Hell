@@ -323,6 +323,9 @@ public class RoomsManager : MonoBehaviour
             roomSize = GetMappedValue(roomSize, sizeNameMappings);
             levelDifficulty = GetMappedValue(levelDifficulty, difficultyMappings);
 
+            if (!GameManager.Instance.dynamicDifficultActivate)
+                levelDifficulty = GetMappedValue(GetRandomDifficulty(), difficultyMappings);
+
             //Generate Scene Name
             nextSceneName = GenerateSceneName(levelFolder, roomType, roomSize, levelDifficulty, sceneObjectsLength);
         }
@@ -336,6 +339,12 @@ public class RoomsManager : MonoBehaviour
     private string GetRandomRoomSize()
     {
         string[] roomSizes = { "Small", "Medium", "Large" };
+        return roomSizes[Random.Range(0, roomSizes.Length)];
+    }
+
+    private string GetRandomDifficulty()
+    {
+        string[] roomSizes = { "Easy", "Medium", "Hard" };
         return roomSizes[Random.Range(0, roomSizes.Length)];
     }
 

@@ -9418,7 +9418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992339940303800677, guid: e1200b5776676c14189dc42120760f68, type: 3}
       propertyPath: dynamicRoomsActivate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

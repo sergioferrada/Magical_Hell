@@ -27,7 +27,7 @@ public class FireballLogic : ProjectileBase
         {   
             for (int i = 0; i < Random.Range(minFireballRange, maxFireballRange); i++)
             {
-                GameObject projectile = Instantiate(gameObject, transform.position, Quaternion.Euler(direction));
+                GameObject projectile = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.Euler(direction));
                 var fireballScript = projectile.GetComponent<FireballLogic>();
 
                 fireballScript.timesExploded += 1;

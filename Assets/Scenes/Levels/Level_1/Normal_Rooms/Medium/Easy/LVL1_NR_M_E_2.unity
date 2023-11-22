@@ -11662,11 +11662,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 198471970173405596, guid: 04f4bfcd588140f43b4a65bee82ed0fe, type: 3}
       propertyPath: nextRoomName
-      value: LVL1_NR_L_M_1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 198471970173405596, guid: 04f4bfcd588140f43b4a65bee82ed0fe, type: 3}
       propertyPath: dynamicRoomsActivate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1905805182414072270, guid: 04f4bfcd588140f43b4a65bee82ed0fe, type: 3}
       propertyPath: m_RootOrder

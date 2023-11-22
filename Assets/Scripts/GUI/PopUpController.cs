@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class PopUpController : MonoBehaviour
 {
     [SerializeField] private float destroyTime;
@@ -17,21 +18,17 @@ public class PopUpController : MonoBehaviour
         Destroy(gameObject, destroyTime);
     }
 
-    private void SetText(string text)
-    {
-        
-    }
-
     public void PopUpText(string text)
     {
         animator.Play("PopUp_Animation");
         textMeshPro.SetText(text);
     }
 
-    public void PopUpTextSprite(string text, Sprite icon = null)
+    public void PopUpTextSprite(string text, Color textColor = default, Sprite icon = null)
     {
         animator.Play("Level_Up_Ability_Animation");
         textMeshPro.SetText(text);
+        textMeshPro.color = (textColor == default) ? Color.white : textColor;
 
         if (icon != null)
         {
@@ -39,5 +36,4 @@ public class PopUpController : MonoBehaviour
             abilityIcon.sprite = icon;
         }
     }
-
 }

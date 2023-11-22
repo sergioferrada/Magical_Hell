@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1549918860175217812
+--- !u!1 &1952771400749560926
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4786856997024472644}
-  - component: {fileID: 3814513133202224577}
+  - component: {fileID: 6429733304506661484}
+  m_Layer: 7
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6429733304506661484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952771400749560926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.08, y: 0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1790858693720613694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5571626400117529182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5570155515321609706}
+  - component: {fileID: 8824415201505894655}
   m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
@@ -17,28 +48,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4786856997024472644
+--- !u!4 &5570155515321609706
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549918860175217812}
+  m_GameObject: {fileID: 5571626400117529182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.151, y: -0.643, z: 0}
   m_LocalScale: {x: 13.114554, y: 1.0729067, z: 1.0729067}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1046043453694598983}
+  m_Father: {fileID: 1790858693720613694}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3814513133202224577
+--- !u!212 &8824415201505894655
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549918860175217812}
+  m_GameObject: {fileID: 5571626400117529182}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,7 +115,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6353795573518411729
+--- !u!1 &6413751012256076001
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,43 +123,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2404490980591940484}
-  m_Layer: 7
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2404490980591940484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353795573518411729}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08, y: 0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1046043453694598983}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8878675889749090585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1046043453694598983}
-  - component: {fileID: 395228788515171995}
-  - component: {fileID: 3303851066690708045}
-  - component: {fileID: 693832018691368774}
-  - component: {fileID: -7211437012151103171}
-  - component: {fileID: 1207102687334995010}
+  - component: {fileID: 1790858693720613694}
+  - component: {fileID: 5393755995092591804}
+  - component: {fileID: 8364887976281571723}
+  - component: {fileID: 9106320201774632084}
+  - component: {fileID: 6687867545179475590}
+  - component: {fileID: 5208207314073295917}
   m_Layer: 7
   m_Name: LittleFireWorm
   m_TagString: Enemy
@@ -136,30 +136,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1046043453694598983
+--- !u!4 &1790858693720613694
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2404490980591940484}
-  - {fileID: 4786856997024472644}
+  - {fileID: 6429733304506661484}
+  - {fileID: 5570155515321609706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &395228788515171995
+--- !u!212 &5393755995092591804
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -205,14 +205,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3303851066690708045
+--- !u!50 &8364887976281571723
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -232,13 +232,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &693832018691368774
+--- !u!70 &9106320201774632084
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -267,14 +267,14 @@ CapsuleCollider2D:
   m_Offset: {x: -0.12179423, y: 0.042989273}
   m_Size: {x: 2.508294, y: 1.4336385}
   m_Direction: 1
---- !u!95 &-7211437012151103171
+--- !u!95 &6687867545179475590
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 621c962b1dc7e304f8b8625c06726ca4, type: 2}
@@ -288,13 +288,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1207102687334995010
+--- !u!114 &5208207314073295917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8878675889749090585}
+  m_GameObject: {fileID: 6413751012256076001}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44a32aa92f9d414c887d0132b47ead7, type: 3}
@@ -344,13 +344,13 @@ MonoBehaviour:
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
     color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
-  healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
+  healthItemPrefab: {fileID: 2147775893084472149, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
   spawnItemProbability: 20
-  expItemPrefab: {fileID: 3954567864300934791, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}
+  expItemPrefab: {fileID: 8160568610309731123, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}
   expAmount: 50
   attackDistance: 5
   chaseDistance: 15
   fireballPrefab: {fileID: 1361801719277694276, guid: a53da36a36e4461489c9d28a41d6635a, type: 3}
-  fireballSpawnPoint: {fileID: 2404490980591940484}
+  fireballSpawnPoint: {fileID: 6429733304506661484}
   projectileDamage: 1
   numFireballs: 3

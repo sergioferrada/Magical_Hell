@@ -57,11 +57,11 @@ TagManager:
   - name: Midle Enviroment
     uniqueID: 3266770419
     locked: 0
-  - name: Characters
-    uniqueID: 2360367109
-    locked: 0
   - name: Items
     uniqueID: 1759848935
+    locked: 0
+  - name: Characters
+    uniqueID: 2360367109
     locked: 0
   - name: Top Enviroment
     uniqueID: 1262838311

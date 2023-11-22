@@ -64,8 +64,11 @@ public class PlayerController : CharacterBase
         if (moveX != 0)
         {
             // Verifica si moveX es negativo antes de cambiar la escala
-            if (moveX < 0)      transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
-            else if (moveX > 0) transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            //if (moveX < 0)      transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            //else if (moveX > 0) transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+
+            if (moveX < 0) GetComponent<SpriteRenderer>().flipX = true;
+            else if (moveX > 0) GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay)
@@ -156,13 +159,12 @@ public class PlayerController : CharacterBase
 
             maxExperiencie += 100;
 
-
             RecoverLife(1);
 
             if (PopUpDamagePrefab != null)
             {
                 var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
-                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up");
+                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", Color.yellow);
                 SoundManager.Instance.PlaySound("Level_Up");
             }
 

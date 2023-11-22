@@ -13,6 +13,42 @@ public class ExperienceItem : MonoBehaviour
         playerPosition = FindAnyObjectByType<PlayerController>().GetComponent<Transform>();
     }
 
+    void Start()
+    {
+        StartCoroutine(MoveToRandomPosition());
+    }
+
+    IEnumerator MoveToRandomPosition()
+    {
+        // Espera el tiempo especificado antes de comenzar a seguir al jugador
+        //yield return new WaitForSeconds(1.0f);
+
+        // Mueve el objeto a una posición aleatoria
+        transform.position = GetRandomPosition();
+
+        // Puedes ajustar el tiempo de espera adicional antes de comenzar a seguir al jugador
+        yield return new WaitForSeconds(2.0f);
+    }
+
+    Vector3 GetRandomPosition()
+    {
+        // Definir una distancia máxima desde la posición actual
+        float maxDistance = 1.5f;
+
+        // Generar coordenadas aleatorias en un círculo alrededor de la posición actual
+        float randomAngle = Random.Range(0f, 2f * Mathf.PI);
+        float randomDistance = Random.Range(0f, maxDistance);
+
+        // Calcular las nuevas coordenadas
+        float offsetX = Mathf.Cos(randomAngle) * randomDistance;
+        float offsetY = Mathf.Sin(randomAngle) * randomDistance;
+
+        // Aplicar las coordenadas alrededor de la posición actual
+        Vector3 randomPosition = transform.position + new Vector3(offsetX, offsetY, 0f);
+
+        return randomPosition;
+    }
+
     // Update is called once per frame
     void Update()
     {

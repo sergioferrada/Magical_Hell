@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CooldownBarController : MonoBehaviour
 {
     private float currentTime, totalTime;
+    public Canvas CloseAttackUI;
     public Image cooldownBars;
     public Image filledCompleted;
 
@@ -27,7 +28,7 @@ public class CooldownBarController : MonoBehaviour
         {
             SoundManager.Instance.PlaySound("Meele_Attack_Enable_Sound", .5f);
             filledCompleted.enabled = true;
-            cooldownBars.enabled = false;
+            //cooldownBars.enabled = false;
         }
         else
         {

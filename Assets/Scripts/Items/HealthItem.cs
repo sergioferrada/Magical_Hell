@@ -12,6 +12,10 @@ public class HealthItem : MonoBehaviour
     {
         playerPosition = FindAnyObjectByType<PlayerController>().GetComponent<Transform>();
     }
+    void Start()
+    {
+        StartCoroutine(MoveToRandomPosition());
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +28,27 @@ public class HealthItem : MonoBehaviour
 
         // Mueve el objeto hacia el jugador con la velocidad especificada
         transform.Translate(directionToPlayer * moveSpeed * Time.deltaTime);
+    }
+
+    IEnumerator MoveToRandomPosition()
+    {
+        // Espera el tiempo especificado antes de comenzar a seguir al jugador
+        yield return new WaitForSeconds(1);
+
+        // Mueve el objeto a una posición aleatoria
+        transform.position = GetRandomPosition();
+
+        // Puedes ajustar el tiempo de espera adicional antes de comenzar a seguir al jugador
+        yield return new WaitForSeconds(1.0f);
+    }
+
+    Vector3 GetRandomPosition()
+    {
+        // Puedes personalizar los límites del área en la que quieres que aparezca el objeto
+        float randomX = Random.Range(-5.0f, 5.0f);
+        float randomY = Random.Range(-5.0f, 5.0f);
+
+        return new Vector3(randomX, randomY, 0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

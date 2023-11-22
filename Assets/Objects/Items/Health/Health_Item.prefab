@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1759848935
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -204304424, guid: b73a3606cc514994eb3b8d26da3f4549, type: 3}
+  m_Sprite: {fileID: 85401054, guid: 01fedd3ab288c5644b4359ea88d23152, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0059556724, y: 0}
+  m_Offset: {x: 0.00016128644, y: 0.0014195144}
   serializedVersion: 2
-  m_Radius: 0.084291056
+  m_Radius: 0.060183436
 --- !u!96 &8874067936890367019
 TrailRenderer:
   serializedVersion: 3
@@ -162,9 +162,9 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1759848935
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Time: 0.4
+  m_Time: 0.2
   m_PreviewTimeScale: 0
   m_Parameters:
     serializedVersion: 3
@@ -195,7 +195,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.91372555, g: 0.2901961, b: 0.3647059, a: 1}
+      key0: {r: 0.91372555, g: 0.2901961, b: 0.3647059, a: 0.5882353}
       key1: {r: 1, g: 1, b: 1, a: 0.39215687}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

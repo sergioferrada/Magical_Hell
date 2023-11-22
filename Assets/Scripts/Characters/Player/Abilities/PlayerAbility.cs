@@ -9,12 +9,14 @@ public class SkillLevelStatistics
     public float damage;
     public float cooldown;
     public float objectScale;
+    public float targetExp;
 
-    public SkillLevelStatistics(float damage, float cooldown, float objectScale)
+    public SkillLevelStatistics(float damage, float cooldown, float objectScale, float targetExp)
     {
         this.damage = damage;
         this.cooldown = cooldown;
         this.objectScale = objectScale;
+        this.targetExp = targetExp;
     }
 }
 
@@ -47,30 +49,29 @@ public class PlayerAbility : MonoBehaviour
 
     public void AddExp()
     {
-        actualExp++;
-        FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
-        if (actualExp >= targetExp && actualLevel < maxLevel)
-        { 
-            LevelUp();
+        if (actualLevel < maxLevel)
+        {
+            actualExp++;
+            FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
+            if (actualExp >= targetExp && actualLevel < maxLevel)
+            {
+                LevelUp();
+            }
         }
     }
 
     public virtual void LevelUp()
     {
-        if (actualLevel < maxLevel)
-        {
-            actualLevel++;
-            actualExp = 0;
-            targetExp += 10;
-            ApplySkillLevel();
-            FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
+        actualLevel++;
+        actualExp = 0;
+        ApplySkillLevel();
+        FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
 
-            if (PopUpDamagePrefab != null)
-            {
-                var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
-                aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", Color.yellow, IconSprite);
-                SoundManager.Instance.PlaySound("Level_Up");
-            }
+        if (PopUpDamagePrefab != null)
+        {
+            var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+            aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", Color.yellow, IconSprite);
+            SoundManager.Instance.PlaySound("Level_Up");
         }
     }
 

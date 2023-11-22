@@ -9,8 +9,8 @@ public class FireballLevelStatics : SkillLevelStatistics
     public int timesItCanExplode;
     public int minRange, maxRange;
 
-    public FireballLevelStatics(float damage, float cooldown, int timesItCanExplode, float objectScale, int minRange, int maxRange)
-            : base(damage, cooldown, objectScale)
+    public FireballLevelStatics(float damage, float cooldown, int timesItCanExplode, float objectScale, int minRange, int maxRange, float targetExp)
+            : base(damage, cooldown, objectScale, targetExp)
     {
         this.timesItCanExplode = timesItCanExplode;
         this.minRange = minRange;
@@ -30,17 +30,17 @@ public class FireballAttackAbilitie : PlayerAbility
     protected override void Start()
     {
         SkillLevelsStats = new List<FireballLevelStatics>
-        {
-            new FireballLevelStatics(1.5f,  1.75f, 1, 1.0f,  1, 1),  //Level 1
-            new FireballLevelStatics(2.0f,  1.55f, 1, 1.0f,  1, 2),  //Level 2
-            new FireballLevelStatics(3.0f,  1.55f, 2, 1.25f, 1, 2),  //Level 3
-            new FireballLevelStatics(4.5f,  1.35f, 2, 1.25f, 2, 2),  //Level 4
-            new FireballLevelStatics(5.5f,  1.35f, 2, 1.5f,  2, 3),  //Level 5
-            new FireballLevelStatics(7.0f,  1.15f, 3, 1.5f,  2, 3),  //Level 6
-            new FireballLevelStatics(8.0f,  1.15f, 3, 1.75f, 3, 3),  //Level 7
-            new FireballLevelStatics(9.0f,  1.0f,  3, 1.75f, 3, 4),  //Level 8
-            new FireballLevelStatics(10.0f, 0.9f,  3, 2.0f,  4, 5),  //Level 9
-            new FireballLevelStatics(12.0f, 0.75f, 4, 2.0f,  5, 5),  //Level 10
+        {                       //   [D]     [CD] [TCE] [OB]  [MAX][MIN][EXP]
+            new FireballLevelStatics(1.5f,  1.75f,  1,  1.0f,   1,  1,  7f),  //Level 1
+            new FireballLevelStatics(2.0f,  1.55f,  1,  1.0f,   1,  2,  14f),  //Level 2
+            new FireballLevelStatics(3.0f,  1.55f,  2,  1.25f,  1,  2,  27f),  //Level 3
+            new FireballLevelStatics(4.5f,  1.35f,  2,  1.25f,  2,  2,  45f),  //Level 4
+            new FireballLevelStatics(5.5f,  1.35f,  2,  1.5f,   2,  3,  57f),  //Level 5
+            new FireballLevelStatics(7.0f,  1.15f,  3,  1.5f,   2,  3,  70f),  //Level 6
+            new FireballLevelStatics(8.0f,  1.15f,  3,  1.75f,  3,  3,  90f),  //Level 7
+            new FireballLevelStatics(9.0f,  1.0f,   3,  1.75f,  3,  4,  110f),  //Level 8
+            new FireballLevelStatics(10.0f, 0.9f,   3,  2.0f,   4,  5,  150f),  //Level 9
+            new FireballLevelStatics(12.0f, 0.75f,  4,  2.0f,   5,  5,  170f),  //Level 10
         };
 
         base.Start();
@@ -89,6 +89,7 @@ public class FireballAttackAbilitie : PlayerAbility
         timesItCanExplode = currentSkillLevel.timesItCanExplode;
         minRange = currentSkillLevel.minRange;
         maxRange = currentSkillLevel.maxRange;
+        targetExp = currentSkillLevel.targetExp;
     }
 }
 

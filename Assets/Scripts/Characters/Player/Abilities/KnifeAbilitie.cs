@@ -11,8 +11,8 @@ public class KnifeLevelStatistics : SkillLevelStatistics
     public float speed;
     public int maxCollidableObjects;
 
-    public KnifeLevelStatistics(float damage, float cooldown, float speed, float objectScale, int maxCollidableObjects)
-            : base(damage, cooldown, objectScale)
+    public KnifeLevelStatistics(float damage, float cooldown, float speed, float objectScale, int maxCollidableObjects, float targetExp)
+            : base(damage, cooldown, objectScale, targetExp)
     {
         this.speed = speed;
         this.maxCollidableObjects = maxCollidableObjects;
@@ -34,17 +34,17 @@ public class KnifeAbilitie : PlayerAbility
 
         SkillLevelsStats = new List<KnifeLevelStatistics>
         {                         
-                                 //  [D]     [CD]     [s]       [OS]   [CO]
-            new KnifeLevelStatistics(.5f,    1.25f,   8.0f,     1.0f,   1),  //Level 1
-            new KnifeLevelStatistics(.75f,   1.25f,   8.0f,     1.0f,   1),  //Level 2
-            new KnifeLevelStatistics(.75f,   1.0f,    8.5f,     1.0f,   2),  //Level 3
-            new KnifeLevelStatistics(1.0f,   1.0f,    8.5f,     1.0f,   2),  //Level 4
-            new KnifeLevelStatistics(1.0f,    .9f,    9.0f,     1.15f,  3),  //Level 5
-            new KnifeLevelStatistics(1.25f,   .9f,    9.0f,     1.15f,  4),  //Level 6
-            new KnifeLevelStatistics(1.25f,  .75f,    9.5f,     1.15f,  5),  //Level 7
-            new KnifeLevelStatistics(1.5f,   .75f,    10.0f,    1.35f,  6),  //Level 8
-            new KnifeLevelStatistics(1.5f,   .75f,    11.5f,     1.5f,  7),  //Level 9
-            new KnifeLevelStatistics(2.0f,    .5f,    13.5f,     1.5f,  8),  //Level 10
+                                 //  [D]     [CD]     [s]       [OS]   [CO] [EXP]
+            new KnifeLevelStatistics(.5f,    1.25f,   8.0f,     1.0f,   1,  15f),  //Level 1
+            new KnifeLevelStatistics(.75f,   1.25f,   8.0f,     1.0f,   1,  25f),  //Level 2
+            new KnifeLevelStatistics(.75f,   1.0f,    8.5f,     1.0f,   2,  40f),  //Level 3
+            new KnifeLevelStatistics(1.0f,   1.0f,    8.5f,     1.0f,   2,  55f),  //Level 4
+            new KnifeLevelStatistics(1.0f,    .9f,    9.0f,     1.15f,  3,  75f),  //Level 5
+            new KnifeLevelStatistics(1.25f,   .9f,    9.0f,     1.15f,  4,  90f),  //Level 6
+            new KnifeLevelStatistics(1.25f,  .75f,    9.5f,     1.15f,  5,  110f),  //Level 7
+            new KnifeLevelStatistics(1.5f,   .75f,    10.0f,    1.35f,  6,  140f),  //Level 8
+            new KnifeLevelStatistics(1.5f,   .75f,    11.5f,     1.5f,  7,  150f),  //Level 9
+            new KnifeLevelStatistics(2.0f,    .5f,    13.5f,     1.5f,  8,  200f),  //Level 10
         };
 
         base.Start();
@@ -80,5 +80,6 @@ public class KnifeAbilitie : PlayerAbility
         damageObjectScale = currentSkillLevel.objectScale;
         speed = currentSkillLevel.speed;
         maxCollidableObjects = currentSkillLevel.maxCollidableObjects;
+        targetExp = currentSkillLevel.targetExp;
     }
 }

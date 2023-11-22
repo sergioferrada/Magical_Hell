@@ -350,7 +350,7 @@ MonoBehaviour:
   expAmount: 50
   attackDistance: 5
   chaseDistance: 15
-  fireballPrefab: {fileID: 1361801719277694276, guid: a53da36a36e4461489c9d28a41d6635a, type: 3}
+  fireballPrefab: {fileID: 3889718139671077823, guid: a53da36a36e4461489c9d28a41d6635a, type: 3}
   fireballSpawnPoint: {fileID: 6429733304506661484}
   projectileDamage: 1
   numFireballs: 3

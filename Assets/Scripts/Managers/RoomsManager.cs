@@ -58,6 +58,7 @@ public class RoomsManager : MonoBehaviour
     private float timePassed;
 
     private string[] lastTwoSceneNames = new string[2];
+    private bool isRoomFinished = false;
     #endregion
 
     private void Awake()
@@ -77,6 +78,7 @@ public class RoomsManager : MonoBehaviour
     {
         if (GameManager.Instance.CompareGameStates(GameManager.GameState.Playing))
         {
+            isRoomFinished = false;
             float PlayedRooms = GameManager.Instance.numberOfPlayedRooms;
             float RoomsInLevel = GameManager.Instance.numberRoomsInLevel;
 
@@ -105,8 +107,7 @@ public class RoomsManager : MonoBehaviour
                 if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
                 {
                     if (GameManager.Instance.dynamicDifficultActivate)
-                    {
-                        DifficultManager.Instance.CalculateDynamicDifficult();
+                    { 
                         DifficultManager.Instance.ResetTimePerRoom();
                         DifficultManager.Instance.ResetTotalAttacks();
                         DifficultManager.Instance.ResetSuccefulAttacks();
@@ -116,7 +117,6 @@ public class RoomsManager : MonoBehaviour
                 ActivateSpawnsInScene();
                 CalculateEnemiesInScene();
                 CalculateExpectedTimeRoom();
-
                 SetRoomState(RoomState.PlayingRoom);
             }
         }
@@ -144,11 +144,18 @@ public class RoomsManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (CompareRoomStates(RoomState.RoomFinished))
-        {        
+        if (!isRoomFinished && CompareRoomStates(RoomState.RoomFinished))
+        {
+            if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial &&
+                GameManager.Instance.dynamicDifficultActivate)
+            {
+                DifficultManager.Instance.CalculateDynamicDifficult();
+            }
+
             ActivateDoorInScene();
             ActivateChestSpawnInScene();
             timePassed = 0;
+            isRoomFinished = true;
         }
 
         if (CompareRoomStates(RoomState.PlayingRoom) &&

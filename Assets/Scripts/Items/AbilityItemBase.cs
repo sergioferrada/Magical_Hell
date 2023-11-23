@@ -28,7 +28,9 @@ public class AbilityItemBase : MonoBehaviour
                 foreach (var item in fields)
                 {
                     item.SetValue(auxRef, item.GetValue(abilityToAdd));
-                }    
+                }
+
+                DifficultManager.Instance.AddPlayerAbilty();
             }
             else
             {
@@ -38,7 +40,7 @@ public class AbilityItemBase : MonoBehaviour
                 {
                     if(item.GetType() == abilityToAdd.GetType())
                     {
-                        item.LevelUp();
+                        item.AddExp((int)item.targetExp);
                         break;
                     }
                 }

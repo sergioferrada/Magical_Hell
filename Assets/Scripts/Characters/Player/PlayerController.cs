@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : CharacterBase
 {
+    [SerializeField] private PlayerStateAnimationController childAnimator;
+
     [Header("Combat Stats (Child)")]
     [SerializeField] private MeleePlayerAttack meleeAttack;
     [SerializeField] public float ImpulseForce;
@@ -108,14 +110,18 @@ public class PlayerController : CharacterBase
             SoundManager.Instance.PlaySound("Health_Recover", .7f);
 
         Life += lifePoints;
+
         if (Life > MaxLife) Life = MaxLife;
+        childAnimator.animator.Play("Hearths_Animation");
         playerHUDController.UpdateHeartsHUD();
+
+        DifficultManager.Instance.SetTotalPlayerLife(Life);
     }
 
     public void AddExp(float exp)
     {
-        if(!SoundManager.Instance.IsClipPlaying("Exp_Collected"))
-            SoundManager.Instance.PlaySound("Exp_Collected", .7f);
+        //if(!SoundManager.Instance.IsClipPlaying("Exp_Collected"))
+            SoundManager.Instance.PlaySound("Exp_Collected", .6f);
 
         currentExperience += exp;
 
@@ -147,6 +153,7 @@ public class PlayerController : CharacterBase
     {
         if(currentLevel < maxLevel)
         {
+            childAnimator.animator.Play("Level_Up_Animation");
             currentLevel++;
             MaxLife += 1;
             Damage += .5f;
@@ -158,8 +165,7 @@ public class PlayerController : CharacterBase
                 AttackDelay -= 0.15f;
 
             maxExperiencie += 100;
-
-            RecoverLife(1);
+            //RecoverLife(1);
 
             if (PopUpDamagePrefab != null)
             {
@@ -167,6 +173,8 @@ public class PlayerController : CharacterBase
                 aux.GetComponent<PopUpController>().PopUpTextSprite("Level Up", Color.yellow);
                 SoundManager.Instance.PlaySound("Level_Up");
             }
+
+            DifficultManager.Instance.SetPlayerMaxLife(MaxLife);
 
             playerHUDController.UpdateHeartsHUD();
             playerHUDController.UpdateExpBarHUD();

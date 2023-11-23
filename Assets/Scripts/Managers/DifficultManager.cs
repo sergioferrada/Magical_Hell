@@ -30,9 +30,11 @@ public class DifficultManager : MonoBehaviour
     public float successfulAttacksPerRoom { get; private set; }
     public float totalAttacks { get; private set; }
 
-    private float lifeWeight = 2.5f;
-    private float timeWeight = 2.5f;
-    private float accuracyWeight = .6f;
+    public float playerAbilitiesCount { get; private set; }
+
+    private float lifeWeight = 1.2f;
+    private float timeWeight = 1.5f;
+    private float accuracyWeight = 1.0f;
 
     #endregion
 
@@ -75,39 +77,50 @@ public class DifficultManager : MonoBehaviour
 
     public void CalculateDynamicDifficult()
     {
-        float lifeDifficulty = (10.0f * (totalPlayerLife / playerMaxLife)) * lifeWeight;
-        float timeDifficulty = (10.0f * ((maxExpectedTime - timePerRoom) / maxExpectedTime)) * timeWeight;
-        float accuracyDifficulty = (10.0f * (successfulAttacksPerRoom / totalAttacks) * accuracyWeight);
+        // Calcular la dificultad basada en la vida del jugador, el tiempo por sala y la precisión de los ataques.
+        float lifeDifficulty =      ((totalPlayerLife / playerMaxLife) - 0.5f) * 2f * lifeWeight;
+        float timeDifficulty =      (((maxExpectedTime - timePerRoom) / maxExpectedTime)) * timeWeight;
+        float accuracyDifficulty =  ((successfulAttacksPerRoom - totalAttacks) / successfulAttacksPerRoom) * accuracyWeight;
 
+        // Calcular la dificultad total ponderada por los pesos asignados a cada factor.
         float totalDifficulty = (lifeDifficulty + timeDifficulty + accuracyDifficulty) / (lifeWeight + timeWeight + accuracyWeight);
 
-        float difference = (((totalDifficulty + dynamicDifficultValue) / 2) * 0.95f) - dynamicDifficultValue;
+        float modificationPercentage = .05f + (playerAbilitiesCount / 100);
+        
+        if(totalDifficulty < 0)
+            modificationPercentage -= playerAbilitiesCount / 150;
 
-        if (Math.Abs(difference) >= 0.25)
-            dynamicDifficultValue += Mathf.Sign(difference) * 0.25f;
+        float newDifficulty = ((dynamicDifficultValue / 10) + (totalDifficulty * modificationPercentage)) * 10.0f;
 
-        if (totalDifficulty > dynamicDifficultValue + 0.5f)
-        {
+        // Incrementar la dificultad de manera más agresiva si la dificultad total es significativamente mayor que el valor dinámico.
+         if (newDifficulty > dynamicDifficultValue + 0.5f)
+         {
             consecutiveDifficultyIncreaseCount++;
 
+            // Aplicar un aumento adicional si la dificultad ha aumentado durante varias iteraciones.
             if (consecutiveDifficultyIncreaseCount >= 3)
-                dynamicDifficultValue += 0.15f;
+                newDifficulty += 0.15f;
         }
         else
             consecutiveDifficultyIncreaseCount = 0;
 
-        if (totalDifficulty < dynamicDifficultValue - 0.5f)
+        // Decrementar la dificultad de manera más agresiva si la dificultad total es significativamente menor que el valor dinámico.
+        if (newDifficulty < dynamicDifficultValue - 0.5f)
         {
             consecutiveDifficultyDecreaseCount++;
 
+            // Aplicar una disminución adicional si la dificultad ha disminuido durante varias iteraciones.
             if (consecutiveDifficultyDecreaseCount >= 3)
-                dynamicDifficultValue -= 0.15f;
+                newDifficulty -= 0.15f;
         }
         else
             consecutiveDifficultyDecreaseCount = 0;
 
+        dynamicDifficultValue = newDifficulty;
         // Asegúrate de que el valor de dificultad sea positivo o cero.
         dynamicDifficultValue = Mathf.Max(0f, dynamicDifficultValue);
+
+        //Mapear la dificultad de acuerdo al valor obtenido
         MapDifficultyLevel();
     }
 
@@ -168,5 +181,10 @@ public class DifficultManager : MonoBehaviour
     public void SetDynamicDifficult(float value)
     {
         dynamicDifficultValue = value;
+    }
+
+    public void AddPlayerAbilty()
+    {
+        playerAbilitiesCount++;
     }
 }

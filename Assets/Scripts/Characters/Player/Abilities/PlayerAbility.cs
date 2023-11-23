@@ -47,11 +47,11 @@ public class PlayerAbility : MonoBehaviour
         StartCoroutine(RepeatActivation());
     }
 
-    public void AddExp()
+    public void AddExp(int expPoint = 1)
     {
         if (actualLevel < maxLevel)
         {
-            actualExp++;
+            actualExp += expPoint;
             FindFirstObjectByType<PlayerHUDController>().UpdateAbilitiesContainerHUD();
             if (actualExp >= targetExp && actualLevel < maxLevel)
             {

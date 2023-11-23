@@ -19,6 +19,7 @@ public class CooldownBarController : MonoBehaviour
 
     public void UpdateHUD()
     {
+        CloseAttackUI.transform.localScale = Vector3.one * playerController.AttackRange;
         currentTime = playerController.passedTime;
         totalTime = playerController.AttackDelay;
 

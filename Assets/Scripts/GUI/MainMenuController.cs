@@ -13,5 +13,15 @@ public class MainMenuController : GUIBase
     private void Start()
     {
         versionText.SetText(" Version " + GameManager.Instance.versionNumber);
-    }                                                                                                                                                                                             
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D))
+        {
+            GameManager.Instance.ChangeGameVersion();
+            GameManager.Instance.GenerateVersionNumber();
+            versionText.SetText(" Version " + GameManager.Instance.versionNumber);
+        }
+    }
 }

@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using EasyTransition;
+using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,16 +26,31 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    private void Awake()
+    public void SetRandomGameVersion()
     {
         int idVersion = Random.Range(1, 3);
-
         dynamicDifficultActivate = (idVersion == 1);
+    }
 
+    public void ChangeGameVersion()
+    {
+        dynamicDifficultActivate = !dynamicDifficultActivate;
+    }
+
+    public void GenerateVersionNumber()
+    {
         int firstGroupNumber = Random.Range(100, 300);
         int secondGroupNumber = Random.Range(100, 300);
 
-        versionNumber = firstGroupNumber.ToString() + idVersion + secondGroupNumber.ToString();
+        int idVersion = dynamicDifficultActivate ? 1 : 2;
+
+        versionNumber = firstGroupNumber.ToString() + (idVersion) + secondGroupNumber.ToString();
+    }
+
+    private void Awake()
+    {
+        SetRandomGameVersion();
+        GenerateVersionNumber();
 
         if (Instance == null)
         {

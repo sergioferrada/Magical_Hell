@@ -1,3 +1,4 @@
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,7 @@ public class PauseController : MonoBehaviour
             GameManager.Instance.SetGameLevel(GameManager.GameLevel.Level_1);
 
         Time.timeScale = 1.0f;
-        GameManager.Instance.ChangeScene("MainMenu");
+        GameManager.Instance.ChangeScene("MainMenu", 2.0f);
+        //SoundManager.Instance.StopMusicWithFade(.1f);
     }
 }

@@ -65,7 +65,7 @@ public class SoundManager : MonoBehaviour
                 case GameManager.GameLevel.Tutorial:
                     if (_musicSource.clip.name != "dungeon_air_Ambience")
                     {
-                        PlayMusicWithFade("dungeon_air_Ambience", .5f);
+                        PlayMusicWithFade("dungeon_air_Ambience", 1.0f);
                     }
                     
                     break;
@@ -73,28 +73,28 @@ public class SoundManager : MonoBehaviour
                 case GameManager.GameLevel.Level_1:
                     if (_musicSource.clip.name != "Level_1_Battle_Song")
                     {
-                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", .5f);
                     }
                     break;
 
                 case GameManager.GameLevel.Level_2:
                     if (_musicSource.clip.name != "Level_1_Battle_Song")
                     {
-                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", .5f);
                     }
                     break;
 
                 case GameManager.GameLevel.Level_3:
                     if (_musicSource.clip.name != "Level_1_Battle_Song")
                     {
-                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", .5f);
                     }
                     break;
 
                 case GameManager.GameLevel.Level_4:
                     if (_musicSource.clip.name != "Level_1_Battle_Song")
                     { 
-                        PlayMusicWithFade("Level_1_Battle_Song", 5.0f);
+                        PlayMusicWithFade("Level_1_Battle_Song", .5f);
                     }
                     break;
             }
@@ -104,7 +104,7 @@ public class SoundManager : MonoBehaviour
             _musicSource.loop = false;
             if (_musicSource.clip.name != "5 rest")
             {
-                PlayMusicWithFade("5 rest", 1.0f);
+                ChangeMusicWithFade("5 rest", 1.0f);
             }
         }
     }
@@ -145,10 +145,10 @@ public class SoundManager : MonoBehaviour
         startVolume = _musicSource.volume;
         _musicSource.clip = FindAudioInList(musicList, name);
         _musicSource.Play();
-        StartCoroutine(FadeOn(fadeDuration));
+        StartCoroutine(FadeIn(fadeDuration));
     }
 
-    private IEnumerator FadeOn(float fadeDuration)
+    private IEnumerator FadeIn(float fadeDuration)
     {
         float currentTime = 0f;
         _musicSource.volume = 0f;

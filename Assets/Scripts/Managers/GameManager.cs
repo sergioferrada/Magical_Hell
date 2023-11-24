@@ -22,6 +22,18 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Instantiate(TransitionManagerPrefab);
+
+        if (CompareGameStates(GameState.MainMenu))
+        {
+            if(FindObjectOfType<MainCameraController>())
+            Destroy(FindObjectOfType<MainCameraController>().gameObject);
+
+            if (FindObjectOfType<PlayerController>())
+                Destroy(FindObjectOfType<PlayerController>().gameObject);
+
+            if (FindObjectOfType<PlayerHUDController>())
+                Destroy(FindObjectOfType<PlayerHUDController>().gameObject);
+        }
     }
 
     public static GameManager Instance;
@@ -81,7 +93,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(FindObjectOfType<MainCameraController>().gameObject);
             Destroy(FindObjectOfType<SimpleUIController>().gameObject);
-            DifficultManager.Instance.SetDynamicDifficult(1.75f);
+            DifficultManager.Instance.SetDynamicDifficult(1.0f);
             DifficultManager.Instance.MapDifficultyLevel();
             TransitionManager.Instance().Transition("GameOver", transition, 0.0f);
         }
@@ -150,10 +162,13 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(sceneName);
     }
 
-    public void ChangeScene(string SceneName)
+    public void ChangeScene(string SceneName, float transitionSpeed = 1.0f)
     {
         //SoundManager.Instance.PlayGUISound("Transition_Sound");
-        TransitionManager.Instance().Transition(SceneName, transition, 0.0f);  
+        TransitionSettings transitionCopy = transition;
+        transitionCopy.transitionSpeed = transitionSpeed;
+        
+        TransitionManager.Instance().Transition(SceneName, transitionCopy, 0.0f);  
         //SceneManager.LoadScene(SceneName);
     }
 

@@ -89,8 +89,15 @@ public class GameManager : MonoBehaviour
 
     public void SetActualGameState(GameState newGameState)
     {
-        if (newGameState == GameState.GameOver)
+        if (newGameState == GameState.Playing)
+            HideCursor();
+        else if (newGameState == GameState.Paused)
+            ShowCursor();
+        else if (newGameState == GameState.MainMenu)
+            ShowCursor();
+        else if (newGameState == GameState.GameOver)
         {
+            ShowCursor();
             Destroy(FindObjectOfType<MainCameraController>().gameObject);
             Destroy(FindObjectOfType<SimpleUIController>().gameObject);
             DifficultManager.Instance.SetDynamicDifficult(1.0f);
@@ -193,5 +200,17 @@ public class GameManager : MonoBehaviour
         // Si no estás en el editor, utiliza la función de Application.Quit
         Application.Quit();
 #endif
+    }
+
+    public void HideCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void ShowCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

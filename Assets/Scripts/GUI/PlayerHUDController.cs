@@ -152,6 +152,9 @@ public class PlayerHUDController : MonoBehaviour
 
             abilityStats[i].ability = playerAbilities[i];
             abilityStats[i].abilityIcon.sprite = playerAbilities[i].IconSprite;
+            abilityStats[i].damageText.SetText(playerAbilities[i].damage.ToString());
+            abilityStats[i].cdText.SetText(playerAbilities[i].cooldown.ToString());
+            abilityStats[i].areaText.SetText(playerAbilities[i].damageObjectScale.ToString());
 
             if (playerAbilities[i].actualLevel < playerAbilities[i].maxLevel)
                 abilityStats[i].levelText.text = "LVL " + playerAbilities[i].actualLevel.ToString();

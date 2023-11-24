@@ -2674,7 +2674,7 @@ PrefabInstance:
     - target: {fileID: 431958359607590943, guid: cb00002b0c67aa848bfed5a456258683, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1616241538}
+      objectReference: {fileID: 2054258511}
     - target: {fileID: 431958359607590943, guid: cb00002b0c67aa848bfed5a456258683, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1
@@ -8271,7 +8271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058338797672399680, guid: 4807f46a2f35dbe409289ffd0172cd60, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4058338797672399680, guid: 4807f46a2f35dbe409289ffd0172cd60, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9867,11 +9867,6 @@ Transform:
   m_Father: {fileID: 389897044}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1616241538 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
-  m_PrefabInstance: {fileID: 2054258510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623966646
 GameObject:
   m_ObjectHideFlags: 0
@@ -12508,7 +12503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12557,7 +12552,7 @@ PrefabInstance:
     - target: {fileID: 2472868270435735239, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: meleeAttack
       value: 
-      objectReference: {fileID: 2054258511}
+      objectReference: {fileID: 2054258512}
     - target: {fileID: 2472868270435735239, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: currentLevel
       value: 1
@@ -12590,6 +12585,14 @@ PrefabInstance:
       propertyPath: abilityStats.Array.data[4]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4725472405069550413, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168571237880614761, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5185363185309086866, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: heartsParent
       value: 
@@ -12605,6 +12608,10 @@ PrefabInstance:
     - target: {fileID: 5693303837337029239, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: progressBar
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907711983784658380, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7261004435449826205, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: m_SortingOrder
@@ -12636,7 +12643,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
---- !u!114 &2054258511 stripped
+--- !u!4 &2054258511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+  m_PrefabInstance: {fileID: 2054258510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054258512 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7206705164531306697, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
   m_PrefabInstance: {fileID: 2054258510}

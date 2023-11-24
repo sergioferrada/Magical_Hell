@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3d7ea891e5aa9415e9bf6d2e52d3d0d7, type: 3}
-  m_Color: {r: 0.7311321, g: 1, b: 0.8558553, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -219,25 +219,25 @@ MonoBehaviour:
     damageMultiplicator: 5
     speedMultiplicator: 5
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 0.99215686, b: 1, a: 0}
+    color: {r: 0.8980392, g: 0.5803922, b: 0.36078432, a: 1}
   Medium:
     lifeExtraPoints: 3
     damageMultiplicator: 15
     speedMultiplicator: 7
     attackDelayMultiplicator: 5
-    color: {r: 1, g: 1, b: 1, a: 0}
+    color: {r: 0.9137255, g: 0.44705883, b: 0.4117647, a: 1}
   Hard:
     lifeExtraPoints: 5
     damageMultiplicator: 25
     speedMultiplicator: 10
     attackDelayMultiplicator: 7
-    color: {r: 0.9882353, g: 0.5882353, b: 1, a: 0}
+    color: {r: 0.64705884, g: 0.67058825, b: 0.30588236, a: 1}
   Very_Hard:
     lifeExtraPoints: 8
     damageMultiplicator: 35
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
-    color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
+    color: {r: 0.7058824, g: 0.34901962, b: 0.5019608, a: 1}
   healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
   spawnItemProbability: 15
   expItemPrefab: {fileID: 3954567864300934791, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}

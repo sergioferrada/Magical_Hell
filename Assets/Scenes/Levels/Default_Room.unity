@@ -1188,7 +1188,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1690335513857813549, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1269,6 +1269,14 @@ PrefabInstance:
     - target: {fileID: 4254415863422790717, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: abilityStats.Array.data[4]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725472405069550413, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725472405069550413, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 5185363185309086866, guid: f9c96c84ae0755a4ca6954e500bc7e48, type: 3}
       propertyPath: heartsParent
@@ -4465,7 +4473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058338797672399680, guid: 4807f46a2f35dbe409289ffd0172cd60, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4058338797672399680, guid: 4807f46a2f35dbe409289ffd0172cd60, type: 3}
       propertyPath: m_AnchorMax.x

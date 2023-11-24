@@ -235,31 +235,31 @@ MonoBehaviour:
     damageMultiplicator: 0
     speedMultiplicator: 0
     attackDelayMultiplicator: 0
-    color: {r: 1, g: 1, b: 1, a: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
   Easy:
     lifeExtraPoints: 1
-    damageMultiplicator: 5
+    damageMultiplicator: 20
     speedMultiplicator: 5
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 0.99215686, b: 1, a: 0}
+    color: {r: 0.44705883, g: 0.63529414, b: 1, a: 1}
   Medium:
     lifeExtraPoints: 3
-    damageMultiplicator: 15
+    damageMultiplicator: 40
     speedMultiplicator: 7
     attackDelayMultiplicator: 5
-    color: {r: 1, g: 1, b: 1, a: 0}
+    color: {r: 1, g: 0.93333334, b: 0.44705883, a: 1}
   Hard:
     lifeExtraPoints: 5
-    damageMultiplicator: 25
+    damageMultiplicator: 60
     speedMultiplicator: 10
     attackDelayMultiplicator: 7
-    color: {r: 0.9882353, g: 0.5882353, b: 1, a: 0}
+    color: {r: 1, g: 0.6745098, b: 0.4392157, a: 1}
   Very_Hard:
     lifeExtraPoints: 8
-    damageMultiplicator: 35
+    damageMultiplicator: 80
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
-    color: {r: 1, g: 0.9764706, b: 0.5882353, a: 0}
+    color: {r: 1, g: 0.44705883, b: 0.49803922, a: 1}
   healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
   spawnItemProbability: 10
   expItemPrefab: {fileID: 3954567864300934791, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}

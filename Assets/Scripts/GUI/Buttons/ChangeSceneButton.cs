@@ -46,6 +46,7 @@ public class ChangeSceneButton : MonoBehaviour
 
     public void GoToInitialRoom()
     {
+        GameManager.Instance.HideCursor();
         if (!GameManager.Instance.tutorialCompleted)
         {
             GameManager.Instance.SetActualGameState(GameManager.GameState.Playing);

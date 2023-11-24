@@ -17,15 +17,19 @@ public class PauseController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameManager.Instance.CompareGameStates(GameManager.GameState.Playing))
+            if (GameManager.Instance.CompareGameStates(GameManager.GameState.Playing))
                 PauseGame();
-            else if(GameManager.Instance.CompareGameStates(GameManager.GameState.Paused))
+            else if (GameManager.Instance.CompareGameStates(GameManager.GameState.Paused))
+            {
+                GameManager.Instance.HideCursor();
                 ContinueGame();
+            }
         }    
     }
 
     public void PauseGame()
     {
+        GameManager.Instance.ShowCursor();
         previousGameState = GameManager.Instance.actualGameState;
         GameManager.Instance.SetActualGameState(GameManager.GameState.Paused);
         PausePanelGUI.SetActive(true);
@@ -34,6 +38,7 @@ public class PauseController : MonoBehaviour
 
     public void ContinueGame()
     {
+        GameManager.Instance.HideCursor();
         GameManager.Instance.SetActualGameState(previousGameState);
         PausePanelGUI.SetActive(false);
         Time.timeScale = 1.0f;
@@ -41,6 +46,7 @@ public class PauseController : MonoBehaviour
 
     public void BackToMainMenu() 
     {
+        GameManager.Instance.ShowCursor();
         GameManager.Instance.SetActualGameState(GameManager.GameState.MainMenu);
         if(!GameManager.Instance.tutorialCompleted)
             GameManager.Instance.SetGameLevel(GameManager.GameLevel.Tutorial);

@@ -150,6 +150,7 @@ public class Enemy : CharacterBase
     {
         SpawnHealthItem();
         SpawnExpItems();
+        GetComponent<SpriteRenderer>().color = Color.white;
         base.Death();
     }
 

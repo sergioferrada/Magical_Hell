@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1934600187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.64705884}
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1934600187
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 2074947038, guid: b523bc0266f1b914a8c3e993a6557aed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -287,31 +287,31 @@ MonoBehaviour:
     damageMultiplicator: 0
     speedMultiplicator: 0
     attackDelayMultiplicator: 0
-    color: {r: 0.5896226, g: 1, b: 0.5896317, a: 0}
+    color: {r: 0.5529412, g: 0.27450982, b: 0.5647059, a: 1}
   Easy:
     lifeExtraPoints: 1
     damageMultiplicator: 5
     speedMultiplicator: 5
     attackDelayMultiplicator: 0
-    color: {r: 0.5882353, g: 0.99232346, b: 1, a: 0}
+    color: {r: 0.5647059, g: 0.27450982, b: 0.3019608, a: 1}
   Medium:
     lifeExtraPoints: 3
     damageMultiplicator: 15
     speedMultiplicator: 7
     attackDelayMultiplicator: 5
-    color: {r: 1, g: 1, b: 1, a: 0}
+    color: {r: 0.27450982, g: 0.27450982, b: 0.5647059, a: 1}
   Hard:
     lifeExtraPoints: 5
     damageMultiplicator: 25
     speedMultiplicator: 10
     attackDelayMultiplicator: 7
-    color: {r: 0.9864577, g: 0.5882353, b: 1, a: 0}
+    color: {r: 0.5647059, g: 0.40784314, b: 0.27450982, a: 1}
   Very_Hard:
     lifeExtraPoints: 8
     damageMultiplicator: 35
     speedMultiplicator: 13
     attackDelayMultiplicator: 10
-    color: {r: 1, g: 0.97739714, b: 0.5882353, a: 0}
+    color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   healthItemPrefab: {fileID: 3954567864300934791, guid: 89269da1396dbe4468af522e3f09273c, type: 3}
   spawnItemProbability: 7
   expItemPrefab: {fileID: 3954567864300934791, guid: 7977a9e04fd9b604a881da005f0a55e4, type: 3}

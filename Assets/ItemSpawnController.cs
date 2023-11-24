@@ -47,17 +47,20 @@ public class ItemSpawnController : MonoBehaviour
             {
                 foreach (var abilitie in playerAbilities)
                 {
-                    if (abilitie == AbilitiesPrefabs[i])
+                    if (abilitie.GetType() == AbilitiesPrefabs[i].GetType())
                     {
                         list.Remove(AbilitiesPrefabs[i]);
                     }
                 }
             }
 
-            AbilitiesPrefabs = list.ToArray();
+            if(list.Count != 0)
+                AbilitiesPrefabs = list.ToArray();
 
-            var item = Instantiate(ItemsPrefab, transform.position, Quaternion.identity);
-            item.GetComponent<AbilityItemBase>().abilityToAdd = AbilitiesPrefabs[Random.Range(0, AbilitiesPrefabs.Length)];
+            var item = Instantiate(ItemsPrefab, transform.position - new Vector3(0.2f, 0.5f), Quaternion.identity);
+            var ability = AbilitiesPrefabs[Random.Range(0, AbilitiesPrefabs.Length)];
+            item.GetComponent<AbilityItemBase>().abilityToAdd = ability;
+            item.GetComponent<AbilityItemBase>().IconChild.sprite = ability.GetComponent<SpriteRenderer>().sprite;
         }
     }
 

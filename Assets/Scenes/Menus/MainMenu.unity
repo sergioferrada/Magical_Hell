@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -517.51294
       objectReference: {fileID: 0}
+    - target: {fileID: 1108666109907083772, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1336910897331111267, guid: ab7c0fbe6491a0b46be0b905d94f266e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

@@ -36,6 +36,10 @@ public class ChangeSceneButton : MonoBehaviour
     {
         yield return new WaitForSeconds(delayDuration);
         GameManager.Instance.SetActualGameState(gameState);
+
+        if (!GameManager.Instance.tutorialCompleted)
+            levelSelected = GameManager.GameLevel.Tutorial;
+
         GameManager.Instance.SetGameLevel(levelSelected);
         GameManager.Instance.ChangeScene(sceneName);
     }

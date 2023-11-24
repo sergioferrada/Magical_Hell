@@ -168,4 +168,15 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        // Si estás en el editor de Unity, simplemente detén la reproducción
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // Si no estás en el editor, utiliza la función de Application.Quit
+        Application.Quit();
+#endif
+    }
 }

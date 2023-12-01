@@ -20,6 +20,7 @@ public class LittleFireWormController : Enemy
     protected override void Awake()
     {
         base.Awake();
+        passedTime = Random.Range(0.1f, AttackDelay);
     }
     protected override void Start()
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class DifficultManager : MonoBehaviour
@@ -19,21 +20,22 @@ public class DifficultManager : MonoBehaviour
 
     public DifficultyLevel actualDifficultyLevel;
 
-    private float dynamicDifficultValue = 1f;
+    private float dynamicDifficultValue = 1.0f;
     private int consecutiveDifficultyIncreaseCount = 0;
     private int consecutiveDifficultyDecreaseCount = 0;
 
     public float timePerRoom { get; private set; }
     public float maxExpectedTime { get; private set; }
     public float totalPlayerLife { get; private set; }
+    public float startingPlayerLife { get; private set; }
     public float playerMaxLife { get; private set; }
     public float successfulAttacksPerRoom { get; private set; }
     public float totalAttacks { get; private set; }
 
     public float playerAbilitiesCount { get; private set; }
 
-    private float lifeWeight = 1.2f;
-    private float timeWeight = 1.5f;
+    private float lifeWeight = 1.5f;
+    private float timeWeight = 1.2f;
     private float accuracyWeight = 1.0f;
 
     #endregion
@@ -49,6 +51,8 @@ public class DifficultManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        MapDifficultyLevel();
     }
 
     public void MapDifficultyLevel()
@@ -78,7 +82,19 @@ public class DifficultManager : MonoBehaviour
     public void CalculateDynamicDifficult()
     {
         // Calcular la dificultad basada en la vida del jugador, el tiempo por sala y la precisión de los ataques.
-        float lifeDifficulty =      ((totalPlayerLife / playerMaxLife) - 0.5f) * 2f * lifeWeight;
+        //float lifeDifficulty =  Mathf.Clamp(((totalPlayerLife - startingPlayerLife) / playerMaxLife), -1.0f, 1.0f) * lifeWeight;
+        //float divider = playerMaxLife - startingPlayerLife <= 0 ? playerMaxLife : playerMaxLife - startingPlayerLife;
+        //float numerator = totalPlayerLife - startingPlayerLife;  
+        float numerator = totalPlayerLife - startingPlayerLife;
+        float divider = totalPlayerLife - startingPlayerLife <= 0 ? startingPlayerLife : playerMaxLife - startingPlayerLife;
+        //float a = totalPlayerLife - startingPlayerLife < 0 ? -1 : 0;
+        //float b = a + 1;
+
+        float lifeDifficulty = numerator / divider * lifeWeight;
+        
+        if (totalPlayerLife >= playerMaxLife)
+            lifeDifficulty = 1f * lifeWeight;
+
         float timeDifficulty =      (((maxExpectedTime - timePerRoom) / maxExpectedTime)) * timeWeight;
         float accuracyDifficulty =  ((successfulAttacksPerRoom - totalAttacks) / successfulAttacksPerRoom) * accuracyWeight;
 
@@ -124,6 +140,12 @@ public class DifficultManager : MonoBehaviour
         MapDifficultyLevel();
     }
 
+    public void ResetDifficult()
+    {
+        dynamicDifficultValue = Mathf.FloorToInt(dynamicDifficultValue) - 1;
+        if(dynamicDifficultValue < 1) { dynamicDifficultValue = 1; }
+    }
+
     public void SetTimePerRoom(float time)
     {
         timePerRoom = time;
@@ -146,6 +168,11 @@ public class DifficultManager : MonoBehaviour
     public void SetTotalPlayerLife(float value)
     {
         totalPlayerLife = value;
+    }
+
+    public void SetStartingPlayerLife(float value)
+    {
+        startingPlayerLife = value;
     }
 
     public void SetPlayerMaxLife(float value)

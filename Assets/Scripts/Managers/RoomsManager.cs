@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using System.Linq;
 
 public class RoomsManager : MonoBehaviour
 {
@@ -107,10 +108,13 @@ public class RoomsManager : MonoBehaviour
                 if (GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
                 {
                     if (GameManager.Instance.dynamicDifficultActivate)
-                    { 
+                    {
+                        timePassed = 0;
                         DifficultManager.Instance.ResetTimePerRoom();
                         DifficultManager.Instance.ResetTotalAttacks();
                         DifficultManager.Instance.ResetSuccefulAttacks();
+                        DifficultManager.Instance.SetStartingPlayerLife(FindAnyObjectByType<PlayerController>().Life);
+                        DifficultManager.Instance.SetPlayerMaxLife(FindAnyObjectByType<PlayerController>().MaxLife);
                     }
                 }
 
@@ -159,15 +163,26 @@ public class RoomsManager : MonoBehaviour
         }
 
         if (CompareRoomStates(RoomState.PlayingRoom) &&
-            GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial)
+            GameManager.Instance.actualGameLevel != GameManager.GameLevel.Tutorial &&
+            GameManager.Instance.CompareGameStates(GameManager.GameState.Playing))
         {
             timePassed += Time.deltaTime;
             DifficultManager.Instance.SetTimePerRoom(timePassed);
         }  
     }
 
-    public static void CalculateExpectedTimeRoom()
+    public int GetEnemiesEnScene()
     {
+        return enemiesInScene;
+    }
+
+    public void CalculateExpectedTimeRoom()
+    {
+        float batExtraTime = 2f, slimeExtraTime = 4f, banditExtraTime = 2f, 
+              skeletonExtraTime = 2f, wormExtraTime = 12f;
+
+        //float enemiesAdded = 0;
+        float generalDecreaceTime = 1.0f;
         float auxTimeExpected = 0;
         float extraTime = 0;
 
@@ -189,13 +204,21 @@ public class RoomsManager : MonoBehaviour
 
         foreach (var enemy in enemiesInEscene)
         {
-            if (enemy is BatController) extraTime = 2f;
-            else if (enemy is SlimeController) extraTime = 4f;
-            else if (enemy is Enemy1Controller) extraTime = 2f;
-            else if (enemy is Enemy2Controller) extraTime = 2f;
-            else if (enemy is FireWormController) extraTime = 12f;
+            if      (enemy is BatController)        extraTime = batExtraTime;           
+            else if (enemy is SlimeController)      extraTime = slimeExtraTime;
+            else if (enemy is Enemy1Controller)     extraTime = banditExtraTime;
+            else if (enemy is Enemy2Controller)     extraTime = skeletonExtraTime;
+            else if (enemy is FireWormController)   extraTime = wormExtraTime;
 
-            auxTimeExpected += (enemy.Life / (totalPlayerDamage) * (totalPlayerDelay)) + extraTime;
+            //enemiesAdded++;
+
+            auxTimeExpected += (enemy.Life / (totalPlayerDamage) * (totalPlayerDelay)) + (extraTime * generalDecreaceTime);
+
+            if (generalDecreaceTime > 0)
+                generalDecreaceTime -= .05f;
+            
+            if(generalDecreaceTime <= 0)
+                generalDecreaceTime = 0;
         }
 
         DifficultManager.Instance.SetMaxExpectedTime(auxTimeExpected);
@@ -399,10 +422,7 @@ public class RoomsManager : MonoBehaviour
         lastTwoSceneNames[0] = sceneName;
     }
 
-    public int GetEnemiesEnScene()
-    {
-        return enemiesInScene;
-    }
+    
 
     public string GetActualRoomName()
     {

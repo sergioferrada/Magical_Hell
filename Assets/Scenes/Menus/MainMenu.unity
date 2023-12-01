@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: TransitionManagerPrefab
       value: 
       objectReference: {fileID: 7547746057148835664, guid: 607d93ede9e66d343af5591c4b18d11e, type: 3}
+    - target: {fileID: 712932286249693953, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
+      propertyPath: dynamicDifficultActivate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4801571127637655080, guid: 9e3d4326b78efa64ea7ffd4e3481ac5d, type: 3}
       propertyPath: defaultFadeDuration
       value: 6

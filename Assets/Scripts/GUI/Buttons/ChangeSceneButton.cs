@@ -52,6 +52,8 @@ public class ChangeSceneButton : MonoBehaviour
             GameManager.Instance.SetActualGameState(GameManager.GameState.Playing);
             GameManager.Instance.SetGameLevel(GameManager.GameLevel.Tutorial);
             GameManager.Instance.ChangeScene("Tutorial_Room_1");
+            DifficultManager.Instance.SetDynamicDifficult(1.0f);
+            DifficultManager.Instance.MapDifficultyLevel();
             SoundManager.Instance.StopMusicWithFade(1.0f);
         }
         else
@@ -62,6 +64,8 @@ public class ChangeSceneButton : MonoBehaviour
             RoomsManager.Instance.SetActualRoomType(RoomsManager.RoomType.Normal_Rooms);
             RoomsManager.Instance.SetNextRoomType(RoomsManager.RoomType.Normal_Rooms);
             GameManager.Instance.ChangeScene("Default_Room");
+            DifficultManager.Instance.ResetDifficult();
+            DifficultManager.Instance.MapDifficultyLevel();
             SoundManager.Instance.StopMusicWithFade(1.0f);
         }
     }

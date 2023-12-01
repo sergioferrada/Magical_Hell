@@ -174,8 +174,10 @@ public class PlayerController : CharacterBase
                 SoundManager.Instance.PlaySound("Level_Up");
             }
 
-            DifficultManager.Instance.SetPlayerMaxLife(MaxLife);
+            
 
+            //DifficultManager.Instance.SetPlayerMaxLife(MaxLife);
+            
             playerHUDController.UpdateHeartsHUD();
             playerHUDController.UpdateExpBarHUD();
             playerHUDController.UpdateStatsHUD();

@@ -27,6 +27,20 @@ public class SimpleUIController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F3))
+        {
+            generalDifficult.enabled = !generalDifficult.enabled;
+            generalDifficult2v.enabled = !generalDifficult2v.enabled;
+            roomNameText.enabled = !roomNameText.enabled;
+            enemiNumbersText.enabled = !enemiNumbersText.enabled;
+            gameStateText.enabled = !gameStateText.enabled;
+            timePerRoomText.enabled = !timePerRoomText.enabled;
+            timeExpectedText.enabled = !timeExpectedText.enabled;
+            totalPlayerAttacks.enabled = !totalPlayerAttacks.enabled;
+            succesAttacks.enabled = !succesAttacks.enabled;
+            levelDifficultText.enabled = !levelDifficultText.enabled;
+        }
+
         UpdateDynamicDifficult(DifficultManager.Instance.GetDynamicDifficult());
         UpdateGameState(GameManager.Instance.actualGameState);
         UpdateTimePerRoom(DifficultManager.Instance.timePerRoom);

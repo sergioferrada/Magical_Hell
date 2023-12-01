@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1616017829
+    rgba: 5405093
   m_fontColor: {r: 0.64705884, g: 0.4745098, b: 0.32156864, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 5405093
+    rgba: 4283595173
   m_fontColor: {r: 0.64705884, g: 0.47450984, b: 0.32156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2761,8 +2761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 195.15637, y: 30.483795}
-  m_SizeDelta: {x: 390.313, y: 60.9676}
+  m_AnchoredPosition: {x: 328.4123, y: 30.483795}
+  m_SizeDelta: {x: 656.8248, y: 60.9676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3753525764390724911
 CanvasRenderer:
@@ -3090,7 +3090,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3453,7 +3453,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1616017829
+    rgba: 5405093
   m_fontColor: {r: 0.64705884, g: 0.4745098, b: 0.32156864, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

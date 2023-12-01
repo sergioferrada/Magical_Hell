@@ -106,5 +106,5 @@ MonoBehaviour:
     levelsToApper: 010000000200000003000000
   - enemyPrefab: {fileID: 699115365041419180, guid: ab606548991cd534ca55c3d9e2b45c69, type: 3}
     levelsToApper: 020000000300000004000000
-  - enemyPrefab: {fileID: 6413751012256076001, guid: 8a6f4f5cf2c477341b19d7b24c43247b, type: 3}
+  - enemyPrefab: {fileID: 6505698770536801469, guid: 8a6f4f5cf2c477341b19d7b24c43247b, type: 3}
     levelsToApper: 0300000004000000

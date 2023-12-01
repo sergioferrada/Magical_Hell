@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         if (CompareGameStates(GameState.MainMenu))
         {
             if(FindObjectOfType<MainCameraController>())
-            Destroy(FindObjectOfType<MainCameraController>().gameObject);
+                Destroy(FindObjectOfType<MainCameraController>().gameObject);
 
             if (FindObjectOfType<PlayerController>())
                 Destroy(FindObjectOfType<PlayerController>().gameObject);
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public void SetRandomGameVersion()
     {
         int idVersion = Random.Range(1, 3);
+        idVersion = 1;
         dynamicDifficultActivate = (idVersion == 1);
     }
 
@@ -51,12 +52,12 @@ public class GameManager : MonoBehaviour
 
     public void GenerateVersionNumber()
     {
-        int firstGroupNumber = Random.Range(100, 300);
-        int secondGroupNumber = Random.Range(100, 300);
+        int firstGroupNumbers = Random.Range(1000, 3000);
+        int secondGroupNumbers = Random.Range(1000, 3000);
 
         int idVersion = dynamicDifficultActivate ? 1 : 2;
-
-        versionNumber = firstGroupNumber.ToString() + (idVersion) + secondGroupNumber.ToString();
+        
+        versionNumber = firstGroupNumbers.ToString() + (idVersion) + secondGroupNumbers.ToString();
     }
 
     private void Awake()
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
             ShowCursor();
             Destroy(FindObjectOfType<MainCameraController>().gameObject);
             Destroy(FindObjectOfType<SimpleUIController>().gameObject);
-            DifficultManager.Instance.SetDynamicDifficult(1.0f);
+            DifficultManager.Instance.ResetDifficult();
             DifficultManager.Instance.MapDifficultyLevel();
             TransitionManager.Instance().Transition("GameOver", transition, 0.0f);
         }

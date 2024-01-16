@@ -70,5 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/[Aa]ssets/[Mm]y LBS Bundle/*
-/[Aa]ssets/[Ee]xamples/*
+/Assets/My\LBS\Bundles/*
+/Assets/Examples/*
+/Assets/ISI\Lab/

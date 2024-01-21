@@ -46,6 +46,9 @@ public class CharacterBase : MonoBehaviour
     public float passedTime;
     public Vector2 direction;
     public Vector2 lastDirection;
+
+    public bool invulnerable = false;
+    public float invulnerableTime = 0.3f;
     
 
     // Start is called before the first frame update
@@ -69,6 +72,10 @@ public class CharacterBase : MonoBehaviour
 
     public virtual void ReciveDamage(float damage)
     {
+        if (invulnerable) return; //si esta en invulnerable, no herir
+
+        BecomeInvulnerable();
+
         SetState(State.Injured);
         Life -= damage;
 
@@ -79,6 +86,12 @@ public class CharacterBase : MonoBehaviour
         }
 
         CheckDeath();
+    }
+
+    protected void BecomeInvulnerable()
+    {
+        invulnerable = true;
+        StartCoroutine(InvulnerabilityFrames());
     }
 
     /// <summary>
@@ -93,6 +106,18 @@ public class CharacterBase : MonoBehaviour
             SetState(State.Death);
             RoomsManager.Instance.CalculateEnemiesInScene();
         }
+    }
+
+    private IEnumerator InvulnerabilityFrames()
+    {
+        Color c = gameObject.GetComponent<Renderer>().material.color;
+        gameObject.GetComponent<Renderer>().material.color = c / 2f;
+
+        yield return new WaitForSeconds(invulnerableTime);
+
+        invulnerable = false;
+
+        gameObject.GetComponent<Renderer>().material.color = c;
     }
 
     /// <summary>

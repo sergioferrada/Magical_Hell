@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//base de todos los ataques del jugador, o de los enemigos?
 public class DamageObjectBase : MonoBehaviour
 {
     public float damage, objectScale;

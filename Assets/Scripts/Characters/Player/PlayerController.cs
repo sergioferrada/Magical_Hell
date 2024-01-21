@@ -19,6 +19,12 @@ public class PlayerController : CharacterBase
     private PlayerHUDController playerHUDController;
     private CooldownBarController cooldownBarController;
 
+    [Header("Player Parts")]
+    public PlayerAbility ControlledAbility;
+
+    [HideInInspector]
+    public static PlayerController Instance;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,6 +38,8 @@ public class PlayerController : CharacterBase
 
     protected override void Start()
     {
+        invulnerableTime = 0.5f;
+        Instance = this;
         base.Start();
     }
 
@@ -73,13 +81,10 @@ public class PlayerController : CharacterBase
             else if (moveX > 0) GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && passedTime >= AttackDelay)
+        //accion disparar
+        if (Input.GetButtonDown("Fire1") && passedTime >= AttackDelay)
         {
-            SetState(State.ShortAttack);
-            meleeAttack.damage = Damage;
-            meleeAttack.impulseForce = ImpulseForce;
-            meleeAttack.objectScale = AttackRange;
-            meleeAttack.Activate();
+            ShootSelected();
         }
 
         // Cambia los estados en función del movimiento o ataque
@@ -97,6 +102,20 @@ public class PlayerController : CharacterBase
         }
 
         direction = new Vector2(moveX, moveY).normalized;
+    }
+
+    public void ShootSelected()
+    {
+        SetState(State.ShortAttack);
+        ControlledAbility.Activate();
+
+        //este es el codigo original
+        /*
+        meleeAttack.damage = Damage;
+        meleeAttack.impulseForce = ImpulseForce;
+        meleeAttack.objectScale = AttackRange;
+        meleeAttack.Activate();
+        */
     }
 
     protected override void Move()
@@ -187,8 +206,11 @@ public class PlayerController : CharacterBase
 
     public override void ReciveDamage(float damage)
     {
-        SetState(State.Injured);
+        if (invulnerable) return;
 
+        BecomeInvulnerable();
+
+        SetState(State.Injured);
         if (!SoundManager.Instance.IsClipPlaying("Player_Hurt"))
         SoundManager.Instance.PlaySound("Player_Hurt");
         //playerHUDController.PlayAnimationHUD("Healthbar_Damage_Animation");

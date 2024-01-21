@@ -9,7 +9,7 @@ public class IceAreaAbilitiy : PlayerAbility
     protected override void Start()
     {
         SkillLevelsStats = new List<SkillLevelStatistics>
-        {                         
+        {
                                  //  [D]     [CD]     [OS]  [EXP]
             new SkillLevelStatistics(2.0f,   3.0f,   1.0f,   5f),  //Level 1
             new SkillLevelStatistics(2.0f,   2.75f,  1.0f,   10f),  //Level 2

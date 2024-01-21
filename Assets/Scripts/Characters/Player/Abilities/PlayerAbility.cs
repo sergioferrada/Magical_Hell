@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Xml.Serialization;
 
+//clase para guardar estadisticas de los ataques
 [System.Serializable]
 public class SkillLevelStatistics
 {
@@ -20,6 +21,7 @@ public class SkillLevelStatistics
     }
 }
 
+//objeto de abilidad del jugador. Guarda datos como el icono tambien. podria ser un scriptable object
 public class PlayerAbility : MonoBehaviour
 {
     public Sprite IconSprite;
@@ -35,6 +37,9 @@ public class PlayerAbility : MonoBehaviour
     public float cooldown = 0;
     public float damageObjectScale = 1;
 
+    [Header("Ability Settings")]
+    public bool auto = true; //si la abilidad es autocast y autoaim
+
     #region UI SETTINGS
     [Header("UI Settings")]
     public GameObject PopUpDamagePrefab;
@@ -43,8 +48,9 @@ public class PlayerAbility : MonoBehaviour
     protected virtual void Start()
     {
         ApplySkillLevel();
+
         // Llama al método Activate cada "cooldown" segundos y lo repite continuamente.
-        StartCoroutine(RepeatActivation());
+        if (auto) StartCoroutine(RepeatActivation());
     }
 
     public void AddExp(int expPoint = 1)

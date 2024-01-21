@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//esto es un ataque, creo que es el q tiene forma de circulo
 public class MeleePlayerAttack : StationaryDamageObject
 {
     public float impulseForce;

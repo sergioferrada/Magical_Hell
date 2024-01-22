@@ -74,4 +74,5 @@ public class FireballLogic : ProjectileBase
         rb2d.velocity = Vector2.zero;
         Destroy(gameObject, .4f);
     }
+
 }

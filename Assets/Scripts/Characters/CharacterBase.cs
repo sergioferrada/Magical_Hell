@@ -12,25 +12,27 @@ public class CharacterBase : MonoBehaviour
     #endregion
 
     #region CHARACTER STATS
-    public enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death }
-    
+    public enum State { Idle, Move, ShortAttack, MidAttack, LongAttack, Injured, Death, Slowed, Rooted }
+
     [Header("Character Stats")]
-    [SerializeField] protected State _state;            
+    [SerializeField] protected State _state;
     [SerializeField] protected float _baseLife;
     [SerializeField] protected float _maxLife;
     [SerializeField] protected float _baseMovementSpeed;
-
     public State state { get { return _state; } private set { _state = value; } }
     public float Life { get { return _baseLife; } protected set { _baseLife = value; } }
     public float MaxLife { get { return _maxLife; } protected set { _maxLife = value; } }
     public float MovementSpeed { get { return _baseMovementSpeed; } protected set { _baseMovementSpeed = value; } }
+
+    //agregado para test 
+    public float originalMovementspd;
     #endregion
 
     #region COMBAT STATS
     [Header("Combat Stats")]
     [SerializeField] protected LayerMask attackableLayers;
-    [SerializeField] protected float _baseDamage;       
-    [SerializeField] protected float _baseAttackDelay;  
+    [SerializeField] protected float _baseDamage;
+    [SerializeField] protected float _baseAttackDelay;
     [SerializeField] protected float _attackRange;
 
     public float Damage { get { return _baseDamage; } protected set { _baseDamage = value; } }
@@ -46,7 +48,7 @@ public class CharacterBase : MonoBehaviour
     public float passedTime;
     public Vector2 direction;
     public Vector2 lastDirection;
-    
+
 
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -79,6 +81,35 @@ public class CharacterBase : MonoBehaviour
         }
 
         CheckDeath();
+    }
+
+    public virtual void ApplySlow(float slow)
+
+    {
+        SetState(State.Slowed);
+        MovementSpeed *= slow;
+
+    }
+
+    public virtual void ApplyRoot(float rootTime)
+    {
+        SetState(State.Rooted);
+        if (PopUpDamagePrefab != null)
+        {
+            var aux = Instantiate(PopUpDamagePrefab, transform.position, Quaternion.identity);
+            aux.GetComponent<PopUpController>().PopUpTextSprite("Rooted!");
+        }
+        originalMovementspd = MovementSpeed;
+        MovementSpeed = 0;
+
+        Invoke("Unroot", rootTime);
+
+    }
+
+    private void Unroot()
+    {
+        SetState(State.Move);
+        MovementSpeed = originalMovementspd;
     }
 
     /// <summary>
@@ -122,4 +153,6 @@ public class CharacterBase : MonoBehaviour
     {
         return state == newState;
     }
+
+
 }

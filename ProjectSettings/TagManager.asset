@@ -8,6 +8,7 @@ TagManager:
   - CameraBounds
   - Wall
   - Fireball
+  - Lich
   layers:
   - Default
   - TransparentFX

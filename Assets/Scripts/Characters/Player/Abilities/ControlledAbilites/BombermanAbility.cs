@@ -19,7 +19,7 @@ public class BombermanAbility : PlayerAbility
 
     protected override IEnumerator ActivateAbility()
     {
-        Instantiate(bomb, transform);
+        Instantiate(bomb, transform).GetComponent<BombLogic>().AssignAbility(this);
         return base.ActivateAbility();
     }
 }

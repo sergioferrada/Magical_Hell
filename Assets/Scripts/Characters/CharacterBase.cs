@@ -90,12 +90,18 @@ public class CharacterBase : MonoBehaviour
         CheckDeath();
     }
 
-    protected void BecomeInvulnerable()
+    public void BecomeInvulnerable()
     {
         invulnerable = true;
         StartCoroutine(InvulnerabilityFrames());
     }
-        
+
+    public void BecomeInvulnerable(float t)
+    {
+        invulnerable = true;
+        StartCoroutine(InvulnerabilityFrames(t));
+    }
+
     public virtual void ApplySlow(float slow)
 
     {
@@ -146,6 +152,18 @@ public class CharacterBase : MonoBehaviour
         gameObject.GetComponent<Renderer>().material.color = c / 2f;
 
         yield return new WaitForSeconds(invulnerableTime);
+
+        invulnerable = false;
+
+        gameObject.GetComponent<Renderer>().material.color = c;
+    }
+
+    private IEnumerator InvulnerabilityFrames(float t)
+    {
+        Color c = gameObject.GetComponent<Renderer>().material.color;
+        gameObject.GetComponent<Renderer>().material.color = c / 2f;
+
+        yield return new WaitForSeconds(t);
 
         invulnerable = false;
 

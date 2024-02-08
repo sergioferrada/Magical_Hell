@@ -7,6 +7,8 @@ public class PlayerController : CharacterBase
 {
     [SerializeField] private PlayerStateAnimationController childAnimator;
 
+    public bool canMove = true;
+
     [Header("Combat Stats (Child)")]
     [SerializeField] private MeleePlayerAttack meleeAttack;
     [SerializeField] public float ImpulseForce;
@@ -24,6 +26,7 @@ public class PlayerController : CharacterBase
 
     [HideInInspector]
     public static PlayerController Instance;
+
 
     protected override void Awake()
     {
@@ -120,7 +123,7 @@ public class PlayerController : CharacterBase
 
     protected override void Move()
     {
-        rb2d.velocity = new Vector2(direction.x * MovementSpeed, direction.y * MovementSpeed);
+        if (canMove) rb2d.velocity = new Vector2(direction.x * MovementSpeed, direction.y * MovementSpeed);
     }
 
     public void RecoverLife(float lifePoints)

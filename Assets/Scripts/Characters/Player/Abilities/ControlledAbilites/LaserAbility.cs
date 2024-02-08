@@ -23,20 +23,25 @@ public class LaserAbility : PlayerAbility
 
         //tirar un raycast para las paredes
         RaycastHit2D wall = Physics2D.Raycast(transform.position, PlayerController.Instance.lastDirection,100,LayerMask.GetMask("Wall"));
-
+        Debug.DrawRay(transform.position, PlayerController.Instance.lastDirection * 10, Color.red,10, false);
 
         //tirar un raycast para tocar enemigos
         Vector2 origin = (Vector2)transform.position + PlayerController.Instance.lastDirection;
         int h = Physics2D.Raycast(origin, PlayerController.Instance.lastDirection, new ContactFilter2D().NoFilter(), hits, wall.distance);
 
-        Debug.DrawRay(origin, PlayerController.Instance.lastDirection*wall.distance, Color.red, 1.5f, false);
+        Debug.DrawRay(origin, PlayerController.Instance.lastDirection*wall.distance, Color.red, 10, false);
 
         Debug.Log(""+wall.distance);
 
         foreach (RaycastHit2D r in hits)
         {
             Enemy e = r.collider.gameObject.GetComponent<Enemy>();
-            if (e != null) e.ReciveDamage(damage);
+
+            if (e != null)
+            {
+                e.ReciveDamage(damage);
+                Debug.Log("Detected enemy");
+            }
         }
 
         return base.ActivateAbility();

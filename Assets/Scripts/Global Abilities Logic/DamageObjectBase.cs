@@ -8,7 +8,7 @@ public class DamageObjectBase : MonoBehaviour
     public float damage, objectScale;
 
     public PlayerAbility parentAbility;
-    protected Collider2D collider2d;
+    public Collider2D collider2d;
     protected Animator animator;
 
     protected virtual void Awake()

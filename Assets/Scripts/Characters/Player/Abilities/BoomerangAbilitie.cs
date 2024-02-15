@@ -29,7 +29,7 @@ public class BoomerangAbilitie : PlayerAbility
     {
         BoomerangLevelStats = new List<BoomerangLevelStatistics>
         {
-            new BoomerangLevelStatistics(.5f,    15f,   8.0f,     1.0f,   8,  15f),  //Level 1
+            new BoomerangLevelStatistics(.5f,    2f,   8.0f,     1.0f,   8,  15f),  //Level 1
             new BoomerangLevelStatistics(.5f,    15f,   8.0f,     1.0f,   9,  15f),  //Level 1
             new BoomerangLevelStatistics(.5f,    15f,   8.0f,     1.0f,   10,  15f),  //Level 1
         };

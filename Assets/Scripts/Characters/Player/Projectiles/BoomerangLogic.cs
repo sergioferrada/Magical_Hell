@@ -65,7 +65,7 @@ public class BoomerangLogic : ProjectileBase
 {
     public Transform playerLocation;
     private float distanceTraveled = 0f;
-    public float minRange = 0.5f;
+    public float minRange = 1f;
     public bool isComingBack = false;
 
     protected override void Awake()
@@ -83,13 +83,18 @@ public class BoomerangLogic : ProjectileBase
     private void Update()
     {
         TrackPlayer();
+        if (isComingBack)
+        {
+            direction = (playerLocation.position - transform.position).normalized;
+            SetProyectileVelocity(speed, direction);
+        }
     }
 
     protected override void DestroyProjectile()
     {
         rb2d.velocity = Vector3.zero;
         GetComponent<Collider2D>().enabled = false;
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.1f);
     }
 
     public void TrackPlayer()

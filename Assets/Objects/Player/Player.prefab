@@ -505,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905094605844748875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 14.397625, y: -9.591316, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -667,6 +667,7 @@ MonoBehaviour:
   _baseLife: 10
   _maxLife: 10
   _baseMovementSpeed: 5.25
+  originalMovementspd: 0
   attackableLayers:
     serializedVersion: 2
     m_Bits: 128

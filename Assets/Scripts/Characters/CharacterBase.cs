@@ -108,9 +108,9 @@ public class CharacterBase : MonoBehaviour
 
     private void Unroot()
     {
-        SetState(State.Move);
+        SetState(State.Idle);
         MovementSpeed = originalMovementspd;
-    }
+    } 
 
     /// <summary>
     /// Check if the life of the character is equal or less than cero

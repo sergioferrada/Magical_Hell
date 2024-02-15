@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class StationaryDamageObject : DamageObjectBase
 {
-    private void ActivateDamageArea()
+    protected void ActivateDamageArea()
     {
         collider2d.enabled = true;
     }
 
-    private void DeactivateDamageArea()
+    protected void DeactivateDamageArea()
     {
         collider2d.enabled = false;
     }

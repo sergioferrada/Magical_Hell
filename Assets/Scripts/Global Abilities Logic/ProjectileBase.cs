@@ -9,6 +9,7 @@ public class ProjectileBase : DamageObjectBase
     public Vector2 direction;
     public float speed, lifeTime;
     public int currentCollidedObjects, maxCollidableObjects;
+    public float maxRange;
 
     protected override void Awake()
     {

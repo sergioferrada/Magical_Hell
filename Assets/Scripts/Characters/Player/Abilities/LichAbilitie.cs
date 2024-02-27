@@ -36,7 +36,7 @@ public class LichAbilitie : PlayerAbility
     public float radius = 5f;
     public float cd = 2f;
     public List<LichLevelStatics> SkillLevelsStats;
-    public float targetProbability = 0.1f;
+    public float targetProbability = 0.1f; //prob de apuntar a un enemigo
 
     protected override void Start()
     {
@@ -88,17 +88,21 @@ public class LichAbilitie : PlayerAbility
     {
 
         bool targetEnemy = UnityEngine.Random.value < targetProbability;
-        var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity);
+        var projectile = Instantiate(objectAttack, transform.position, Quaternion.identity).GetComponent<LichLogic>();
         Vector3 targetDirection;
+
+        //si persigue al enemigo
         if (targetEnemy)
         {
             // Obtener el enemigo más cercano
             Enemy nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
             {
+                projectile.SetTarget(nearestEnemy.gameObject);
+
                 // Calcular la dirección hacia el enemigo más cercano
                 targetDirection = (nearestEnemy.transform.position - transform.position).normalized;
-                projectile.GetComponent<LichLogic>().direction = targetDirection;
+                projectile.direction = targetDirection;
                 targetProbability = 0.1f;
             }
         }

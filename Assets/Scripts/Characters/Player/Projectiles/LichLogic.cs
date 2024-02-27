@@ -9,7 +9,10 @@ public class LichLogic : ProjectileBase
     public int minFireballRange, maxFireballRange;
     public float trackRadius = 3f;
     private int timesExploded;
+
+    private GameObject target;
     private GameObject ultimoEnemigoAlcanzado;
+    private bool tracking = false;
 
     protected override void Awake()
     {
@@ -23,8 +26,30 @@ public class LichLogic : ProjectileBase
         base.Start();
     }
 
-    public void Track()
+    public void SetTarget(GameObject g)
+    {
+        tracking = true;
+        target = g;
+    }
 
+    private void Update()
+    {
+        if (tracking)
+        {
+            if (target != null)
+            {
+                // Calcular la dirección hacia el enemigo
+                Vector2 direction = target.transform.position - transform.position;
+                direction.Normalize();
+
+                // Mover el proyectil hacia el enemigo
+                //transform.Translate(direction * speed * Time.deltaTime);
+                SetProyectileVelocity(speed, direction);
+            }
+        }
+    }
+
+    public void Track()
     {
         Collider2D[] EnemyInRange = Physics2D.OverlapCircleAll(transform.position, trackRadius, 7);
 
@@ -38,12 +63,20 @@ public class LichLogic : ProjectileBase
             direction.Normalize();
 
             // Mover el proyectil hacia el enemigo
-            transform.Translate(direction * speed * Time.deltaTime);
+            //transform.Translate(direction * speed * Time.deltaTime);
+            SetProyectileVelocity(speed, direction);
 
             // Actualizar el último enemigo alcanzado
             ultimoEnemigoAlcanzado = closestEnemy;
+
+            tracking = true;
+            target = closestEnemy;
         }
-        else { Debug.Log("No hay"); }
+        else 
+        {
+            tracking = false;
+            Debug.Log("No hay"); 
+        }
     }
 
 
@@ -54,7 +87,7 @@ public class LichLogic : ProjectileBase
    
         if (collision.gameObject.layer == 7)
         {
-            Track();
+            //Track();
             //Si el objeto colisonado tiene menos o la misma cantidad de vida que el daño
             if (collision.gameObject.GetComponent<Enemy>().Life <= damage)
                 Track();
@@ -69,11 +102,11 @@ public class LichLogic : ProjectileBase
         //Cuando colisione con un objeto en el layer de "Enemies"
         if (collision.gameObject.layer == 7)
         {
-            Track();
+            //Track();
             //Si el objeto colisonado tiene menos o la misma cantidad de vida que el daño
             if (collision.gameObject.GetComponent<Enemy>().Life <= damage)
                 Track();
-
+            else
                 DestroyProjectile();
         }
     }

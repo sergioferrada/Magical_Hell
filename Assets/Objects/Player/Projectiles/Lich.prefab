@@ -164,12 +164,14 @@ MonoBehaviour:
   damage: 0.25
   objectScale: 1
   parentAbility: {fileID: 0}
+  collider2d: {fileID: 0}
   direction: {x: 0, y: 0}
   speed: 7
   lifeTime: 5
   currentCollidedObjects: 0
-  maxCollidableObjects: 0
-  timesItcanBounce: 0
+  maxCollidableObjects: 5
+  maxRange: 0
+  timesItcanBounce: 3
   minFireballRange: 0
   maxFireballRange: 0
-  trackRadius: 2
+  trackRadius: 4

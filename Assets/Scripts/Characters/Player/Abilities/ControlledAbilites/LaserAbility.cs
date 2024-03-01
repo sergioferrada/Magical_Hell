@@ -8,6 +8,27 @@ using UnityEngine;
 
 public class LaserAbility : PlayerAbility
 {
+    public MeleePlayerAttack laser;
+
+    private void Update()
+    {
+        
+            //rotar con el jugador
+            Vector2 to = PlayerController.Instance.direction;
+            float z = Mathf.Atan2(to.y, to.x) * Mathf.Rad2Deg - 90;
+            transform.rotation = Quaternion.Euler(0, 0, z);
+
+            //tirar un raycast para las paredes
+            //RaycastHit2D wall = Physics2D.Raycast(transform.position,PlayerController.Instance.direction,100,LayerMask.GetMask("Wall"));
+
+            //Debug.DrawRay(transform.position, PlayerController.Instance.lastDirection * 10, Color.red, 0, false);
+
+            //cambiar longitud segun raycast
+           // transform.localScale = new Vector3(1, wall.distance, 1);
+            //Debug.Log("Distance To Wall: " + wall.distance);
+       
+    }
+
     protected override void Start()
     {
         auto = false;
@@ -16,34 +37,7 @@ public class LaserAbility : PlayerAbility
 
     protected override IEnumerator ActivateAbility()
     {
-        List<RaycastHit2D> hits = new List<RaycastHit2D>();
-
-        ContactFilter2D filter = new ContactFilter2D().NoFilter();
-        filter.SetLayerMask(LayerMask.GetMask("Enemies"));
-
-        //tirar un raycast para las paredes
-        RaycastHit2D wall = Physics2D.Raycast(transform.position, PlayerController.Instance.lastDirection,100,LayerMask.GetMask("Wall"));
-        Debug.DrawRay(transform.position, PlayerController.Instance.lastDirection * 10, Color.red,10, false);
-
-        //tirar un raycast para tocar enemigos
-        Vector2 origin = (Vector2)transform.position + PlayerController.Instance.lastDirection;
-        int h = Physics2D.Raycast(origin, PlayerController.Instance.lastDirection, new ContactFilter2D().NoFilter(), hits, wall.distance);
-
-        Debug.DrawRay(origin, PlayerController.Instance.lastDirection*wall.distance, Color.red, 10, false);
-
-        Debug.Log(""+wall.distance);
-
-        foreach (RaycastHit2D r in hits)
-        {
-            Enemy e = r.collider.gameObject.GetComponent<Enemy>();
-
-            if (e != null)
-            {
-                e.ReciveDamage(damage);
-                Debug.Log("Detected enemy");
-            }
-        }
-
+        laser.Activate();
         return base.ActivateAbility();
     }
 }
